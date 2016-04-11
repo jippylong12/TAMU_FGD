@@ -26,5 +26,7 @@ listOfSemesters = [
     "C"  # Fall
 ]
 
-downloadPDFs(url,str(2014),"A",listOfColleges[0])
+for x in xrange(0,len(listOfColleges)):
+    print "On College: " + str(listOfColleges[x])
+    downloadPDFs(url,str(2015),"C",listOfColleges[x])
 

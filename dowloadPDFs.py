@@ -65,7 +65,7 @@ def downloadPDFs(url,year,semester,college):
 
     # create a new folder for each different semester
     filePathCollege,filePathSemester = createPrettyFilePath(college,semester)
-    downloadFilesHere = downloadFilesHere + "\\" +str(filePathSemester) + str(year) + " - " + str(filePathCollege)
+    downloadFilesHere = downloadFilesHere + "\\" +str(filePathSemester) + str(year)
     if not os.path.exists(downloadFilesHere):
         os.makedirs(downloadFilesHere)
 
@@ -73,6 +73,9 @@ def downloadPDFs(url,year,semester,college):
     fp.set_preference("browser.download.manager.showWhenStarting",False)
     fp.set_preference("browser.download.dir", downloadFilesHere)
     fp.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/pdf")
+    fp.set_preference("pdfjs.disabled", True)
+    fp.set_preference("plugin.scan.Acrobat", "99.0")
+    fp.set_preference("plugin.scan.plid.all", False)
 
 
     #set up firefox
@@ -95,7 +98,8 @@ def downloadPDFs(url,year,semester,college):
     collegeSELECT.select_by_value(college)
 
     #find and click download button
+    downloadELEM = driver.find_element_by_id("ctl00_plcMain_btnGrade")
+    downloadELEM.send_keys(Keys.RETURN)
 
-
-
-    #elem.send_keys(Keys.ARROW_DOWN)
+    #exit
+    driver.close()
