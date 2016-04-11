@@ -5,4 +5,12 @@ My negative feelings toward the A&M administration has been slowly growing the l
 
 A&M continues to show that money is more important to them than the actual students. From keeping freshman on campus, to expanding the size of the campus even though the CITY's infrastructure, let alone the college's, can't handle it, to limiting the amount of transfer credits a student can bring in, and probably others that I can't think of that others can. Like I said I can't do much but I can help out in this aspect. I can bet you anything that A&M is getting a cut of the money from the silly website. The most ironic thing is at the bottom is states "Made by the Students, For the students."
 
-What irony. 
+What irony.
+
+Marcus Salinas - 4-11-2016
+##### ACTUAL PROJECT #############################
+
+This project is done in three parts. I am currently working on the first part. 
+1) Download all the usable pdfs and store them in folders
+2) Use OCR applications to get text from pdfs
+3) Manipulate data to present in a workable format.
