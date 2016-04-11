@@ -57,10 +57,13 @@ def downloadPDFs(url,year,semester,college):
     #set up firefox profile
     fp = webdriver.FirefoxProfile()
 
-
+    # go to where we downloaded project and create initial DB folder
     downloadFilesHere = os.getcwd()
     downloadFilesHere = downloadFilesHere + "\\GradeDistributionsDB"
-    os.chdir(downloadFilesHere)
+    if not os.path.exists(downloadFilesHere):
+        os.chdir(downloadFilesHere)
+
+    # create a new folder for each different semester
     filePathCollege,filePathSemester = createPrettyFilePath(college,semester)
     downloadFilesHere = downloadFilesHere + "\\" +str(filePathSemester) + str(year) + " - " + str(filePathCollege)
     if not os.path.exists(downloadFilesHere):
