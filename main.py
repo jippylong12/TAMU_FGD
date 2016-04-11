@@ -1,6 +1,7 @@
 _author_ = "Marcus Salinas"
 
-from dowloadPDFs import downloadPDFs
+from downloadPDFs import downloadPDFs
+from manipulatePDFs import manipulatePdfs
 
 url = "http://web-as.tamu.edu/gradereport/"
 
@@ -26,7 +27,15 @@ listOfSemesters = [
     "C"  # Fall
 ]
 
-for x in xrange(0,len(listOfColleges)):
-    print "On College: " + str(listOfColleges[x])
-    downloadPDFs(url,str(2015),"C",listOfColleges[x])
+#Part 1
 
+#for x in xrange(0,len(listOfColleges)):
+    #print "On College: " + str(listOfColleges[x])
+    #downloadPDFs(url,str(2015),"C",listOfColleges[x])
+
+# Part 2
+
+file = 'grd20153EN.txt'
+masterDictionary = manipulatePdfs(file)
+
+print "Here"
