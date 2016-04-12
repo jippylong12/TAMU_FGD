@@ -20,16 +20,21 @@ def outputData(masterDictionary,title):
 
     #'{:.1%}'.format(1/3.0)
 
+    # added a sort
     sortThisList = []
 
+    # add all the keys to the list
     for key in masterDictionary.keys():
         sortThisList.append(key)
 
+    # sort the list
     sortThisList.sort()
 
-    #writing class data to spreadsheet if not using sortByCourse Method
+    #writing class data to spreadsheet
+    # for each class in the list
     for course in sortThisList:
-        dataList = masterDictionary[course]
+        dataList = masterDictionary[course] # find it in the masterDictionary
+        # output the data
         ws.cell(row = rowCount, column = 1).value = course
         rowCount += 1
         for item in dataList:
