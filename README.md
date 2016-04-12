@@ -10,7 +10,7 @@ A&M continues to show that money is more important to them than the actual stude
 
 What irony.
 
-Marcus Salinas - 4-11-2016
+       - Marcus Salinas 4-11-2016
 ##### ACTUAL PROJECT #############################
 
 This project is done in three parts. I have finished all three parts enough to get them to work. 
