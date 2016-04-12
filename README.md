@@ -28,18 +28,31 @@ HOW-TO:
 (The College Student Who Just Wants to See Grades)
 
 If you just want to have a grade distribution to look at, go to the outputs folder and download the one with your college. The keys are: 
+
     "AG", # AGRICULTURE AND LIFE SCIENCES
+
     "AR", # ARCHITECTURE
+
     "BA", # BUSINESS ADMINISTRATION
+
     "ED", # EDUCATION
+
     "EL", # ENGLISH LANGUAGE INSTITUTE
+
     "EN", # ENGINEERING
+
     "GB", # GEORGE BUSH SCHOOL OF GOVERNMENT
+
     "GE", # GEOSCIENCES
+
     "LA", # LIBERAL ARTS
+
     "MD", # MEDICINE
+
     "MS", # MILITARY SCIENCE
+
     "SC", # SCIENCE
+
     "VM"  # VETERINARY MEDICINE
 
 Then once you have it downloaded just use Ctrl+F (Command+F for Mac I think) and then search for the class. This only has 2015 (as you might have guessed based on the names of the files) so you might not find your professor. To that I say I'm sorry and hopefully you make the right choice. I may or may not work on this more to make it better. 
