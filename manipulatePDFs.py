@@ -14,8 +14,8 @@ sys.setdefaultencoding('utf8')
 # this function will go through the text files (after using Google Drive OCR) and remove all the unnecessary lines that
 # we don't need. It iwill take the lines we do need and add them to a list so each item in the list is actually
 # a row in the text file
-def getDataFromTextFiles(filename):
-    filePath = os.getcwd() + "\\GradeDistributionsDB\\Fall2015"
+def getDataFromTextFiles(filename,semester,year,createPath):
+    filePath = os.getcwd() + "\\GradeDistributionsDB\\" + semester+year
     os.chdir(filePath)
     fileAsList = []
     addData = False
@@ -136,9 +136,9 @@ def sortByCourse(masterdictionary):
 
     return finalOutputDictionary
 
-def manipulatePdfs(file):
+def manipulatePdfs(file,semester,year,createPath):
     # get the data
-    usefulData = getDataFromTextFiles(file)
+    usefulData = getDataFromTextFiles(file,semester,year,createPath)
 
     # filter the data to only the data we need
     masterDictionary = getCoursesWithProfessors(usefulData)
