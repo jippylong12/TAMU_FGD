@@ -27,6 +27,7 @@ Something to work on in the future, besides eliminating bugs, are:
 
 * Eliminate some of the manual work and make it all autonomous. 
 
+Side note before the how-to: This project took me around 6 hours to complete. This could easily be the back-end to a server that a front end application can pull it's data from. I don't say that to gloat. I say that for how ridiculously easy this can be for one person let alone a whole team of people. This program is not perfect and it still needs lots of hours to get perfect but it get's the job done and I don't even have direct access to the data like I'm sure that other website does. Just a thought. 
 
 HOW-TO:
 
@@ -69,6 +70,8 @@ First off, great.
 Second off, once you downloaded it I apologize for my poor commenting. Some things to know are:
 
 * Part 1 and Parts 2 and 3 are separated. What that means is that you must comment out one, run it, then flip the comments to run the other half. Again, Part 1 should run by itself and Parts 2 and 3 can run together. 
+
+* Speaking of Part 1 it requires some manual work. Now you can run part 1 and get all the pdfs but then you need an OCR software to scan the pdfs. So what I did is used Google Drive and Google's free OCR software and you do this by uploading to Drive and then opening the pdf with Google Docs. Then you have to download the files as a Plain text file and then you can run Parts 2 and 3. 
 
 * I tried to make this as universal as possible but then I realized that most people who would want to help me are probably using Linux because it's "So much better man you don't understand" and to that I say you're entitled to 
 your own opinion, but I made this on Windows so you will have to probably change the file paths format to UNIX. Same for the Mac folk. 
