@@ -45,6 +45,7 @@ listOfSemesters = [
 semester = "Summer"
 year = 2015
 
+
 semesterChar = getSemesterChar(semester)
 
 # # Part 1
