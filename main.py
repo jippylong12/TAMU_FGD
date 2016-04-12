@@ -41,8 +41,8 @@ year = 2015
 
 # Part 2
 # take all the data we have right now and give us what we need
-file = 'grd20153EN.txt'
-college = "Engineering"
+file = 'grd20153VM.txt'
+college = file[8:10]
 masterDictionary = manipulatePdfs(file)
 
 # Part 3
