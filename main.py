@@ -42,11 +42,12 @@ year = 2015
 # Part 2
 # take all the data we have right now and give us what we need
 file = 'grd20153EN.txt'
+college = "Engineering"
 masterDictionary = manipulatePdfs(file)
 
 # Part 3
 # take the data we have and make it useful
-title = semester+str(year)+".xlsx"
+title = semester+str(year)+ " " + college + ".xlsx"
 wb = Workbook()
 
 #save the file to a new path

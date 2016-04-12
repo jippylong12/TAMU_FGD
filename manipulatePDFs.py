@@ -4,6 +4,7 @@ import os
 import sys
 import re
 from copy import deepcopy
+import copy
 from collections import defaultdict
 
 # setting up console for encoding
@@ -86,26 +87,27 @@ def createDataDictionary(masterDictionary):
     ]
 
     for course,classTouple in masterDictionary.items():
-        classProfessor = classTouple[0][1]
-        thisTuple = (course,classProfessor)
-        if thisTuple not in masterDataDictionary:
-            masterDataDictionary[thisTuple].append(deepcopy(emptyDataList))
+        for Touple in classTouple:
+            classProfessor = Touple[1]
+            thisTuple = (course,classProfessor)
+            if thisTuple not in masterDataDictionary:
+                masterDataDictionary[thisTuple].append(deepcopy(emptyDataList))
 
-        #get class data
-        classData = classTouple[0][0]
-        classData = classData.split(' ')
-        classData.pop(0)
+            #get class data
+            classData = Touple[0]
+            classData = classData.split(' ')
+            classData.pop(0)
 
-        tempClassData = deepcopy(classData)
-        # add the data to the totals
-        masterDataDictionary[thisTuple][0][0] += float(tempClassData[0])
-        masterDataDictionary[thisTuple][0][1] += float(tempClassData[1])
-        masterDataDictionary[thisTuple][0][2] += float(tempClassData[2])
-        masterDataDictionary[thisTuple][0][3] += float(tempClassData[3])
-        masterDataDictionary[thisTuple][0][4] += float(tempClassData[4])
-        masterDataDictionary[thisTuple][0][7] += 1
-        masterDataDictionary[thisTuple][0][6] += float(tempClassData[6])
-        masterDataDictionary[thisTuple][0][5] += float(tempClassData[5])
+            tempClassData = deepcopy(classData)
+            # add the data to the totals
+            masterDataDictionary[thisTuple][0][0] += float(tempClassData[0])
+            masterDataDictionary[thisTuple][0][1] += float(tempClassData[1])
+            masterDataDictionary[thisTuple][0][2] += float(tempClassData[2])
+            masterDataDictionary[thisTuple][0][3] += float(tempClassData[3])
+            masterDataDictionary[thisTuple][0][4] += float(tempClassData[4])
+            masterDataDictionary[thisTuple][0][7] += 1
+            masterDataDictionary[thisTuple][0][6] += float(tempClassData[6])
+            masterDataDictionary[thisTuple][0][5] += float(tempClassData[5])
 
     # now we calculate the averages for each class,professor
     for item in masterDataDictionary:
@@ -121,8 +123,18 @@ def createDataDictionary(masterDictionary):
 
     return masterDataDictionary
 
+# makes a dictionary where the key is the course and the values are a list of dictionaries where those keys are the
+# professor and the values is the list of data
+def sortByCourse(masterdictionary):
+    finalOutputDictionary = defaultdict(list)
+    tempDictionary = {}
 
+    for key in masterdictionary.keys():
+        tempDictionary[key[1]] = masterdictionary[key][0]
+        finalOutputDictionary[key[0]].append(deepcopy(tempDictionary))
+        tempDictionary.clear()
 
+    return finalOutputDictionary
 
 def manipulatePdfs(file):
     # get the data
@@ -131,4 +143,5 @@ def manipulatePdfs(file):
     # filter the data to only the data we need
     masterDictionary = getCoursesWithProfessors(usefulData)
     masterDictionary = createDataDictionary(masterDictionary)
+    masterDictionary = sortByCourse(masterDictionary)
     return masterDictionary
