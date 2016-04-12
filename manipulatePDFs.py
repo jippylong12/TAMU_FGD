@@ -9,6 +9,9 @@ from collections import defaultdict
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+# this function will go through the text files (after using Google Drive OCR) and remove all the unnecessary lines that
+# we don't need. It iwill take the lines we do need and add them to a list so each item in the list is actually
+# a row in the text file
 def getDataFromTextFiles(filename):
     filePath = os.getcwd() + "\\GradeDistributionsDB\\Fall2015"
     os.chdir(filePath)
@@ -32,7 +35,12 @@ def getDataFromTextFiles(filename):
 
     return fileAsList
 
+# will look at the text file and based on regex expressions will find the useful course and professor data and make
+# a dictionary of list of tuples out of them. The key of the dictionary is the actual course and the touples hold
+# the (course info, professor info). It is a list because some courses have multiple sections.
 def getCoursesWithProfessors(usefulData):
+
+    #setting everything up
     listOfCourses = []
     listOfProfessors = []
     masterDictionary = defaultdict(list)
@@ -40,6 +48,7 @@ def getCoursesWithProfessors(usefulData):
     currentCourse = ""
     tempCourseInfo = ""
 
+    # for each line use regex to find the course info and professor infor and add them to the master dictionary
     for line in usefulData:
         if line[:6] == "COURSE":
             continue
@@ -54,8 +63,10 @@ def getCoursesWithProfessors(usefulData):
     return masterDictionary
 
 def manipulatePdfs(file):
+    # get the data
     usefulData = getDataFromTextFiles(file)
 
+    # filter the data to only the data we need
     masterDictionary = getCoursesWithProfessors(usefulData)
 
     return masterDictionary
