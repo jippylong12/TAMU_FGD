@@ -3,6 +3,7 @@ _author_ = "Marcus Salinas"
 import os
 import sys
 import re
+from copy import deepcopy
 from collections import defaultdict
 
 # setting up console for encoding
@@ -62,11 +63,72 @@ def getCoursesWithProfessors(usefulData):
 
     return masterDictionary
 
+# take the master Dictionary we have that holds on the information and creates a new dictionary where each entry holds
+# the grade distribution by course and professor
+def createDataDictionary(masterDictionary):
+
+    masterDataDictionary = defaultdict(list)
+    emptyDataList = [
+        0, # As
+        0, # Bs
+        0, # Cs
+        0, # Ds
+        0, # Fs
+        0, # Number Of Students
+        0, # GPA Total
+        0, # GPA Count
+        0, # Average As
+        0, # Average Bs
+        0, # Average Cs
+        0, # Average Ds
+        0, # Average Fs
+        0  # Average GPA
+    ]
+
+    for course,classTouple in masterDictionary.items():
+        classProfessor = classTouple[0][1]
+        thisTuple = (course,classProfessor)
+        if thisTuple not in masterDataDictionary:
+            masterDataDictionary[thisTuple].append(deepcopy(emptyDataList))
+
+        #get class data
+        classData = classTouple[0][0]
+        classData = classData.split(' ')
+        classData.pop(0)
+
+        tempClassData = deepcopy(classData)
+        # add the data to the totals
+        masterDataDictionary[thisTuple][0][0] += float(tempClassData[0])
+        masterDataDictionary[thisTuple][0][1] += float(tempClassData[1])
+        masterDataDictionary[thisTuple][0][2] += float(tempClassData[2])
+        masterDataDictionary[thisTuple][0][3] += float(tempClassData[3])
+        masterDataDictionary[thisTuple][0][4] += float(tempClassData[4])
+        masterDataDictionary[thisTuple][0][7] += 1
+        masterDataDictionary[thisTuple][0][6] += float(tempClassData[6])
+        masterDataDictionary[thisTuple][0][5] += float(tempClassData[5])
+
+    # now we calculate the averages for each class,professor
+    for item in masterDataDictionary:
+        # A-F
+        masterDataDictionary[item][0][8] = round(masterDataDictionary[item][0][0]/masterDataDictionary[item][0][5],4)
+        masterDataDictionary[item][0][9] = round(masterDataDictionary[item][0][1]/masterDataDictionary[item][0][5],4)
+        masterDataDictionary[item][0][10] = round(masterDataDictionary[item][0][2]/masterDataDictionary[item][0][5],4)
+        masterDataDictionary[item][0][11] = round(masterDataDictionary[item][0][3]/masterDataDictionary[item][0][5],4)
+        masterDataDictionary[item][0][12] = round(masterDataDictionary[item][0][4]/masterDataDictionary[item][0][5],4)
+        #GPA
+        masterDataDictionary[item][0][13] = round(masterDataDictionary[item][0][6]/masterDataDictionary[item][0][7],4)
+
+
+    return masterDataDictionary
+
+
+
+
 def manipulatePdfs(file):
     # get the data
     usefulData = getDataFromTextFiles(file)
 
     # filter the data to only the data we need
     masterDictionary = getCoursesWithProfessors(usefulData)
-
+    masterDictionary = createDataDictionary(masterDictionary)
     return masterDictionary

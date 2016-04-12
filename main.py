@@ -2,6 +2,9 @@ _author_ = "Marcus Salinas"
 
 from downloadPDFs import downloadPDFs
 from manipulatePDFs import manipulatePdfs
+from outputData import outputData
+from openpyxl import Workbook
+import os
 
 url = "http://web-as.tamu.edu/gradereport/"
 
@@ -27,15 +30,34 @@ listOfSemesters = [
     "C"  # Fall
 ]
 
-#Part 1
+semester = "Fall"
+year = 2015
 
+# Part 1
+# get the data from the website
 #for x in xrange(0,len(listOfColleges)):
     #print "On College: " + str(listOfColleges[x])
-    #downloadPDFs(url,str(2015),"C",listOfColleges[x])
+    #downloadPDFs(url,str(year),"C",listOfColleges[x])
 
 # Part 2
-
+# take all the data we have right now and give us what we need
 file = 'grd20153EN.txt'
 masterDictionary = manipulatePdfs(file)
+
+# Part 3
+# take the data we have and make it useful
+title = semester+str(year)+".xlsx"
+wb = Workbook()
+
+#save the file to a new path
+newPath = os.getcwd() + "\\Output"
+if not os.path.exists(newPath):
+    os.makedirs(newPath)
+os.chdir(newPath)
+
+# call the function to outpt data and save in the new path
+wb = outputData(masterDictionary,title)
+wb.save(title)
+
 
 print "Here"
