@@ -14,12 +14,17 @@ Marcus Salinas - 4-11-2016
 ##### ACTUAL PROJECT #############################
 
 This project is done in three parts. I have finished all three parts enough to get them to work. 
+
 1) Download all the usable pdfs and store them in folders
+
 2) Use OCR applications to get text from pdfs
+
 3) Manipulate data to present in a workable format.
 
 Something to work on in the future, besides eliminating bugs, are:
+
 * Go back 3 or 5 years and create a master file for each college that holds all of that data
+
 * Eliminate some of the manual work and make it all autonomous. 
 
 
@@ -62,8 +67,12 @@ Then once you have it downloaded just use Ctrl+F (Command+F for Mac I think) and
 First off, great. 
 
 Second off, once you downloaded it I apologize for my poor commenting. Some things to know are:
+
 * Part 1 and Parts 2 and 3 are separated. What that means is that you must comment out one, run it, then flip the comments to run the other half. Again, Part 1 should run by itself and Parts 2 and 3 can run together. 
-* I tried to make this as universal as possible but then I realized that most people who would want to help me are probably using Linux because it's "So much better man you don't understand" and to that I say you're entitled to your own opinion, but I made this on Windows so you will have to probably change the file paths format to UNIX. Same for the Mac folk. 
+
+* I tried to make this as universal as possible but then I realized that most people who would want to help me are probably using Linux because it's "So much better man you don't understand" and to that I say you're entitled to 
+your own opinion, but I made this on Windows so you will have to probably change the file paths format to UNIX. Same for the Mac folk. 
+
 * The comments although poor in quality should help you out enough. I apologize if they don't. You can always reach out to me at markysalinas12@gmail.com. 
 
 Lastly I don't really care what you do to the code as long as my name is credited and whatever you do is freely available to the students. That being said, I know very little about legal things and I am putting this on the Internet (screw you newspaper people it's capitalized) so you could probably do whatever you want even not give me credit. I just hope it helps people. 
