@@ -26,6 +26,7 @@ Something to work on in the future, besides eliminating bugs, are:
 HOW-TO:
 
 (The College Student Who Just Wants to See Grades)
+
 If you just want to have a grade distribution to look at, go to the outputs folder and download the one with your college. The keys are: 
     "AG", # AGRICULTURE AND LIFE SCIENCES
     "AR", # ARCHITECTURE
@@ -44,6 +45,7 @@ If you just want to have a grade distribution to look at, go to the outputs fold
 Then once you have it downloaded just use Ctrl+F (Command+F for Mac I think) and then search for the class. This only has 2015 (as you might have guessed based on the names of the files) so you might not find your professor. To that I say I'm sorry and hopefully you make the right choice. I may or may not work on this more to make it better. 
 
 (The Hey This Is Pretty Cool And I Want To Help Expand On This Person)
+
 First off, great. 
 
 Second off, once you downloaded it I apologize for my poor commenting. Some things to know are:
