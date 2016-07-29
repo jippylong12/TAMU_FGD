@@ -43,8 +43,6 @@ def getDataFromTextFiles(filename,semester,year):
 def getCoursesWithProfessors(usefulData):
 
     #setting everything up
-    listOfCourses = []
-    listOfProfessors = []
     masterDictionary = defaultdict(list)
 
     currentCourse = ""
@@ -65,8 +63,11 @@ def getCoursesWithProfessors(usefulData):
         # try to find a professor
         foundProfessor = re.match("[A-Z]+ [A-Z]",line)
         # if we found a professor
-        if foundProfessor != None and line[:5] != "A - F":
+        if foundProfessor != None and line[:5] != "A - F" and (line.find('%') > 0):
             # add it to the master dictionary
+            testString = foundProfessor.group()
+            if testString == 'AGRICULTURAL E':
+                pass
             masterDictionary[currentCourse].append((tempCourseInfo,foundProfessor.group()))
 
     return masterDictionary
