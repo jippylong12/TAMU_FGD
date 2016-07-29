@@ -1,64 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="New and improved!&#10;- created method to create master DBs for each of the colleges&#10;- made the main streamlined.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 AG.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 AR.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 BA.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 ED.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 EL.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 EN.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 GB.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 GE.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 MS.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 SC.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 VM.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141AG.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141AG.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141AR.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141AR.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141BA.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141BA.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141ED.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141ED.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141EL.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141EL.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141EN.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141EN.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141GB.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141GB.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141GE.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141GE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141MS.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141MS.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141SC.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141SC.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141VM.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141VM.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 MD.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 MD.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 VM.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/AGMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/AGMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ARMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ARMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/BAMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/BAMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ELMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ELMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ENMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ENMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GEMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GEMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/MSMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/MSMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/VMMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/VMMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-    </list>
+    <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="" />
     <ignored path="FreeGradeDistribution.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,7 +13,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="C:\Users\Marcus\PycharmProjects\FreeGradeDistribution" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -628,19 +571,26 @@
       <option name="project" value="LOCAL" />
       <updated>1469810320633</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="uncommited the main">
+      <created>1469813685645</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1469813685645</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10958904" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10958904" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28767124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28767124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3487882" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -701,7 +651,8 @@
     <MESSAGE value="Testing push" />
     <MESSAGE value="New and improved!&#10; - Streamlined process. No need to run part 1 and then part 2. &#10; - Will download files, convert them to text, get the data, and export automatically! All you need to do is add the year.&#10;- Still some errors and bugs and I am not sure why they happen. Sometimes it downloads part files and sometimes the google drive API will wig out and say that a file doesn't exist." />
     <MESSAGE value="New and improved!&#10;- created method to create master DBs for each of the colleges&#10;- made the main streamlined." />
-    <option name="LAST_COMMIT_MESSAGE" value="New and improved!&#10;- created method to create master DBs for each of the colleges&#10;- made the main streamlined." />
+    <MESSAGE value="uncommited the main" />
+    <option name="LAST_COMMIT_MESSAGE" value="uncommited the main" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
