@@ -14,7 +14,7 @@ sys.setdefaultencoding('utf8')
 # this function will go through the text files (after using Google Drive OCR) and remove all the unnecessary lines that
 # we don't need. It iwill take the lines we do need and add them to a list so each item in the list is actually
 # a row in the text file
-def getDataFromTextFiles(filename,semester,year,createPath):
+def getDataFromTextFiles(filename,semester,year):
     filePath = os.getcwd() + "\\GradeDistributionsDB\\" + semester+year
     os.chdir(filePath)
     fileAsList = []
@@ -52,14 +52,21 @@ def getCoursesWithProfessors(usefulData):
 
     # for each line use regex to find the course info and professor infor and add them to the master dictionary
     for line in usefulData:
+        # skip lines we don't need
         if line[:6] == "COURSE":
             continue
+        # find the course it the string. It matches this format of word-digit-...
         foundCourseMatch = re.search("\w+-\d+-\d+ \d+ \d+ \d+ \d+ \d+ \d+ \d.\d+",line)
+        # if we found the course line we add it
         if foundCourseMatch != None:
             tempCourseInfo = foundCourseMatch.group()
+            # get the course name
             currentCourse = tempCourseInfo[:8]
+        # try to find a professor
         foundProfessor = re.match("[A-Z]+ [A-Z]",line)
+        # if we found a professor
         if foundProfessor != None and line[:5] != "A - F":
+            # add it to the master dictionary
             masterDictionary[currentCourse].append((tempCourseInfo,foundProfessor.group()))
 
     return masterDictionary
@@ -136,9 +143,9 @@ def sortByCourse(masterdictionary):
 
     return finalOutputDictionary
 
-def manipulatePdfs(file,semester,year,createPath):
+def manipulatePdfs(file,semester,year):
     # get the data
-    usefulData = getDataFromTextFiles(file,semester,year,createPath)
+    usefulData = getDataFromTextFiles(file,semester,year)
 
     # filter the data to only the data we need
     masterDictionary = getCoursesWithProfessors(usefulData)

@@ -3,6 +3,7 @@ _author_ = "Marcus Salinas"
 
 from selenium import webdriver
 import os
+import time
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 
@@ -102,4 +103,5 @@ def downloadPDFs(url,year,semester,college):
     downloadELEM.send_keys(Keys.RETURN)
 
     #exit
+    time.sleep(1)
     driver.close()

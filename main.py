@@ -1,10 +1,19 @@
+from __future__ import print_function
+
 _author_ = "Marcus Salinas"
 
 from downloadPDFs import downloadPDFs
+from  googleOCR import googleOCR
 from manipulatePDFs import manipulatePdfs
 from outputData import outputData
 from openpyxl import Workbook
 import os
+import time
+from os import path
+from glob import glob
+
+def find_ext(dr, ext):
+    return glob(path.join(dr,"*.{}".format(ext)))
 
 def getSemesterChar(semester):
     if semester == "Spring":
@@ -35,46 +44,51 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-    "A", # Spring
-    "B", # Summer
-    "C"  # Fall
+    #"Spring", # A
+    #"Summer", # B
+    "Fall"  # C
 ]
 
+year = 2013
+MainDirectory = os.getcwd()
+for semester in listOfSemesters:
+    print ("On Semester: " + semester)
+    os.chdir(MainDirectory)
+    semesterChar = getSemesterChar(semester)
+    folderName = semester + str(year)
+    pdfFileDirectory = os.getcwd() + "\\GradeDistributionsDB\\" + folderName
+    # # Part 1a
+    # # get the data from the website
+    for x in xrange(0,len(listOfColleges)):
+        print("On College: " + str(listOfColleges[x]))
+        downloadPDFs(url,str(year),semesterChar,listOfColleges[x])
+    #
+    os.chdir(pdfFileDirectory)
+    # # Part 1b
+    # # take the pdfs and make them to text files
+    pdfList = glob('*.pdf')
+    googleOCR(folderName,pdfList)
 
+    # Part 2a
+    # take all the data we have right now and give us what we need
+    txtList = glob('*.txt')
+    for textFile in txtList:
+        os.chdir(MainDirectory)
+        print ("On TextFile " + textFile)
+        college = textFile[8:10]
+        masterDictionary = manipulatePdfs(textFile,semester,str(year))
 
-semester = "Summer"
-year = 2015
+        # Part 2b
+        # take the data we have and make it useful
+        title = semester+str(year)+ " " + college + ".xlsx"
+        wb = Workbook()
 
+        #save the file to a new path
+        newPath = os.getcwd() + "\\Output"
+        if not os.path.exists(newPath):
+            os.makedirs(newPath)
+        os.chdir(newPath)
 
-semesterChar = getSemesterChar(semester)
-
-# # Part 1
-# # get the data from the website
-# for x in xrange(0,len(listOfColleges)):
-#     print "On College: " + str(listOfColleges[x])
-#     downloadPDFs(url,str(year),semesterChar,listOfColleges[x])
-
-# Part 2
-# take all the data we have right now and give us what we need
-createPath = True
-file = 'grd20152VM.txt'
-college = file[8:10]
-masterDictionary = manipulatePdfs(file,semester,str(year),createPath)
-
-# Part 3
-# take the data we have and make it useful
-title = semester+str(year)+ " " + college + ".xlsx"
-wb = Workbook()
-
-#save the file to a new path
-newPath = os.getcwd() + "\\Output"
-if not os.path.exists(newPath):
-    os.makedirs(newPath)
-os.chdir(newPath)
-
-# call the function to outpt data and save in the new path
-wb = outputData(masterDictionary,title)
-wb.save(title)
-
-
-print "Here"
+        # call the function to outpt data and save in the new path
+        wb = outputData(masterDictionary,title)
+        wb.save(title)
