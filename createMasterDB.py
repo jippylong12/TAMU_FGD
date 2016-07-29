@@ -74,6 +74,7 @@ def createMasterDBs(listOfColleges):
                 # write the course row
                 spamwriter.writerow([course, '', '', '', '', '', '',''])
                 # for each teacher output their data
+                teachersDict = collections.OrderedDict(sorted(teachersDict.items()))
                 for teacher in teachersDict:
                     thisTeacherList = orderedMasterDB[course][teacher]
                     spamwriter.writerow(['', teacher, round(thisTeacherList[0] / thisTeacherList[6], 2),

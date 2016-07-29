@@ -46,8 +46,8 @@ listOfColleges = [
 
 listOfSemesters = [
     "Spring" # A
-    #"Summer", # B
-    #"Fall"  # C
+    "Summer", # B
+    "Fall"  # C
 ]
 
 year = 2014
