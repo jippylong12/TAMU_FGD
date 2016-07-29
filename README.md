@@ -53,7 +53,7 @@ If you just want to have a grade distribution to look at, go to the outputs fold
 
     "LA", # LIBERAL ARTS
 
-    "MD", # MEDICINE
+    "MD", # MEDICINE <---- No longer allowed access
 
     "MS", # MILITARY SCIENCE
 
@@ -69,9 +69,7 @@ First off, great.
 
 Second off, once you downloaded it I apologize for my poor commenting. Some things to know are:
 
-* Part 1 and Parts 2 and 3 are separated. What that means is that you must comment out one, run it, then flip the comments to run the other half. Again, Part 1 should run by itself and Parts 2 and 3 can run together. 
-
-* Speaking of Part 1 it requires some manual work. Now you can run part 1 and get all the pdfs but then you need an OCR software to scan the pdfs. So what I did is used Google Drive and Google's free OCR software and you do this by uploading to Drive and then opening the pdf with Google Docs. Then you have to download the files as a Plain text file and then you can run Parts 2 and 3. 
+* Forget all that stuff about a lot of manual work! This latest version only requires you to have a google account with drive and that's it! It should work all the way through. All you need is the year and it will do it's thing. There are some bugs with selenium when it only only downloads .part files of the pdfs and I don't know why it happens because it only happens sometimes. Other than that it should run smoothly. 
 
 * I tried to make this as universal as possible but then I realized that most people who would want to help me are probably using Linux because it's "So much better man you don't understand" and to that I say you're entitled to 
 your own opinion, but I made this on Windows so you will have to probably change the file paths format to UNIX. Same for the Mac folk. 
