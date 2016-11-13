@@ -9,7 +9,6 @@ from manipulatePDFs import manipulatePdfs
 from outputData import outputData
 from openpyxl import Workbook
 import os
-import time
 from os import path
 from glob import glob
 
@@ -38,19 +37,19 @@ listOfColleges = [
     "GB", # GEORGE BUSH SCHOOL OF GOVERNMENT
     "GE", # GEOSCIENCES
     "LA", # LIBERAL ARTS Spring 2014
-    # "MD", # MEDICINE No longer have access
+    #"MD", # MEDICINE No longer have access
     "MS", # MILITARY SCIENCE
     "SC", # SCIENCE
     "VM"  # VETERINARY MEDICINE
 ]
 
 listOfSemesters = [
-    "Spring" # A
+    "Spring", # A
     "Summer", # B
-    "Fall"  # C
+    #"Fall"  # C
 ]
 
-year = 2014
+year = 2016
 MainDirectory = os.getcwd()
 for semester in listOfSemesters:
     print ("On Semester: " + semester)
@@ -60,15 +59,15 @@ for semester in listOfSemesters:
     pdfFileDirectory = os.getcwd() + "\\GradeDistributionsDB\\" + folderName
     # # Part 1a
     # # get the data from the website
-    for x in xrange(0,len(listOfColleges)):
-        print("On College: " + str(listOfColleges[x]))
-        downloadPDFs(url,str(year),semesterChar,listOfColleges[x])
+    # for x in xrange(0,len(listOfColleges)):
+    #     print("On College: " + str(listOfColleges[x]))
+    #     downloadPDFs(url,str(year),semesterChar,listOfColleges[x])
 
     os.chdir(pdfFileDirectory)
     # # Part 1b
     # # take the pdfs and make them to text files
-    pdfList = glob('*.pdf')
-    googleOCR(folderName,pdfList)
+    # pdfList = glob('*.pdf')
+    # googleOCR(folderName,pdfList)
 
     # Part 2a
     # take all the data we have right now and give us what we need

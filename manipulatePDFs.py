@@ -29,11 +29,14 @@ def getDataFromTextFiles(filename,semester,year):
             if test == "A - F": # start of each section
                 addData = True
             if addData: # add data fro this section
-                fileAsList.append(line.encode('utf-8'))
-                count += 1
-                if count == 32: # once we get to 32 we've gotten to the end of the section
-                    addData = False # stop counting
-                    count = 0 # reset for next section
+                if line == '________________':
+                    addData = False
+                else:
+                    fileAsList.append(line.encode('utf-8'))
+                # count += 1
+                # if count == 32: # once we get to 32 we've gotten to the end of the section
+                #     addData = False # stop counting
+                #     count = 0 # reset for next section
 
     return fileAsList
 

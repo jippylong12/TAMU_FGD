@@ -22,7 +22,7 @@ except ImportError:
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/drive-python-quickstart.json
 SCOPES = 'https://www.googleapis.com/auth/drive'
-CLIENT_SECRET_FILE = 'client_secret.json'
+CLIENT_SECRET_FILE = 'client_secret_OCR.json'
 APPLICATION_NAME = 'freeGradeDistribution'
 
 
@@ -101,7 +101,7 @@ def get_credentials():
     if not os.path.exists(credential_dir):
         os.makedirs(credential_dir)
     credential_path = os.path.join(credential_dir,
-                                   'client_secret.json')
+                                   'client_secret_OCR.json')
 
     store = oauth2client.file.Storage(credential_path)
     credentials = store.get()
