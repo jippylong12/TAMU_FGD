@@ -1,18 +1,19 @@
-_author_ = "Marcus Salinas"
-
 # used to create teh list of course to be used on the PHP server
 
 import os
 from glob import glob
 import re
+
+_author_ = "Marcus Salinas"
+
 os.chdir(os.getcwd() + "/GradeDistributionsDB/MasterDBs")
 
-csvList  = glob("*.csv")
+csvList = glob("*.csv")
 for csv in csvList:
     courseList = []
-    with open(csv,'r') as csvFile:
-        textName = csv.replace("MasterDB.csv","CoursesList.txt")
-        with open(textName,'w') as textFile:
+    with open(csv, 'r') as csvFile:
+        textName = csv.replace("MasterDB.csv", "CoursesList.txt")
+        with open(textName, 'w') as textFile:
             for line in csvFile:
                 foundCourse = re.match("\w+-\d+", line)
                 try:

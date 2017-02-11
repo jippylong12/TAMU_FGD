@@ -5,6 +5,7 @@ client_secret_OCR.json
 .DS_Store
 GradeDistributionsDB/*
 geckodriver.log
+.idea/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
