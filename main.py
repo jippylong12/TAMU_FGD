@@ -46,22 +46,22 @@ listOfColleges = [
 listOfSemesters = [
     "Spring", # A
     "Summer", # B
-    #"Fall"  # C
+    # "Fall"  # C
 ]
 
 year = 2016
 MainDirectory = os.getcwd()
-for semester in listOfSemesters:
+"""for semester in listOfSemesters:
     print ("On Semester: " + semester)
     os.chdir(MainDirectory)
     semesterChar = getSemesterChar(semester)
     folderName = semester + str(year)
-    pdfFileDirectory = os.getcwd() + "\\GradeDistributionsDB\\" + folderName
+    pdfFileDirectory = os.getcwd() + "/GradeDistributionsDB/" + folderName
     # # Part 1a
     # # get the data from the website
     # for x in xrange(0,len(listOfColleges)):
-    #     print("On College: " + str(listOfColleges[x]))
-    #     downloadPDFs(url,str(year),semesterChar,listOfColleges[x])
+    #    print("On College: " + str(listOfColleges[x]))
+    #    downloadPDFs(url,str(year),semesterChar,listOfColleges[x])
 
     os.chdir(pdfFileDirectory)
     # # Part 1b
@@ -84,14 +84,14 @@ for semester in listOfSemesters:
         wb = Workbook()
 
         #save the file to a new path
-        newPath = os.getcwd() + "\\Output"
+        newPath = os.getcwd() + "/Output"
         if not os.path.exists(newPath):
             os.makedirs(newPath)
         os.chdir(newPath)
 
         # call the function to outpt data and save in the new path
         wb = outputData(masterDictionary,title)
-        wb.save(title)
+        wb.save(title)"""
 
 # finally we just run the createMaster DB file
 os.chdir(MainDirectory)

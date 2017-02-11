@@ -6,16 +6,17 @@ import re
 from copy import deepcopy
 import copy
 from collections import defaultdict
+import imp
 
 # setting up console for encoding
-reload(sys)
+imp.reload(sys)
 sys.setdefaultencoding('utf8')
 
 # this function will go through the text files (after using Google Drive OCR) and remove all the unnecessary lines that
 # we don't need. It iwill take the lines we do need and add them to a list so each item in the list is actually
 # a row in the text file
 def getDataFromTextFiles(filename,semester,year):
-    filePath = os.getcwd() + "\\GradeDistributionsDB\\" + semester+year
+    filePath = os.getcwd() + "/GradeDistributionsDB/" + semester+year
     os.chdir(filePath)
     fileAsList = []
     addData = False
@@ -57,14 +58,16 @@ def getCoursesWithProfessors(usefulData):
         if line[:6] == "COURSE":
             continue
         # find the course it the string. It matches this format of word-digit-...
-        foundCourseMatch = re.search("\w+-\d+-\d+ \d+ \d+ \d+ \d+ \d+ \d+ \d.\d+",line)
+        #foundCourseMatch = re.search("\w+-\d+-\d+ \d+ \d+ \d+ \d+ \d+ \d+ \d.\d+",line)
+        course_fmt = "\w+-\d+-\d+ \d+ \d+ \d+ \d+ \d+ \d+ \d.\d+ \d+ \d+ \d+ \d+ \d+ \d+"
+        foundCourseMatch = re.search(course_fmt, line)
         # if we found the course line we add it
         if foundCourseMatch != None:
             tempCourseInfo = foundCourseMatch.group()
             # get the course name
             currentCourse = tempCourseInfo[:8]
         # try to find a professor
-        foundProfessor = re.match("[A-Z]+ [A-Z]",line)
+        foundProfessor = re.match("[A-Z]+ [A-Z]", line)
         # if we found a professor
         if foundProfessor != None and line[:5] != "A - F" and (line.find('%') > 0):
             # add it to the master dictionary
@@ -81,20 +84,22 @@ def createDataDictionary(masterDictionary):
 
     masterDataDictionary = defaultdict(list)
     emptyDataList = [
-        0, # As
-        0, # Bs
-        0, # Cs
-        0, # Ds
-        0, # Fs
-        0, # Number Of Students
-        0, # GPA Total
-        0, # GPA Count
-        0, # Average As
-        0, # Average Bs
-        0, # Average Cs
-        0, # Average Ds
-        0, # Average Fs
-        0  # Average GPA
+        0,  # As
+        0,  # Bs
+        0,  # Cs
+        0,  # Ds
+        0,  # Fs
+        0,  # Number Of Students
+        0,  # GPA Total
+        0,  # Qdrop Count
+        0,  # GPA Count
+        0,  # Average As
+        0,  # Average Bs
+        0,  # Average Cs
+        0,  # Average Ds
+        0,  # Average Fs
+        0,  # Average Qdrops
+        0   # Average GPA
     ]
 
     for course,classTouple in masterDictionary.items():
@@ -116,20 +121,25 @@ def createDataDictionary(masterDictionary):
             masterDataDictionary[thisTuple][0][2] += float(tempClassData[2])
             masterDataDictionary[thisTuple][0][3] += float(tempClassData[3])
             masterDataDictionary[thisTuple][0][4] += float(tempClassData[4])
-            masterDataDictionary[thisTuple][0][7] += 1
-            masterDataDictionary[thisTuple][0][6] += float(tempClassData[6])
             masterDataDictionary[thisTuple][0][5] += float(tempClassData[5])
+            masterDataDictionary[thisTuple][0][6] += float(tempClassData[6])
+            masterDataDictionary[thisTuple][0][7] += float(tempClassData[10])
+            masterDataDictionary[thisTuple][0][8] += 1
 
     # now we calculate the averages for each class,professor
     for item in masterDataDictionary:
         # A-F
-        masterDataDictionary[item][0][8] = round(masterDataDictionary[item][0][0]/masterDataDictionary[item][0][5],4)
-        masterDataDictionary[item][0][9] = round(masterDataDictionary[item][0][1]/masterDataDictionary[item][0][5],4)
-        masterDataDictionary[item][0][10] = round(masterDataDictionary[item][0][2]/masterDataDictionary[item][0][5],4)
-        masterDataDictionary[item][0][11] = round(masterDataDictionary[item][0][3]/masterDataDictionary[item][0][5],4)
-        masterDataDictionary[item][0][12] = round(masterDataDictionary[item][0][4]/masterDataDictionary[item][0][5],4)
+        masterDataDictionary[item][0][9] = round(masterDataDictionary[item][0][0]/masterDataDictionary[item][0][5],4)
+        masterDataDictionary[item][0][10] = round(masterDataDictionary[item][0][1]/masterDataDictionary[item][0][5],4)
+        masterDataDictionary[item][0][11] = round(masterDataDictionary[item][0][2]/masterDataDictionary[item][0][5],4)
+        masterDataDictionary[item][0][12] = round(masterDataDictionary[item][0][3]/masterDataDictionary[item][0][5],4)
+        masterDataDictionary[item][0][13] = round(masterDataDictionary[item][0][4]/masterDataDictionary[item][0][5],4)
+        #Q drop
+        masterDataDictionary[item][0][14] = round(
+            masterDataDictionary[item][0][7] /
+            (masterDataDictionary[item][0][7] + masterDataDictionary[item][0][5]), 4)
         #GPA
-        masterDataDictionary[item][0][13] = round(masterDataDictionary[item][0][6]/masterDataDictionary[item][0][7],4)
+        masterDataDictionary[item][0][15] = round(masterDataDictionary[item][0][6]/masterDataDictionary[item][0][8],4)
 
 
     return masterDataDictionary

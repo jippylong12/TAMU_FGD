@@ -60,13 +60,13 @@ def downloadPDFs(url,year,semester,college):
 
     # go to where we downloaded project and create initial DB folder
     downloadFilesHere = os.getcwd()
-    downloadFilesHere = downloadFilesHere + "\\GradeDistributionsDB"
+    downloadFilesHere = downloadFilesHere + "/GradeDistributionsDB"
     if not os.path.exists(downloadFilesHere):
         os.chdir(downloadFilesHere)
 
     # create a new folder for each different semester
     filePathCollege,filePathSemester = createPrettyFilePath(college,semester)
-    downloadFilesHere = downloadFilesHere + "\\" +str(filePathSemester) + str(year)
+    downloadFilesHere = downloadFilesHere + "/" +str(filePathSemester) + str(year)
     if not os.path.exists(downloadFilesHere):
         os.makedirs(downloadFilesHere)
 

@@ -5,7 +5,7 @@ _author_ = "Marcus Salinas"
 import os
 from glob import glob
 import re
-os.chdir(os.getcwd() + "\\GradeDistributionsDB\\MasterDBs")
+os.chdir(os.getcwd() + "/GradeDistributionsDB/MasterDBs")
 
 csvList  = glob("*.csv")
 for csv in csvList:

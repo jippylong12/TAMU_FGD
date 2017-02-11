@@ -15,6 +15,7 @@ def outputData(masterDictionary,title):
     ws.cell(row = 1, column = 6).value = "% of C's"
     ws.cell(row = 1, column = 7).value = "% of D's"
     ws.cell(row = 1, column = 8).value = "% of F's"
+    ws.cell(row = 1, column = 9).value = "% of Q Drop's"
 
     rowCount = 2
 
@@ -40,12 +41,13 @@ def outputData(masterDictionary,title):
         for item in dataList:
             professorName = item.keys()[0]
             ws.cell(row = rowCount, column = 2).value = professorName
-            ws.cell(row = rowCount, column = 3).value = item[professorName][13]
-            ws.cell(row = rowCount, column = 4).value = '{:.2%}'.format(item[professorName][8])
-            ws.cell(row = rowCount, column = 5).value = '{:.2%}'.format(item[professorName][9])
-            ws.cell(row = rowCount, column = 6).value = '{:.2%}'.format(item[professorName][10])
-            ws.cell(row = rowCount, column = 7).value = '{:.2%}'.format(item[professorName][11])
-            ws.cell(row = rowCount, column = 8).value = '{:.2%}'.format(item[professorName][12])
+            ws.cell(row = rowCount, column = 3).value = item[professorName][15]
+            ws.cell(row = rowCount, column = 4).value = '{:.2%}'.format(item[professorName][9])
+            ws.cell(row = rowCount, column = 5).value = '{:.2%}'.format(item[professorName][10])
+            ws.cell(row = rowCount, column = 6).value = '{:.2%}'.format(item[professorName][11])
+            ws.cell(row = rowCount, column = 7).value = '{:.2%}'.format(item[professorName][12])
+            ws.cell(row = rowCount, column = 8).value = '{:.2%}'.format(item[professorName][13])
+            ws.cell(row = rowCount, column = 9).value = '{:.2%}'.format(item[professorName][14])
             rowCount += 1
         rowCount += 1
 
