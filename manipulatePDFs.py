@@ -54,6 +54,8 @@ def getCoursesWithProfessors(usefulData):
     # for each line use regex to find the course info and professor infor and add them to the master dictionary
     for line in usefulData:
         # skip lines we don't need
+        if line[:8] == 'CHEN-425':
+            pass
         if line[:6] == "COURSE":
             continue
         # find the course it the string. It matches this format of word-digit-...
@@ -64,7 +66,7 @@ def getCoursesWithProfessors(usefulData):
             # get the course name
             currentCourse = tempCourseInfo[:8]
         # try to find a professor
-        foundProfessor = re.match("[A-Z]+ [A-Z]",line)
+        foundProfessor = re.search("[-A-Z]+ [A-Z]",line)
         # if we found a professor
         if foundProfessor != None and line[:5] != "A - F" and (line.find('%') > 0):
             # add it to the master dictionary

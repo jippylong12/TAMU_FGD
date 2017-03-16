@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createCoursesLists.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 AG.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 AR.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 BA.xlsx" />
@@ -132,16 +131,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ARMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ARMasterDB.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/BAMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/BAMasterDB.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/EDMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/EDMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ELMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ELMasterDB.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ENMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ENMasterDB.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GEMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GEMasterDB.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/LAMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/LAMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/MSMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/MSMasterDB.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/VMMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/VMMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListOfColleges.txt" afterPath="$PROJECT_DIR$/ListOfColleges.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/googleOCR.py" afterPath="$PROJECT_DIR$/googleOCR.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulatePDFs.py" afterPath="$PROJECT_DIR$/manipulatePDFs.py" />
     </list>
@@ -163,11 +158,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="manipulatePDFs.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="manipulatePDFs.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manipulatePDFs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2533">
-              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grd20161AG.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161AG.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -186,18 +191,38 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+            <state relative-caret-position="207">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="69" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createCoursesLists.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="outputData.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/outputData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="downloadPDFs.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/downloadPDFs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="867">
+              <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createCoursesLists.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/createCoursesLists.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+            <state relative-caret-position="306">
+              <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
               <folding>
                 <element signature="e#95#104#0" expanded="true" />
               </folding>
@@ -205,31 +230,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GBMasterDB.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="483" column="0" selection-start-line="483" selection-start-column="0" selection-end-line="485" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SCMasterDB.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="2390" column="0" selection-start-line="2390" selection-start-column="0" selection-end-line="2390" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grd20143EN.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2014/grd20143EN.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23052">
-              <caret line="1356" column="16" selection-start-line="1356" selection-start-column="0" selection-end-line="1356" selection-end-column="16" />
+            <state relative-caret-position="41191">
+              <caret line="2423" column="0" selection-start-line="2423" selection-start-column="0" selection-end-line="2423" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -240,6 +245,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="9792">
               <caret line="576" column="0" selection-start-line="576" selection-start-column="0" selection-end-line="576" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grd20161EN.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161EN.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11318" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -287,11 +302,11 @@
         <option value="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/MSCoursesList.txt" />
         <option value="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCCoursesList.txt" />
         <option value="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/VMCoursesList.txt" />
-        <option value="$PROJECT_DIR$/manipulatePDFs.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv" />
         <option value="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv" />
         <option value="$PROJECT_DIR$/createCoursesLists.py" />
+        <option value="$PROJECT_DIR$/manipulatePDFs.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -345,8 +360,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -379,8 +392,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FreeGradeDistribution" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FreeGradeDistribution" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GradeDistributionsDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spring2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,7 +421,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.createCoursesLists">
+  <component name="RunManager" selected="Python.main">
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -423,23 +456,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="downloadPDFs" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="FreeGradeDistribution" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/downloadPDFs.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="createMasterDB" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -470,6 +486,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FreeGradeDistribution" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/createCoursesLists.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="manipulatePDFs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FreeGradeDistribution" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manipulatePDFs.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -611,17 +644,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.main" />
       <item index="1" class="java.lang.String" itemvalue="Python.googleOCR" />
-      <item index="2" class="java.lang.String" itemvalue="Python.downloadPDFs" />
-      <item index="3" class="java.lang.String" itemvalue="Python.createMasterDB" />
-      <item index="4" class="java.lang.String" itemvalue="Python.createCoursesLists" />
+      <item index="2" class="java.lang.String" itemvalue="Python.createMasterDB" />
+      <item index="3" class="java.lang.String" itemvalue="Python.createCoursesLists" />
+      <item index="4" class="java.lang.String" itemvalue="Python.manipulatePDFs" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.createCoursesLists" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
-        <item index="2" class="java.lang.String" itemvalue="Python.createMasterDB" />
-        <item index="3" class="java.lang.String" itemvalue="Python.googleOCR" />
-        <item index="4" class="java.lang.String" itemvalue="Python.downloadPDFs" />
+        <item index="0" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.manipulatePDFs" />
+        <item index="2" class="java.lang.String" itemvalue="Python.createCoursesLists" />
+        <item index="3" class="java.lang.String" itemvalue="Python.createMasterDB" />
+        <item index="4" class="java.lang.String" itemvalue="Python.googleOCR" />
       </list>
     </recent_temporary>
   </component>
@@ -765,31 +798,38 @@
       <option name="project" value="LOCAL" />
       <updated>1469813685645</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fixed bug where classes were being unaccounted for because of my silly way of delimitting. &#10;Fixed bug where stat would not show up because STAT would show up in another School and I wasn't resetting the course. &#10;Updated all the db files because of the error of classes being unaccounted for.">
+      <created>1479055306494</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1479055306494</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10958904" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2866175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2866175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34773445" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37302423" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34773445" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37302423" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -839,7 +879,8 @@
     <MESSAGE value="New and improved!&#10; - Streamlined process. No need to run part 1 and then part 2. &#10; - Will download files, convert them to text, get the data, and export automatically! All you need to do is add the year.&#10;- Still some errors and bugs and I am not sure why they happen. Sometimes it downloads part files and sometimes the google drive API will wig out and say that a file doesn't exist." />
     <MESSAGE value="New and improved!&#10;- created method to create master DBs for each of the colleges&#10;- made the main streamlined." />
     <MESSAGE value="uncommited the main" />
-    <option name="LAST_COMMIT_MESSAGE" value="uncommited the main" />
+    <MESSAGE value="Fixed bug where classes were being unaccounted for because of my silly way of delimitting. &#10;Fixed bug where stat would not show up because STAT would show up in another School and I wasn't resetting the course. &#10;Updated all the db files because of the error of classes being unaccounted for." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where classes were being unaccounted for because of my silly way of delimitting. &#10;Fixed bug where stat would not show up because STAT would show up in another School and I wasn't resetting the course. &#10;Updated all the db files because of the error of classes being unaccounted for." />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -875,13 +916,17 @@
           <line>16</line>
           <option name="timeStamp" value="214" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/manipulatePDFs.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="215" />
+      <option name="time" value="226" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Dropbox/Code/SDD/stockdeepdive3 Updated.py" />
     <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Summer2015/grd20152EN.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -918,13 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161AG.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/googleapiclient/discovery.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -954,13 +992,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/createMasterDB.py" />
-    <entry file="file://$PROJECT_DIR$/outputData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2013/grd20133AG.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
@@ -984,13 +1015,6 @@
           <folding>
             <element signature="e#0#37#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/downloadPDFs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="83" column="18" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1132,7 +1156,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="963" column="0" selection-start-line="963" selection-start-column="0" selection-end-line="963" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2014/grd20143EN.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23052">
+          <caret line="1356" column="16" selection-start-line="1356" selection-start-column="0" selection-end-line="1356" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8296">
+          <caret line="488" column="0" selection-start-line="487" selection-start-column="0" selection-end-line="489" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41191">
+          <caret line="2423" column="0" selection-start-line="2423" selection-start-column="0" selection-end-line="2423" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCCoursesList.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBCoursesList.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1144,10 +1203,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2014/grd20143EN.txt">
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161EN.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23052">
-          <caret line="1356" column="16" selection-start-line="1356" selection-start-column="0" selection-end-line="1356" selection-end-column="16" />
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11318" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createCoursesLists.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+          <folding>
+            <element signature="e#95#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloadPDFs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161AG.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1160,61 +1253,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manipulatePDFs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2533">
-          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        <state relative-caret-position="207">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="69" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv">
+    <entry file="file://$PROJECT_DIR$/manipulatePDFs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="483" column="0" selection-start-line="483" selection-start-column="0" selection-end-line="485" selection-end-column="7" />
+        <state relative-caret-position="360">
+          <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="2390" column="0" selection-start-line="2390" selection-start-column="0" selection-end-line="2390" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCCoursesList.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBCoursesList.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createCoursesLists.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding>
-            <element signature="e#95#104#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

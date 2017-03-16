@@ -44,9 +44,9 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-    "Spring", # A
-    "Summer", # B
-    #"Fall"  # C
+    #"Spring", # A
+    #"Summer", # B
+    "Fall"  # C
 ]
 
 year = 2016
@@ -59,15 +59,15 @@ for semester in listOfSemesters:
     pdfFileDirectory = os.getcwd() + "\\GradeDistributionsDB\\" + folderName
     # # Part 1a
     # # get the data from the website
-    # for x in xrange(0,len(listOfColleges)):
-    #     print("On College: " + str(listOfColleges[x]))
-    #     downloadPDFs(url,str(year),semesterChar,listOfColleges[x])
+    for x in xrange(0,len(listOfColleges)):
+        print("On College: " + str(listOfColleges[x]))
+        downloadPDFs(url,str(year),semesterChar,listOfColleges[x])
 
     os.chdir(pdfFileDirectory)
     # # Part 1b
     # # take the pdfs and make them to text files
-    # pdfList = glob('*.pdf')
-    # googleOCR(folderName,pdfList)
+    pdfList = glob('*.pdf')
+    googleOCR(folderName,pdfList)
 
     # Part 2a
     # take all the data we have right now and give us what we need
