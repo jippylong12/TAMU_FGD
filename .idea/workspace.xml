@@ -2,143 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 ED.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 ED.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 LA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 LA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2013/Output/Fall2013 VM.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 ED.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 ED.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 LA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 LA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2014/Output/Fall2014 VM.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 ED.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 ED.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 LA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 LA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 MD.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 MD.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Fall2015/Output/Fall2015 VM.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 ED.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 ED.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 LA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 LA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2013/Output/Spring2013 VM.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 ED.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 ED.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 LA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 LA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2014/Output/Spring2014 VM.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 ED.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 ED.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 LA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 LA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 MD.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 MD.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2015/Output/Spring2015 VM.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 ED.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 ED.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 LA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 LA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 MD.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 MD.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Spring2016/Output/Spring2016 VM.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 ED.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 ED.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 LA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 LA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2013/Output/Summer2013 VM.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 ED.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 ED.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 LA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 LA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2014/Output/Summer2014 VM.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 AG.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 AG.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 AR.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 AR.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 BA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 BA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 ED.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 ED.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 EL.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 EL.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 EN.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 EN.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 GB.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 GB.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 GE.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 GE.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 LA.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 LA.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 MD.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 MD.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 MS.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 MS.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 SC.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 SC.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 VM.xlsx" afterPath="$PROJECT_DIR$/GradeDistributionsDB/Summer2015/Output/Summer2015 VM.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/AGMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/AGMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ARMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ARMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/BAMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/BAMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/EDMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/EDMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ENMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ENMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GEMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GEMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/LAMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/LAMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/VMMasterDB.csv" afterPath="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/VMMasterDB.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/googleOCR.py" afterPath="$PROJECT_DIR$/googleOCR.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulatePDFs.py" afterPath="$PROJECT_DIR$/manipulatePDFs.py" />
     </list>
     <ignored path="FreeGradeDistribution.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -158,52 +24,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="manipulatePDFs.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="manipulatePDFs.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manipulatePDFs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grd20161AG.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161AG.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createMasterDB.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/createMasterDB.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="61" column="2" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="69" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="outputData.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outputData.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="442">
+              <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -211,50 +51,20 @@
       <file leaf-file-name="downloadPDFs.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/downloadPDFs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createCoursesLists.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/createCoursesLists.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+            <state relative-caret-position="1734">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding>
-                <element signature="e#95#104#0" expanded="true" />
+                <element signature="e#0#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SCMasterDB.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv">
+      <file leaf-file-name="googleOCR.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/googleOCR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41191">
-              <caret line="2423" column="0" selection-start-line="2423" selection-start-column="0" selection-end-line="2423" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grd20153EN.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2015/grd20153EN.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9792">
-              <caret line="576" column="0" selection-start-line="576" selection-start-column="0" selection-end-line="576" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grd20161EN.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161EN.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11318" selection-end-column="5" />
+            <state relative-caret-position="2227">
+              <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -276,6 +86,11 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -284,11 +99,8 @@
         <option value="$PROJECT_DIR$/outputData.py" />
         <option value="$USER_HOME$/Dropbox/Code/StocksCoverSheet/stockcoversheet.py" />
         <option value="$USER_HOME$/Dropbox/Code/SDD/stockdeepdive3 Updated.py" />
-        <option value="$PROJECT_DIR$/downloadPDFs.py" />
-        <option value="$PROJECT_DIR$/googleOCR.py" />
         <option value="$PROJECT_DIR$/GradeDistributionsDB/createMasterDB.py" />
         <option value="$PROJECT_DIR$/GradeDistributionsDB/AGMasterDB.csv" />
-        <option value="$PROJECT_DIR$/createMasterDB.py" />
         <option value="$PROJECT_DIR$/ListOfColleges.txt" />
         <option value="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/AGCoursesList.txt" />
         <option value="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ARCoursesList.txt" />
@@ -306,6 +118,11 @@
         <option value="$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv" />
         <option value="$PROJECT_DIR$/createCoursesLists.py" />
         <option value="$PROJECT_DIR$/manipulatePDFs.py" />
+        <option value="C:/Python27/Lib/site-packages/selenium/webdriver/firefox/firefox_binary.py" />
+        <option value="$PROJECT_DIR$/downloadPDFs.py" />
+        <option value="$PROJECT_DIR$/googleOCR.py" />
+        <option value="$PROJECT_DIR$/GradeDistributionsDB/Fall2016/grd20163AG.txt" />
+        <option value="$PROJECT_DIR$/createMasterDB.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -360,6 +177,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -392,34 +210,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FreeGradeDistribution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FreeGradeDistribution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GradeDistributionsDB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spring2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/Code/CalcReturns" />
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -805,31 +604,38 @@
       <option name="project" value="LOCAL" />
       <updated>1479055306494</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Not sure">
+      <created>1489702449916</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1489702449916</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10958904" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22181243" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2866175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34773445" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37934667" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34773445" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37302423" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -880,7 +686,8 @@
     <MESSAGE value="New and improved!&#10;- created method to create master DBs for each of the colleges&#10;- made the main streamlined." />
     <MESSAGE value="uncommited the main" />
     <MESSAGE value="Fixed bug where classes were being unaccounted for because of my silly way of delimitting. &#10;Fixed bug where stat would not show up because STAT would show up in another School and I wasn't resetting the course. &#10;Updated all the db files because of the error of classes being unaccounted for." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where classes were being unaccounted for because of my silly way of delimitting. &#10;Fixed bug where stat would not show up because STAT would show up in another School and I wasn't resetting the course. &#10;Updated all the db files because of the error of classes being unaccounted for." />
+    <MESSAGE value="Not sure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Not sure" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -891,114 +698,66 @@
           <line>1465</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/googleOCR.py</url>
-          <line>140</line>
-          <option name="timeStamp" value="147" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/googleOCR.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="148" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/createCoursesLists.py</url>
-          <line>12</line>
+          <line>13</line>
           <option name="timeStamp" value="211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/createCoursesLists.py</url>
-          <line>20</line>
+          <line>21</line>
           <option name="timeStamp" value="213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/createCoursesLists.py</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/manipulatePDFs.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="224" />
+          <url>file://$PROJECT_DIR$/downloadPDFs.py</url>
+          <line>90</line>
+          <option name="timeStamp" value="230" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/downloadPDFs.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="231" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/downloadPDFs.py</url>
+          <line>100</line>
+          <option name="timeStamp" value="232" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/downloadPDFs.py</url>
+          <line>88</line>
+          <option name="timeStamp" value="233" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="238" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="239" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="241" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="226" />
+      <option name="time" value="242" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Summer2015/grd20152EN.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Summer2015/grd20152AG.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.txt" />
-    <entry file="file://C:/Python27/Lib/ntpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/glob.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2015/grd20151AG.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/googleapiclient/discovery.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="678" column="0" selection-start-line="678" selection-start-column="0" selection-end-line="678" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/encodings/utf_8.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141AG.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2805">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Summer2015/CoursePickerData/grd20111EN.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2014/grd20141AG.txt" />
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Summer2015/CoursePickerData/grd20111EN.txt" />
     <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/createMasterDB.py" />
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2013/grd20133AG.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="1492" column="7" selection-start-line="1492" selection-start-column="7" selection-end-line="1492" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2013/grd20133AG.txt" />
     <entry file="file://$PROJECT_DIR$/client_secret.json" />
     <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/AGMasterDB.csv" />
     <entry file="file://C:/Python27/Lib/os.py">
@@ -1008,23 +767,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/googleOCR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1178">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ENMasterDB.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/ENMasterDB.csv" />
     <entry file="file://$PROJECT_DIR$/ListOfColleges.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1089,13 +832,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/MSMasterDB.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/MSMasterDB.csv" />
     <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/LACoursesList.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1124,34 +861,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/AGMasterDB.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Summer2016/grd20162AG.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2015/grd20153EL.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2013/grd20133EN.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/AGMasterDB.csv" />
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2015/grd20153EL.txt" />
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2013/grd20133EN.txt" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -1159,28 +871,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2014/grd20143EN.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23052">
-          <caret line="1356" column="16" selection-start-line="1356" selection-start-column="0" selection-end-line="1356" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8296">
-          <caret line="488" column="0" selection-start-line="487" selection-start-column="0" selection-end-line="489" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41191">
-          <caret line="2423" column="0" selection-start-line="2423" selection-start-column="0" selection-end-line="2423" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2014/grd20143EN.txt" />
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/GBMasterDB.csv" />
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCMasterDB.csv" />
     <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/MasterDBs/SCCoursesList.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1195,77 +888,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2015/grd20153EN.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9792">
-          <caret line="576" column="0" selection-start-line="576" selection-start-column="0" selection-end-line="576" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161EN.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11318" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2015/grd20153EN.txt" />
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161EN.txt" />
     <entry file="file://$PROJECT_DIR$/createCoursesLists.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-          <folding>
-            <element signature="e#95#104#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/downloadPDFs.py">
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161AG.txt" />
+    <entry file="file://C:/Python27/Lib/site-packages/selenium/webdriver/firefox/firefox_binary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="189">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geckodriver.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/selenium/webdriver/common/service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/selenium/webdriver/support/select.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/outputData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="-122">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Spring2016/grd20161AG.txt">
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Summer2016/grd20162AG.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="102">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/createMasterDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="61" column="2" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
+        <state relative-caret-position="-1306">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2016/grd20163BA.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2016/grd20163ED.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2016/grd20163AR.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GradeDistributionsDB/Fall2016/grd20163AG.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/googleOCR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="69" selection-end-column="33" />
+        <state relative-caret-position="2227">
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manipulatePDFs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="97" column="23" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="255">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloadPDFs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

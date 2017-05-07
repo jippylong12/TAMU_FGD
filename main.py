@@ -34,21 +34,21 @@ listOfColleges = [
     "AR",  # ARCHITECTURE
     "BA",  # BUSINESS ADMINISTRATION
     "ED",  # EDUCATION Spring 2016
-    "EL",  # ENGLISH LANGUAGE INSTITUTE
+    #"EL",  # ENGLISH LANGUAGE INSTITUTE No access 3/16/2017
     "EN",  # ENGINEERING
     "GB",  # GEORGE BUSH SCHOOL OF GOVERNMENT
     "GE",  # GEOSCIENCES
     "LA",  # LIBERAL ARTS Spring 2014
-    # "MD", # MEDICINE No longer have access
+    "MD", # MEDICINE No longer have access
     "MS",  # MILITARY SCIENCE
     "SC",  # SCIENCE
     "VM"  # VETERINARY MEDICINE
 ]
 
 listOfSemesters = [
-    "Spring",  # A
+    #"Spring",  # A
     # "Summer",  # B
-    # "Fall"  # C
+     "Fall"  # C
 ]
 
 year = 2016
@@ -61,13 +61,13 @@ for semester in listOfSemesters:
     pdfFileDirectory = os.getcwd() + "/GradeDistributionsDB/" + folderName
     # # Part 1a
     # # get the data from the website
-    # for x in range(0, len(listOfColleges)):
-    #     print("On College: " + str(listOfColleges[x]))
-    #     downloadPDFs(url, str(year), semesterChar, listOfColleges[x])
+    for x in range(0, len(listOfColleges)):
+        print("On College: " + str(listOfColleges[x]))
+        downloadPDFs(url, str(year), semesterChar, listOfColleges[x])
 
     os.chdir(pdfFileDirectory)
     # # Part 1b
-    # # take the pdfs and make them to text files
+    # take the pdfs and make them to text files
     # pdfList = glob('*.pdf')
     # googleOCR(folderName, pdfList)
 

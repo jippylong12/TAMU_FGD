@@ -149,4 +149,4 @@ def googleOCR(folderName, pdfList):
         text = download_file(service, file)
         print("done downloading file")
         with open(fileTitle + '.txt', 'w') as outputFile:
-            outputFile.write(text.strip())
+            outputFile.write(text.encode('utf-8').strip())
