@@ -1,3 +1,4 @@
+from __future__ import print_function
 from selenium import webdriver
 import os
 import time
@@ -14,7 +15,7 @@ def createPrettyFilePath(college, semester):
     elif college == "AR":
         newCollege = "ARCHITECTURE"
     elif college == "BA":
-        newCollege = "BUSINESS ADMINISTRATION"
+        newCollege = "BUSINESS"
     elif college == "ED":
         newCollege = "EDUCATION"
     elif college == "EL":
@@ -54,21 +55,27 @@ def createPrettyFilePath(college, semester):
         return (0, 0)
 
 
-def downloadPDFs(url, year, semester, college):
+def findIndex(options, filePathCollege):
+    for x in range(0, len(options)):
+        if options[x].text == filePathCollege:
+            return x
+    return -1
 
+
+def downloadPDFs(url, year, semester, college):
     # set up firefox profile
     fp = webdriver.FirefoxProfile()
 
     # go to where we downloaded project and create initial DB folder
     downloadFilesHere = os.getcwd()
-    downloadFilesHere = downloadFilesHere + "/GradeDistributionsDB"
+    downloadFilesHere = downloadFilesHere + "\\GradeDistributionsDB"
     if not os.path.exists(downloadFilesHere):
         os.chdir(downloadFilesHere)
 
     # create a new folder for each different semester
     filePathCollege, filePathSemester = createPrettyFilePath(college, semester)
     downloadFilesHere = downloadFilesHere + \
-        "/" + str(filePathSemester) + str(year)
+                        "\\" + str(filePathSemester) + str(year)
     if not os.path.exists(downloadFilesHere):
         os.makedirs(downloadFilesHere)
 
@@ -102,8 +109,7 @@ def downloadPDFs(url, year, semester, college):
 
     # find and click download button
     downloadELEM = driver.find_element_by_id("ctl00_plcMain_btnGrade")
-    downloadELEM.send_keys(Keys.RETURN)
-
+    downloadELEM.click()
     # exit
-    time.sleep(1)
-    driver.close()
+    time.sleep(5)
+    driver.quit()

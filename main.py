@@ -26,13 +26,22 @@ def getSemesterChar(semester):
     else:
         return "N/A"
 
+def semesterCharToURLChar(semesterChar):
+    if semesterChar == "A":
+        return "1"
+    elif semesterChar == "B":
+        return "2"
+    elif semesterChar == "C":
+        return "3"
+    else:
+        return "0"
 
+# url = "http://web-as.tamu.edu/gradereport/PDFReports/"
 url = "http://web-as.tamu.edu/gradereport/"
-
 listOfColleges = [
     "AG",  # AGRICULTURE AND LIFE SCIENCES
     "AR",  # ARCHITECTURE
-    "BA",  # BUSINESS ADMINISTRATION
+    "BA",  # BUSINESS
     "ED",  # EDUCATION Spring 2016
     #"EL",  # ENGLISH LANGUAGE INSTITUTE No access 3/16/2017
     "EN",  # ENGINEERING
@@ -59,6 +68,7 @@ for semester in listOfSemesters:
     semesterChar = getSemesterChar(semester)
     folderName = semester + str(year)
     pdfFileDirectory = os.getcwd() + "/GradeDistributionsDB/" + folderName
+    yearAndURLChar = str(year) + semesterCharToURLChar(semesterChar)
     # # Part 1a
     # # get the data from the website
     for x in range(0, len(listOfColleges)):
