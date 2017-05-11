@@ -24,60 +24,63 @@ def createMasterDBs(listOfColleges):
 
         # create the master DB dictirionary
         for folder in listOfFolders:
-            os.chdir(os.getcwd() + '/' + folder + '/Output')
-            currentWBName = folder + ' ' + college + '.xlsx'
-            print ("Starting " + currentWBName)
-            wb = load_workbook(currentWBName, read_only=True)
-            ws = wb.active
-            currentCourse = ''
-            for rownum, row in enumerate(ws.rows):
-                print(rownum, row[0].value)
-                # skip the first row
-                if rownum == 0:
-                    continue
-                # check for the course name
-                if row[0].value is not None:
-                    currentCourse = row[0].value.encode('utf-8')
-                    # if not in the master Dcit we add it
-                    if currentCourse not in masterDB:
-                        masterDB[currentCourse] = defaultdict(list)
-                if row[1].value is not None:
-                    # create the list of grades
-                    if row[1].value.encode('utf-8') not in masterDB[currentCourse]:
-                        # need 8 values, the GPA, 5 percentages A-F, q drops,
-                        # and a count
+            try:
+                os.chdir(os.getcwd() + '\\' + folder + '\\Output')
+                currentWBName = folder + ' ' + college + '.xlsx'
+                print ("Starting " + currentWBName)
+                wb = load_workbook(currentWBName, read_only=True)
+                ws = wb.active
+                currentCourse = ''
+                for rownum, row in enumerate(ws.rows):
+                    # skip the first row
+                    if rownum == 0:
+                        continue
+                    # check for the course name
+                    if row[0].value is not None:
+                        currentCourse = row[0].value.encode('utf-8')
+                        # if not in the master Dcit we add it
+                        if currentCourse not in masterDB:
+                            masterDB[currentCourse] = defaultdict(list)
+                    if row[1].value is not None:
+                        # create the list of grades
+                        if row[1].value.encode('utf-8') not in masterDB[currentCourse]:
+                            # need 8 values, the GPA, 5 percentages A-F, q drops,
+                            # and a count
+                            masterDB[currentCourse][row[1].value.encode(
+                                'utf-8')] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+                        # GPA
                         masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                            'utf-8')][0] += float(row[2].value)
 
-                    # GPA
-                    masterDB[currentCourse][row[1].value.encode(
-                        'utf-8')][0] += float(row[2].value)
+                        # grade percentages A,B,C,D,F
+                        masterDB[currentCourse][row[1].value.encode(
+                            'utf-8')][1] += float(row[3].value.replace("%", ''))
+                        masterDB[currentCourse][row[1].value.encode(
+                            'utf-8')][2] += float(row[4].value.replace("%", ''))
+                        masterDB[currentCourse][row[1].value.encode(
+                            'utf-8')][3] += float(row[5].value.replace("%", ''))
+                        masterDB[currentCourse][row[1].value.encode(
+                            'utf-8')][4] += float(row[6].value.replace("%", ''))
+                        masterDB[currentCourse][row[1].value.encode(
+                            'utf-8')][5] += float(row[7].value.replace("%", ''))
+                        # q drops
+                        masterDB[currentCourse][row[1].value.encode(
+                            'utf-8')][6] += float(row[8].value.replace("%", ''))
+                        # the count
+                        masterDB[currentCourse][
+                            row[1].value.encode('utf-8')][7] += 1
 
-                    # grade percentages A,B,C,D,F
-                    masterDB[currentCourse][row[1].value.encode(
-                        'utf-8')][1] += float(row[3].value.replace("%", ''))
-                    masterDB[currentCourse][row[1].value.encode(
-                        'utf-8')][2] += float(row[4].value.replace("%", ''))
-                    masterDB[currentCourse][row[1].value.encode(
-                        'utf-8')][3] += float(row[5].value.replace("%", ''))
-                    masterDB[currentCourse][row[1].value.encode(
-                        'utf-8')][4] += float(row[6].value.replace("%", ''))
-                    masterDB[currentCourse][row[1].value.encode(
-                        'utf-8')][5] += float(row[7].value.replace("%", ''))
-                    # q drops
-                    masterDB[currentCourse][row[1].value.encode(
-                        'utf-8')][6] += float(row[8].value.replace("%", ''))
-                    # the count
-                    masterDB[currentCourse][
-                        row[1].value.encode('utf-8')][7] += 1
-
-            os.chdir(mainDirectory)
-            print ("done with" + currentWBName)
+                os.chdir(mainDirectory)
+                print ("done with " + currentWBName)
+            except:
+                print ("Cannot find: " + currentWBName)
+                continue
 
         # output to csv file
         headerLine = ['Course', 'Professor', 'GPA', '% of A\'s', '% of B\'s',
                       '% of C\'s', '% of D\'s', '% of F\'s', '% of Q Drop\'s',
-                      'N']
+                      'Num of Semesters']
         blankLine = ['', '', '', '', '', '', '', '', '']
         csvFileName = college + 'MasterDB.csv'
         os.chdir(outputDirectory)

@@ -2,6 +2,7 @@ import os
 import re
 from copy import deepcopy
 from collections import defaultdict
+from transformTextFiles import transformedTextFiles
 
 _author_ = "Marcus Salinas"
 
@@ -171,11 +172,18 @@ def sortByCourse(masterdictionary):
 
 
 def manipulatePdfs(file, semester, year):
-    # get the data
-    usefulData = getDataFromTextFiles(file, semester, year)
 
-    # filter the data to only the data we need
-    masterDictionary = getCoursesWithProfessors(usefulData)
+    # IN FALL OF 2016 THEY CHANGED THE FORMAT OF PDFS AND I HAD TO MAKE A FUNCTION TO TRANSFORM THE TEXT FILES INTO
+    # SOMETHING USEFUL SO I COULD RUN IT AGAIN.
+    if(int(year) > 2016 or (year == "2016" and semester =="C")):
+        masterDictionary = transformedTextFiles(file,semester,year)
+    else:
+        # get the data
+        usefulData = getDataFromTextFiles(file, semester, year)
+        # filter the data to only the data we need
+        masterDictionary = getCoursesWithProfessors(usefulData)
+
+
     masterDictionary = createDataDictionary(masterDictionary)
     masterDictionary = sortByCourse(masterDictionary)
     return masterDictionary

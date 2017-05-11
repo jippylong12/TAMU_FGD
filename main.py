@@ -55,9 +55,9 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-    #"Spring",  # A
-    # "Summer",  # B
-     "Fall"  # C
+    "Spring",  # A
+    "Summer",  # B
+    "Fall"  # C
 ]
 
 year = 2016
@@ -67,7 +67,7 @@ for semester in listOfSemesters:
     os.chdir(MainDirectory)
     semesterChar = getSemesterChar(semester)
     folderName = semester + str(year)
-    pdfFileDirectory = os.getcwd() + "/GradeDistributionsDB/" + folderName
+    pdfFileDirectory = os.getcwd() + "\\GradeDistributionsDB\\" + folderName
     yearAndURLChar = str(year) + semesterCharToURLChar(semesterChar)
     # # Part 1a
     # # get the data from the website
@@ -78,8 +78,8 @@ for semester in listOfSemesters:
     os.chdir(pdfFileDirectory)
     # # Part 1b
     # take the pdfs and make them to text files
-    # pdfList = glob('*.pdf')
-    # googleOCR(folderName, pdfList)
+    pdfList = glob('*.pdf')
+    googleOCR(folderName, pdfList)
 
     # Part 2a
     # take all the data we have right now and give us what we need
@@ -96,7 +96,7 @@ for semester in listOfSemesters:
         wb = Workbook()
 
         # save the file to a new path
-        newPath = os.getcwd() + "/Output"
+        newPath = os.getcwd() + "\\Output"
         if not os.path.exists(newPath):
             os.makedirs(newPath)
         os.chdir(newPath)
