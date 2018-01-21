@@ -43,7 +43,7 @@ listOfColleges = [
     "AR",  # ARCHITECTURE
     "BA",  # BUSINESS
     "ED",  # EDUCATION Spring 2016
-    #"EL",  # ENGLISH LANGUAGE INSTITUTE No access 3/16/2017
+    # "EL",  # ENGLISH LANGUAGE INSTITUTE No access 3/16/2017
     "EN",  # ENGINEERING
     "GB",  # GEORGE BUSH SCHOOL OF GOVERNMENT
     "GE",  # GEOSCIENCES
@@ -55,12 +55,12 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-    "Spring",  # A
-    "Summer",  # B
-    "Fall"  # C
+    # "Spring",  # A
+    # "Summer",  # B
+    # "Fall"  # C
 ]
 
-year = 2016
+year = 2017
 MainDirectory = os.getcwd()
 for semester in listOfSemesters:
     print ("On Semester: " + semester)
@@ -71,15 +71,15 @@ for semester in listOfSemesters:
     yearAndURLChar = str(year) + semesterCharToURLChar(semesterChar)
     # # Part 1a
     # # get the data from the website
-    for x in range(0, len(listOfColleges)):
-        print("On College: " + str(listOfColleges[x]))
-        downloadPDFs(url, str(year), semesterChar, listOfColleges[x])
+    # for x in range(0, len(listOfColleges)):
+    #     print("On College: " + str(listOfColleges[x]))
+    #     downloadPDFs(url, str(year), semesterChar, listOfColleges[x])
 
     os.chdir(pdfFileDirectory)
     # # Part 1b
     # take the pdfs and make them to text files
-    pdfList = glob('*.pdf')
-    googleOCR(folderName, pdfList)
+    # pdfList = glob('*.pdf')
+    # googleOCR(folderName, pdfList)
 
     # Part 2a
     # take all the data we have right now and give us what we need

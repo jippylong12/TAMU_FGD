@@ -47,8 +47,8 @@ def transformedTextFiles(filename, semester, year):
 
     with open(filename) as textFile:
         for line in textFile:
-            if re.match(r"\w+-\d+-\d+\s\d+", line) is not None: # COURSE LINES
-                data = re.match(r"\w+-\d+-\d+\s\d+", line).group(0)
+            if re.match(r"\w+-\d+-\w\d+\s\d+", line) is not None: # COURSE LINES
+                data = re.match(r"\w+-\d+-\w\d+\s\d+", line).group(0)
                 beginningQ.put(data)
             elif re.match(r"\w+\s\w+:\s\d+",line) is not None: # COURSE TOTAL LINE
                 data = re.match(r"\w+\s\w+:\s\d+", line).group(0)

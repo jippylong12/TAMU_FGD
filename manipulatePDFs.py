@@ -175,7 +175,7 @@ def manipulatePdfs(file, semester, year):
 
     # IN FALL OF 2016 THEY CHANGED THE FORMAT OF PDFS AND I HAD TO MAKE A FUNCTION TO TRANSFORM THE TEXT FILES INTO
     # SOMETHING USEFUL SO I COULD RUN IT AGAIN.
-    if(int(year) > 2016 or (year == "2016" and semester =="C")):
+    if(int(year) > 2016 or (year == "2016" and semester =="Fall")):
         masterDictionary = transformedTextFiles(file,semester,year)
     else:
         # get the data

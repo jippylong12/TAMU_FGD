@@ -10,6 +10,24 @@ import csv
 _author_ = "Marcus Salinas"
 
 
+# given the data list calculate a GPA
+def calculate_GPA(data_list):
+    gpa = 0.0
+    # A's
+    gpa += data_list[1] * 4
+    # B's
+    gpa += data_list[2] * 3
+    # C's
+    gpa += data_list[3] * 2
+    # D's
+    gpa += data_list[4] * 1
+    # F's
+    gpa += data_list[5] * 0
+
+    # the gpa is the current sum divided by the number of students
+    return round(gpa / (data_list[7]), 2)
+
+
 def createMasterDBs(listOfColleges):
     mainDirectory = os.getcwd() + '/GradeDistributionsDB'
     outputDirectory = mainDirectory + '/MasterDBs'
@@ -53,23 +71,31 @@ def createMasterDBs(listOfColleges):
                         masterDB[currentCourse][row[1].value.encode(
                             'utf-8')][0] += float(row[2].value)
 
+                        course_total = 0
                         # grade percentages A,B,C,D,F
                         masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][1] += float(row[3].value.replace("%", ''))
+                            'utf-8')][1] += float(row[3].value)
+                        course_total += row[3].value
                         masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][2] += float(row[4].value.replace("%", ''))
+                            'utf-8')][2] += float(row[4].value)
+                        course_total += row[4].value
                         masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][3] += float(row[5].value.replace("%", ''))
+                            'utf-8')][3] += float(row[5].value)
+                        course_total += row[5].value
                         masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][4] += float(row[6].value.replace("%", ''))
+                            'utf-8')][4] += float(row[6].value)
+                        course_total += row[6].value
                         masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][5] += float(row[7].value.replace("%", ''))
+                            'utf-8')][5] += float(row[7].value)
+                        course_total += row[7].value
                         # q drops
                         masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][6] += float(row[8].value.replace("%", ''))
+                            'utf-8')][6] += float(row[8].value)
+                        course_total += row[8].value
                         # the count
                         masterDB[currentCourse][
-                            row[1].value.encode('utf-8')][7] += 1
+                            row[1].value.encode('utf-8')][7] += course_total
+                        masterDB[currentCourse][row[1].value.encode('utf-8')][8] += 1 # num of semesters
 
                 os.chdir(mainDirectory)
                 print ("done with " + currentWBName)
@@ -80,7 +106,7 @@ def createMasterDBs(listOfColleges):
         # output to csv file
         headerLine = ['Course', 'Professor', 'GPA', '% of A\'s', '% of B\'s',
                       '% of C\'s', '% of D\'s', '% of F\'s', '% of Q Drop\'s',
-                      'Num of Semesters']
+                      '% of Semesters']
         blankLine = ['', '', '', '', '', '', '', '', '']
         csvFileName = college + 'MasterDB.csv'
         os.chdir(outputDirectory)
@@ -97,21 +123,20 @@ def createMasterDBs(listOfColleges):
                 for teacher in teachersDict:
                     thisTeacherList = orderedMasterDB[course][teacher]
                     spamwriter.writerow(['', teacher,
-                                         round(thisTeacherList[
-                                             0] / thisTeacherList[7], 2),
-                                         str(thisTeacherList[
-                                             1] / thisTeacherList[7]) + '%',
-                                         str(thisTeacherList[
-                                             2] / thisTeacherList[7]) + '%',
-                                         str(thisTeacherList[
-                                             3] / thisTeacherList[7]) + '%',
-                                         str(thisTeacherList[
-                                             4] / thisTeacherList[7]) + '%',
-                                         str(thisTeacherList[
-                                             5] / thisTeacherList[7]) + '%',
-                                         str(thisTeacherList[
-                                             6] / thisTeacherList[7]) + '%',
-                                         str(thisTeacherList[7])])
+                                         calculate_GPA(thisTeacherList),
+                                         str(round(thisTeacherList[
+                                                       1] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(round(thisTeacherList[
+                                                       2] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(round(thisTeacherList[
+                                                       3] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(round(thisTeacherList[
+                                                       4] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(round(thisTeacherList[
+                                                       5] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(round(thisTeacherList[
+                                                       6] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(thisTeacherList[8])])
                 # output blank row
                 spamwriter.writerow(blankLine)
         os.chdir(mainDirectory)
