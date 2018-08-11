@@ -110,14 +110,20 @@ def createDataDictionary(masterDictionary):
 
     for course, classTouple in masterDictionary.items():
         for Touple in classTouple:
+            # get class data
+            classData = Touple[0]
+            classData = classData.split(' ')
+            section = re.findall("\d+",classData[0])[1] # ECEN-###-### and we want the second one
             classProfessor = Touple[1]
+
+            # all honor sections start with a 2
+            if section[0] == '2':
+                classProfessor +='*'
             thisTuple = (course, classProfessor)
             if thisTuple not in masterDataDictionary:
                 masterDataDictionary[thisTuple].append(deepcopy(emptyDataList))
 
-            # get class data
-            classData = Touple[0]
-            classData = classData.split(' ')
+
             classData.pop(0)
 
             tempClassData = deepcopy(classData)

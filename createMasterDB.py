@@ -25,7 +25,10 @@ def calculate_GPA(data_list):
     gpa += data_list[5] * 0
 
     # the gpa is the current sum divided by the number of students
-    return round(gpa / (data_list[7]), 2)
+    if data_list[7] == 0:
+        return 0.0
+    else:
+        return round(gpa / (data_list[7]), 2)
 
 
 def createMasterDBs(listOfColleges):
@@ -42,9 +45,9 @@ def createMasterDBs(listOfColleges):
 
         # create the master DB dictirionary
         for folder in listOfFolders:
+            currentWBName = folder + ' ' + college + '.xlsx'
             try:
                 os.chdir(os.getcwd() + '\\' + folder + '\\Output')
-                currentWBName = folder + ' ' + college + '.xlsx'
                 print ("Starting " + currentWBName)
                 wb = load_workbook(currentWBName, read_only=True)
                 ws = wb.active
@@ -122,21 +125,34 @@ def createMasterDBs(listOfColleges):
                     sorted(teachersDict.items()))
                 for teacher in teachersDict:
                     thisTeacherList = orderedMasterDB[course][teacher]
-                    spamwriter.writerow(['', teacher,
-                                         calculate_GPA(thisTeacherList),
-                                         str(round(thisTeacherList[
-                                                       1] * 100 / thisTeacherList[7], 2)) + '%',
-                                         str(round(thisTeacherList[
-                                                       2] * 100 / thisTeacherList[7], 2)) + '%',
-                                         str(round(thisTeacherList[
-                                                       3] * 100 / thisTeacherList[7], 2)) + '%',
-                                         str(round(thisTeacherList[
-                                                       4] * 100 / thisTeacherList[7], 2)) + '%',
-                                         str(round(thisTeacherList[
-                                                       5] * 100 / thisTeacherList[7], 2)) + '%',
-                                         str(round(thisTeacherList[
-                                                       6] * 100 / thisTeacherList[7], 2)) + '%',
-                                         str(thisTeacherList[8])])
+                    if thisTeacherList[7] == 0:
+                        # SOCI 323 has a semester where the parse is 0 or there is an error
+                        spamwriter.writerow(['', teacher,
+                                             '4.0',
+                                             '100%',
+                                             '0%',
+                                             '0%',
+                                             '0%',
+                                             '0%',
+                                             '0%',
+                                             '0%',
+                                             str(thisTeacherList[8])])
+                    else:
+                        spamwriter.writerow(['', teacher,
+                                             calculate_GPA(thisTeacherList),
+                                             str(round(thisTeacherList[
+                                                           1] * 100 / thisTeacherList[7], 2)) + '%',
+                                             str(round(thisTeacherList[
+                                                           2] * 100 / thisTeacherList[7], 2)) + '%',
+                                             str(round(thisTeacherList[
+                                                           3] * 100 / thisTeacherList[7], 2)) + '%',
+                                             str(round(thisTeacherList[
+                                                           4] * 100 / thisTeacherList[7], 2)) + '%',
+                                             str(round(thisTeacherList[
+                                                           5] * 100 / thisTeacherList[7], 2)) + '%',
+                                             str(round(thisTeacherList[
+                                                           6] * 100 / thisTeacherList[7], 2)) + '%',
+                                             str(thisTeacherList[8])])
                 # output blank row
                 spamwriter.writerow(blankLine)
         os.chdir(mainDirectory)

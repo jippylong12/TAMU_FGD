@@ -39,71 +39,90 @@ def semesterCharToURLChar(semesterChar):
 # url = "http://web-as.tamu.edu/gradereport/PDFReports/"
 url = "http://web-as.tamu.edu/gradereport/"
 listOfColleges = [
+    "AE",  # ACADEMIC SUCCESS CENTER
     "AG",  # AGRICULTURE AND LIFE SCIENCES
     "AR",  # ARCHITECTURE
+    "AP",  # ASSOCIATE PROVOST FOR UNDERGRADUATE PROGRAMS
     "BA",  # BUSINESS
+    "DN",  # DENTISTRY (UNDERGRADUATE & GRADUATE)
+    "DN_PROF",  # DENTISTRY (PROFESSIONAL)
     "ED",  # EDUCATION Spring 2016
-    # "EL",  # ENGLISH LANGUAGE INSTITUTE No access 3/16/2017
     "EN",  # ENGINEERING
     "GB",  # GEORGE BUSH SCHOOL OF GOVERNMENT
     "GE",  # GEOSCIENCES
+    "SL",  # SCHOOL OF LAW (UNDERGRADUATE & GRADUATE)
+    "SL_PROF",  # SCHOOL OF LAW (PROFESSIONAL)
     "LA",  # LIBERAL ARTS Spring 2014
-    "MD", # MEDICINE No longer have access
+    "MD", # MEDICINE (UNDERGRADUATE & PROFESSIONAL)
+    "MD_PROF",  # MEDICINE (UNDERGRADUATE & PROFESSIONAL)
     "MS",  # MILITARY SCIENCE
+    "NU",  # NURSING
+    "CP_PROF",  # PHARMACY (PROFESSIONAL)
+    "PH",  # PUBLIC HEALTH
     "SC",  # SCIENCE
-    "VM"  # VETERINARY MEDICINE
+    "VM",  # VETERINARY MEDICINE (UNDERGRADUATE & GRADUATE)
+    "VM_PROF",  # VETERINARY MEDICINE (PROFESSIONAL)
 ]
 
 listOfSemesters = [
-    # "Spring",  # A
-    # "Summer",  # B
-    # "Fall"  # C
+     "Spring",  # A
+     # "Summer",  # B
+     # "Fall"  # C
 ]
 
-year = 2017
+years = [
+    # 2012,
+    # 2013,
+    # 2014,
+    # 2015,
+    # 2016,
+    # 2017,
+    2018
+]
 MainDirectory = os.getcwd()
-for semester in listOfSemesters:
-    print ("On Semester: " + semester)
-    os.chdir(MainDirectory)
-    semesterChar = getSemesterChar(semester)
-    folderName = semester + str(year)
-    pdfFileDirectory = os.getcwd() + "\\GradeDistributionsDB\\" + folderName
-    yearAndURLChar = str(year) + semesterCharToURLChar(semesterChar)
-    # # Part 1a
-    # # get the data from the website
-    # for x in range(0, len(listOfColleges)):
-    #     print("On College: " + str(listOfColleges[x]))
-    #     downloadPDFs(url, str(year), semesterChar, listOfColleges[x])
-
-    os.chdir(pdfFileDirectory)
-    # # Part 1b
-    # take the pdfs and make them to text files
-    # pdfList = glob('*.pdf')
-    # googleOCR(folderName, pdfList)
-
-    # Part 2a
-    # take all the data we have right now and give us what we need
-    txtList = glob('*.txt')
-    for textFile in txtList:
+for year in years:
+    for semester in listOfSemesters:
+        print ("On Semester: " + semester)
         os.chdir(MainDirectory)
-        print ("On TextFile " + textFile)
-        college = textFile[8:10]
-        masterDictionary = manipulatePdfs(textFile, semester, str(year))
+        semesterChar = getSemesterChar(semester)
+        folderName = semester + str(year)
+        pdfFileDirectory = os.path.join(os.getcwd(),"GradeDistributionsDB",folderName)
+        yearAndURLChar = str(year) + semesterCharToURLChar(semesterChar)
+        # # Part 1a
+        # # get the data from the website
+        # for x in range(0, len(listOfColleges)):
+        #     print("On College: " + str(listOfColleges[x]))
+        #     downloadPDFs(url, str(year), semesterChar, listOfColleges[x])
 
-        # Part 2b
-        # take the data we have and make it useful
-        title = semester + str(year) + " " + college + ".xlsx"
-        wb = Workbook()
+        os.chdir(pdfFileDirectory)
+        # # Part 1b
+        # take the pdfs and make them to text files
+        # pdfList = glob('*.pdf')
+        # googleOCR(folderName, pdfList)
 
-        # save the file to a new path
-        newPath = os.getcwd() + "\\Output"
-        if not os.path.exists(newPath):
-            os.makedirs(newPath)
-        os.chdir(newPath)
+        # Part 2a
+        # take all the data we have right now and give us what we need
+        txtList = glob('*.txt')
+        for textFile in txtList:
+            os.chdir(MainDirectory)
+            print ("On TextFile " + textFile)
+            college = textFile[8:10]
+            masterDictionary = manipulatePdfs(textFile, semester, str(year))
 
-        # call the function to outpt data and save in the new path
-        wb = outputData(masterDictionary, title)
-        wb.save(title)
+            # Part 2b
+            # take the data we have and make it useful
+            title = semester + str(year) + " " + college + ".xlsx"
+            wb = Workbook()
+
+            # save the file to a new path
+            newPath = os.getcwd() + "\\Output"
+            if not os.path.exists(newPath):
+                os.makedirs(newPath)
+            os.chdir(newPath)
+
+            # call the function to outpt data and save in the new path
+            wb = outputData(masterDictionary, title)
+            wb.save(title)
 
 # finally we just run the createMaster DB file
 os.chdir(MainDirectory)

@@ -10,7 +10,9 @@ _author_ = "Marcus Salinas"
 
 def createPrettyFilePath(college, semester):
     # colleges
-    if college == "AG":
+    if college == "AE":
+        newCollege = "ACADEMIC SUCCESS CENTER"
+    elif college == "AG":
         newCollege = "AGRICULTURE AND LIFE SCIENCES"
     elif college == "AR":
         newCollege = "ARCHITECTURE"
@@ -79,17 +81,14 @@ def downloadPDFs(url, year, semester, college):
     if not os.path.exists(downloadFilesHere):
         os.makedirs(downloadFilesHere)
 
-    fp.set_preference("browser.download.folderList", 2)
-    fp.set_preference("browser.download.manager.showWhenStarting", False)
-    fp.set_preference("browser.download.dir", downloadFilesHere)
-    fp.set_preference(
-        "browser.helperApps.neverAsk.saveToDisk", "application/pdf")
-    fp.set_preference("pdfjs.disabled", True)
-    fp.set_preference("plugin.scan.Acrobat", "99.0")
-    fp.set_preference("plugin.scan.plid.all", False)
+    options = webdriver.ChromeOptions()
 
-    # set up firefox
-    driver = webdriver.Firefox(firefox_profile=fp)
+    profile = {"plugins.plugins_list": [{"enabled": False, "name": "Chrome PDF Viewer"}],  # Disable Chrome's PDF Viewer
+               "download.default_directory": downloadFilesHere, "download.extensions_to_open": "applications/pdf"}
+    options.add_experimental_option("prefs", profile)
+    driver = webdriver.Chrome('C:\\Users\\Marcus\\Downloads\\chromedriver_win32\chromedriver.exe',
+                              chrome_options=options)  # Optional argument, if not specified will search path.
+
     driver.get(url)
 
     # select the right year
