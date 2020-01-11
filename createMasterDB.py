@@ -103,6 +103,7 @@ def createMasterDBs(listOfColleges):
                 os.chdir(mainDirectory)
                 print ("done with " + currentWBName)
             except:
+                os.chdir(mainDirectory)
                 print ("Cannot find: " + currentWBName)
                 continue
 

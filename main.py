@@ -65,9 +65,9 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-     "Spring",  # A
-     # "Summer",  # B
-     # "Fall"  # C
+     # "Spring",  # A
+     "Summer",  # B
+     "Fall"  # C
 ]
 
 years = [
@@ -77,7 +77,8 @@ years = [
     # 2015,
     # 2016,
     # 2017,
-    2018
+    # 2018,
+    2019
 ]
 MainDirectory = os.getcwd()
 for year in years:
@@ -88,8 +89,8 @@ for year in years:
         folderName = semester + str(year)
         pdfFileDirectory = os.path.join(os.getcwd(),"GradeDistributionsDB",folderName)
         yearAndURLChar = str(year) + semesterCharToURLChar(semesterChar)
-        # # Part 1a
-        # # get the data from the website
+        # Part 1a
+        # get the data from the website
         # for x in range(0, len(listOfColleges)):
         #     print("On College: " + str(listOfColleges[x]))
         #     downloadPDFs(url, str(year), semesterChar, listOfColleges[x])
@@ -102,27 +103,27 @@ for year in years:
 
         # Part 2a
         # take all the data we have right now and give us what we need
-        txtList = glob('*.txt')
-        for textFile in txtList:
-            os.chdir(MainDirectory)
-            print ("On TextFile " + textFile)
-            college = textFile[8:10]
-            masterDictionary = manipulatePdfs(textFile, semester, str(year))
-
-            # Part 2b
-            # take the data we have and make it useful
-            title = semester + str(year) + " " + college + ".xlsx"
-            wb = Workbook()
-
-            # save the file to a new path
-            newPath = os.getcwd() + "\\Output"
-            if not os.path.exists(newPath):
-                os.makedirs(newPath)
-            os.chdir(newPath)
-
-            # call the function to outpt data and save in the new path
-            wb = outputData(masterDictionary, title)
-            wb.save(title)
+        # txtList = glob('*.txt')
+        # for textFile in txtList:
+        #     os.chdir(MainDirectory)
+        #     print ("On TextFile " + textFile)
+        #     college = textFile[8:10]
+        #     masterDictionary = manipulatePdfs(textFile, semester, str(year))
+        #
+        #     # Part 2b
+        #     # take the data we have and make it useful
+        #     title = semester + str(year) + " " + college + ".xlsx"
+        #     wb = Workbook()
+        #
+        #     # save the file to a new path
+        #     newPath = os.getcwd() + "\\Output"
+        #     if not os.path.exists(newPath):
+        #         os.makedirs(newPath)
+        #     os.chdir(newPath)
+        #
+        #     # call the function to outpt data and save in the new path
+        #     wb = outputData(masterDictionary, title)
+        #     wb.save(title)
 
 # finally we just run the createMaster DB file
 os.chdir(MainDirectory)

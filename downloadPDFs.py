@@ -83,7 +83,7 @@ def downloadPDFs(url, year, semester, college):
 
     options = webdriver.ChromeOptions()
 
-    profile = {"plugins.plugins_list": [{"enabled": False, "name": "Chrome PDF Viewer"}],  # Disable Chrome's PDF Viewer
+    profile = {"plugins.always_open_pdf_externally": True,  # Disable Chrome's PDF Viewer
                "download.default_directory": downloadFilesHere, "download.extensions_to_open": "applications/pdf"}
     options.add_experimental_option("prefs", profile)
     driver = webdriver.Chrome('C:\\Users\\Marcus\\Downloads\\chromedriver_win32\chromedriver.exe',
