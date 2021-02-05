@@ -2,7 +2,7 @@ import os
 import re
 from copy import deepcopy
 from collections import defaultdict
-from transformTextFiles import transformedTextFiles
+from transformTextFiles import transformedTextFiles, transformedTextFiles2020
 
 _author_ = "Marcus Salinas"
 
@@ -181,8 +181,10 @@ def manipulatePdfs(file, semester, year):
 
     # IN FALL OF 2016 THEY CHANGED THE FORMAT OF PDFS AND I HAD TO MAKE A FUNCTION TO TRANSFORM THE TEXT FILES INTO
     # SOMETHING USEFUL SO I COULD RUN IT AGAIN.
-    if(int(year) > 2016 or (year == "2016" and semester =="Fall")):
+    if (2016 < int(year) < 2020) or (year == "2016" and semester == "Fall"):
         masterDictionary = transformedTextFiles(file,semester,year)
+    elif year > 2019:
+        masterDictionary = transformedTextFiles2020(file,semester,year)
     else:
         # get the data
         usefulData = getDataFromTextFiles(file, semester, year)

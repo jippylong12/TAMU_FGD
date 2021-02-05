@@ -146,3 +146,95 @@ def transformedTextFiles(filename, semester, year):
 
     # NOW NEW TRANSFORMED STRING IS IN THE CORRECT FORMAT
     return getCoursesWithProfessorsTransformed(newTransformedString)
+
+
+def transformedTextFiles2020(filename,semester,year):
+
+    filePath = os.getcwd() + "/GradeDistributionsDB/" + semester + year
+    os.chdir(filePath)
+
+    beginningQ = Queue()
+    endQ = Queue()
+
+    middleCount = 0
+    extraCount = 0
+    extraMiddleCount = 0
+
+    middleString = ""
+    extraMiddleString = ""
+
+    transformedString = ""
+
+    _list = []
+    num_of_courses = 0
+
+    with open(filename) as textFile:
+        course_index = 0
+        grade_column_index = 0 # we need to go through each column
+        starting_courses = False
+        grades_data = False
+        final_prof_data = False
+        final_course_data = False
+
+        for line in textFile:
+            if starting_courses:
+                if re.match(r"COURSE TOTAL: \d+", line) is not None:
+                    _list.append(re.match(r"COURSE TOTAL: \d+", line).group())
+                elif re.match(r"DEPARTMENT TOTAL: \d+", line) is not None:
+                    _list.append(re.match(r"DEPARTMENT TOTAL: \d+", line).group())
+                elif re.match(r"COLLEGE TOTAL: \d+", line) is not None:
+                    _list.append(re.match(r"COLLEGE TOTAL: \d+", line).group())
+                    grades_data = True
+                    starting_courses = False
+                elif re.match(r"\w+-\d+-\d+\s\d+", line) is not None:
+                    _list.append(re.match(r"\w+-\d+-\d+\s\d+", line).group())
+                    num_of_courses += 1
+            elif grades_data:
+                if re.match("\s\d+\s", line) is not None:
+                    number =  re.match("\s\d+\s", line).group().strip()
+                    _list[course_index] = _list[course_index] + " " + number
+                    course_index += 1
+                    if course_index == num_of_courses + 3: # - 1 for the index + 3 because of course, department, college
+                        course_index = 0
+                        grade_column_index+=1
+                        if grade_column_index == 4:
+                            grade_column_index = 0
+                            course_index = 0
+                            final_prof_data = True
+                            grades_data = False
+            elif final_prof_data:
+                if len(re.findall(r"\d+\s\d+\.\d+ \d+ \d+ \d+ \d+ \d+ \d+ \w+ \w", line)) > 0:
+                    string_matches = re.findall(r"\d+\s\d+\.\d+ \d+ \d+ \d+ \d+ \d+ \d+ \w+ \w", line)
+                    course_index += len(string_matches)
+                    for index, elem in  enumerate(string_matches):
+                        _list[index] = _list[index] + " " + elem
+
+                    if course_index == num_of_courses:
+                        final_prof_data = False
+                        final_course_data = True
+                        course_index = 0
+            elif final_course_data:
+                if len(re.findall(r"\d+\s\d+\.\d+ \d+ \d+ \d+ \d+ \d+ \d+", line)) > 0:
+                    string_matches = re.findall(r"\d+\s\d+\.\d+ \d+ \d+ \d+ \d+ \d+ \d+", line)
+                    for elem in string_matches:
+                        _list[num_of_courses + course_index] += " " + elem
+                        course_index += 1
+            else:
+                if re.match(r"\w+-\d+-\d+\s\d+", line) is not None:
+                    starting_courses = True
+                    _list.append(re.match(r"\w+-\d+-\d+\s\d+", line).group())
+                    num_of_courses += 1
+
+    # ONCE HERE IT HAS TRANSFORMED THE FILE. NOW WE JUST NEED TO PUT THE PROFESSOR NAMES ON A NEW LINE AND THEN
+    # JUST RUN THE OLD FUNCTIONS ON IT.
+
+    transformedString = ""
+    for index, row in enumerate(_list):
+        transformedString += row
+        if index+1 != len(_list):
+            transformedString += "\n\n"
+
+
+
+    # NOW NEW TRANSFORMED STRING IS IN THE CORRECT FORMAT
+    return getCoursesWithProfessorsTransformed(transformedString)

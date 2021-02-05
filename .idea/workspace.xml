@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FreeGradeDistribution.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FreeGradeDistribution.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="Fixed issue that prevented some masterDBs from being created because the directory was incorrect&#10;Fixed issue where Chrome browser did not download externally anymore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListOfColleges.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ListOfColleges.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createMasterDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/createMasterDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/downloadPDFs.py" beforeDir="false" afterPath="$PROJECT_DIR$/downloadPDFs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manipulatePDFs.py" beforeDir="false" afterPath="$PROJECT_DIR$/manipulatePDFs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transformTextFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformTextFiles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +41,12 @@
         <option value="Marcus &lt;markysalinas12@gmail.com&gt;" />
       </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="newStylePDFs" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PAggpCknsajF68xZumBYoCQ9mq" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -76,16 +73,16 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="BUSINESS Admin&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python&#10;CoffeeScriptLiterate" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SpicyMemes" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -180,6 +177,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FreeGradeDistribution" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="scratch_5" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FreeGradeDistribution" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -194,28 +213,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_5.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tranformTextFiles2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FreeGradeDistribution" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tranformTextFiles2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -275,25 +272,26 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;.&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.tranformTextFiles2" />
       <item itemvalue="Python.createMasterDB" />
       <item itemvalue="Python.createCoursesLists" />
       <item itemvalue="Python.scratch_5" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.scratch" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.scratch" />
         <item itemvalue="Python.scratch_5" />
         <item itemvalue="Python.createCoursesLists" />
         <item itemvalue="Python.createMasterDB" />
-        <item itemvalue="Python.tranformTextFiles2" />
       </list>
     </recent_temporary>
   </component>
@@ -309,6 +307,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration>C:\Users\Marcus\AppData\Roaming\Subversion</configuration>
   </component>
@@ -327,7 +326,14 @@
       <workItem from="1558549132547" duration="15000" />
       <workItem from="1565322431668" duration="31000" />
       <workItem from="1566191995831" duration="38000" />
-      <workItem from="1578776855273" duration="4236000" />
+      <workItem from="1578776855273" duration="4310000" />
+      <workItem from="1580356975754" duration="1300000" />
+      <workItem from="1580414067746" duration="3000" />
+      <workItem from="1580448651362" duration="81000" />
+      <workItem from="1612401973125" duration="365000" />
+      <workItem from="1612541748877" duration="327000" />
+      <workItem from="1612542115438" duration="3739000" />
+      <workItem from="1612561626245" duration="5373000" />
     </task>
     <task id="LOCAL-00001" summary="INitial push">
       <created>1460389325114</created>
@@ -504,11 +510,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533960859702</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Fixed issue that prevented some masterDBs from being created because the directory was incorrect&#10;Fixed issue where Chrome browser did not download externally anymore">
+      <created>1578781153170</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1578781153170</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -540,53 +553,8 @@
     <MESSAGE value="I had to revert some of the changes from the merge with Matt. I think he tried to make it more universal with linux/Mac code and I don't like that. I want it to be Windows Universal. Just my preference.&#10;&#10;Now the issue was that A&amp;M had changed the format of the files in Fall 2016 so the OCR result was different so I noticed the pattern and created an algorithm that transforms the text file into the original format and then used the old code again." />
     <MESSAGE value="Was pointed out by Zubin Shah that the way the program calculates averages is not completely accurate because of stacked classes or classes with small groups of people that have high GPAs so it inflates the GPAs. &#10;- Changed the GPA and percentages to use actual numbers from students&#10;&#10;Also had two bugs I fixed&#10;- The Fall 2017 semester has started using M's in the section numbers which messed things up but that is fixed&#10;- I use Fall instead of C now." />
     <MESSAGE value="Made bug fixes to include parts that I was skipping over and also to correct the data.&#10;- Some dates were not accurate and out of place. The logic in the transform text file is crazy but I'm confident it works&#10;I also realized that the new PDFs (Fall 2016 and onward) have Errors in their files so you have to change those to be accurate otherwise it messes up everything. But the numbers are fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made bug fixes to include parts that I was skipping over and also to correct the data.&#10;- Some dates were not accurate and out of place. The logic in the transform text file is crazy but I'm confident it works&#10;I also realized that the new PDFs (Fall 2016 and onward) have Errors in their files so you have to change those to be accurate otherwise it messes up everything. But the numbers are fixed" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1292" y="548" key="#xdebugger.evaluate" timestamp="1578780563624">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state x="1292" y="548" key="#xdebugger.evaluate/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578780563624" />
-    <state width="3029" height="567" key="GridCell.Tab.0.bottom" timestamp="1578781097311">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state width="3029" height="567" key="GridCell.Tab.0.bottom/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578781097311" />
-    <state width="3029" height="567" key="GridCell.Tab.0.center" timestamp="1578781097311">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state width="3029" height="567" key="GridCell.Tab.0.center/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578781097311" />
-    <state width="3029" height="567" key="GridCell.Tab.0.left" timestamp="1578781097311">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state width="3029" height="567" key="GridCell.Tab.0.left/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578781097311" />
-    <state width="3029" height="567" key="GridCell.Tab.0.right" timestamp="1578781097311">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state width="3029" height="567" key="GridCell.Tab.0.right/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578781097311" />
-    <state width="3029" height="567" key="GridCell.Tab.1.bottom" timestamp="1578781097312">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state width="3029" height="567" key="GridCell.Tab.1.bottom/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578781097312" />
-    <state width="3029" height="567" key="GridCell.Tab.1.center" timestamp="1578781097311">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state width="3029" height="567" key="GridCell.Tab.1.center/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578781097311" />
-    <state width="3029" height="567" key="GridCell.Tab.1.left" timestamp="1578781097311">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state width="3029" height="567" key="GridCell.Tab.1.left/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578781097311" />
-    <state width="3029" height="567" key="GridCell.Tab.1.right" timestamp="1578781097312">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state width="3029" height="567" key="GridCell.Tab.1.right/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578781097312" />
-    <state x="1045" y="488" key="SettingsEditor" timestamp="1578777168257">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state x="1045" y="488" key="SettingsEditor/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578777168257" />
-    <state x="1233" y="670" key="com.intellij.ide.util.TipDialog" timestamp="1578776866463">
-      <screen x="0" y="0" width="3072" height="1688" />
-    </state>
-    <state x="1233" y="670" key="com.intellij.ide.util.TipDialog/-1920.625.1920.1030/0.0.3072.1688@0.0.3072.1688" timestamp="1578776866463" />
+    <MESSAGE value="Fixed issue that prevented some masterDBs from being created because the directory was incorrect&#10;Fixed issue where Chrome browser did not download externally anymore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue that prevented some masterDBs from being created because the directory was incorrect&#10;Fixed issue where Chrome browser did not download externally anymore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -612,9 +580,44 @@
           <option name="timeStamp" value="214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/googleOCR.py</url>
+          <url>file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="438" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/createMasterDB.py</url>
           <line>110</line>
-          <option name="timeStamp" value="435" />
+          <option name="timeStamp" value="440" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/createMasterDB.py</url>
+          <line>105</line>
+          <option name="timeStamp" value="444" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/outputData.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="448" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
+          <line>239</line>
+          <option name="timeStamp" value="474" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="476" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="478" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
+          <line>230</line>
+          <option name="timeStamp" value="479" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -625,14 +628,9 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="csvFileName" language="Python" />
-        <watch expression="masterDB" language="Python" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1578780563650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FreeGradeDistribution$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1612402131767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1612566987449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
