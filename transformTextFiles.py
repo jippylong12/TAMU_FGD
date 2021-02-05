@@ -228,13 +228,15 @@ def transformedTextFiles2020(filename,semester,year):
     # ONCE HERE IT HAS TRANSFORMED THE FILE. NOW WE JUST NEED TO PUT THE PROFESSOR NAMES ON A NEW LINE AND THEN
     # JUST RUN THE OLD FUNCTIONS ON IT.
 
-    transformedString = ""
+    _list = _list[0:num_of_courses]
+    _transformed_list = []
     for index, row in enumerate(_list):
-        transformedString += row
-        if index+1 != len(_list):
-            transformedString += "\n\n"
+        professor = re.findall(r"\s\w+ \w", row)[-1].strip()
+        row = row.replace(professor, "").strip()
+        _transformed_list.append(row)
+        _transformed_list.append(professor)
 
 
 
     # NOW NEW TRANSFORMED STRING IS IN THE CORRECT FORMAT
-    return getCoursesWithProfessorsTransformed(transformedString)
+    return getCoursesWithProfessorsTransformed(_transformed_list)
