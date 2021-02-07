@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="Fixed issue that prevented some masterDBs from being created because the directory was incorrect&#10;Fixed issue where Chrome browser did not download externally anymore">
+    <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="I have added another method to transform the 2020 data but working on getting the data to the right format">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/downloadPDFs.py" beforeDir="false" afterPath="$PROJECT_DIR$/downloadPDFs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manipulatePDFs.py" beforeDir="false" afterPath="$PROJECT_DIR$/manipulatePDFs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transformTextFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformTextFiles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -333,7 +331,8 @@
       <workItem from="1612401973125" duration="365000" />
       <workItem from="1612541748877" duration="327000" />
       <workItem from="1612542115438" duration="3739000" />
-      <workItem from="1612561626245" duration="5373000" />
+      <workItem from="1612561626245" duration="6585000" />
+      <workItem from="1612658794160" duration="4485000" />
     </task>
     <task id="LOCAL-00001" summary="INitial push">
       <created>1460389325114</created>
@@ -517,7 +516,21 @@
       <option name="project" value="LOCAL" />
       <updated>1578781153170</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="I have added another method to transform the 2020 data but working on getting the data to the right format">
+      <created>1612567072619</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1612567072620</updated>
+    </task>
+    <task id="LOCAL-00028" summary="This version works in the smallest test case">
+      <created>1612567838417</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1612567838417</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +567,9 @@
     <MESSAGE value="Was pointed out by Zubin Shah that the way the program calculates averages is not completely accurate because of stacked classes or classes with small groups of people that have high GPAs so it inflates the GPAs. &#10;- Changed the GPA and percentages to use actual numbers from students&#10;&#10;Also had two bugs I fixed&#10;- The Fall 2017 semester has started using M's in the section numbers which messed things up but that is fixed&#10;- I use Fall instead of C now." />
     <MESSAGE value="Made bug fixes to include parts that I was skipping over and also to correct the data.&#10;- Some dates were not accurate and out of place. The logic in the transform text file is crazy but I'm confident it works&#10;I also realized that the new PDFs (Fall 2016 and onward) have Errors in their files so you have to change those to be accurate otherwise it messes up everything. But the numbers are fixed" />
     <MESSAGE value="Fixed issue that prevented some masterDBs from being created because the directory was incorrect&#10;Fixed issue where Chrome browser did not download externally anymore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue that prevented some masterDBs from being created because the directory was incorrect&#10;Fixed issue where Chrome browser did not download externally anymore" />
+    <MESSAGE value="I have added another method to transform the 2020 data but working on getting the data to the right format" />
+    <MESSAGE value="This version works in the smallest test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="This version works in the smallest test case" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -601,23 +616,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
-          <line>239</line>
-          <option name="timeStamp" value="474" />
+          <line>212</line>
+          <option name="timeStamp" value="509" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="476" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="478" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
-          <line>230</line>
-          <option name="timeStamp" value="479" />
+          <line>178</line>
+          <option name="timeStamp" value="513" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -631,6 +636,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FreeGradeDistribution$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1612402131767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1612566987449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1612664912634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
