@@ -39,7 +39,7 @@ def semesterCharToURLChar(semesterChar):
 # url = "http://web-as.tamu.edu/gradereport/PDFReports/"
 url = "http://web-as.tamu.edu/gradereport/"
 listOfColleges = [
-    # "AE",  # ACADEMIC SUCCESS CENTER
+    "AE",  # ACADEMIC SUCCESS CENTER
     "AG",  # AGRICULTURE AND LIFE SCIENCES
     "AR",  # ARCHITECTURE
     "AP",  # ASSOCIATE PROVOST FOR UNDERGRADUATE PROGRAMS
