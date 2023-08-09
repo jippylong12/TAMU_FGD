@@ -9,7 +9,6 @@ _author_ = "Marcus Salinas"
 
 
 def create_filepath(semester):
-
     # semester
     if semester == "A":
         new_semester = "Spring"
@@ -26,39 +25,40 @@ def create_filepath(semester):
         return 0
 
 
-def downloadPDFs(url, year, semester, college):
+def downloadPDFs(url, year, semester, listOfColleges):
     driver, filepath = setup_driver(semester, year)
-    driver.get(url)
 
-    # select the right year
-    year_elem = driver.find_element_by_id("ctl00_plcMain_lstGradYear")
-    year_select = Select(year_elem)
-    year_select.select_by_value(year)
+    for x in range(0, len(listOfColleges)):
+        driver.get(url)
+        print("On College: " + str(listOfColleges[x]))
 
-    # select the correct semester
-    semester_elem = driver.find_element_by_id("ctl00_plcMain_lstGradTerm")
-    semester_select = Select(semester_elem)
-    semester_select.select_by_value(semester)
+        # select the right year
+        year_elem = driver.find_element_by_id("ctl00_plcMain_lstGradYear")
+        year_select = Select(year_elem)
+        year_select.select_by_value(year)
 
-    # select the correct college i.e ENGINEERING
-    college_elem = driver.find_element_by_id("ctl00_plcMain_lstGradCollege")
-    college_select = Select(college_elem)
-    college_select.select_by_value(college)
+        # select the correct semester
+        semester_elem = driver.find_element_by_id("ctl00_plcMain_lstGradTerm")
+        semester_select = Select(semester_elem)
+        semester_select.select_by_value(semester)
 
-    # find and click download button
-    download_elem = driver.find_element_by_id("ctl00_plcMain_btnGrade")
-    driver.execute_script("arguments[0].click();", download_elem)
+        # select the correct college i.e ENGINEERING
+        college_elem = driver.find_element_by_id("ctl00_plcMain_lstGradCollege")
+        college_select = Select(college_elem)
+        college_select.select_by_value(listOfColleges[x])
 
-    fileends = "crdownload"
-    while "crdownload" == fileends:
-        time.sleep(1)
-        newest_file = latest_download_file(filepath)
-        if "crdownload" in newest_file:
-            fileends = "crdownload"
-        else:
-            fileends = "none"
-    # exit
-    time.sleep(10)  # wait to download
+        # find and click download button
+        download_elem = driver.find_element_by_id("ctl00_plcMain_btnGrade")
+        driver.execute_script("arguments[0].click();", download_elem)
+
+        fileends = "crdownload"
+        while "crdownload" == fileends:
+            time.sleep(1)
+            newest_file = latest_download_file(filepath)
+            if "crdownload" in newest_file:
+                fileends = "crdownload"
+            else:
+                fileends = "none"
     driver.quit()
 
 
@@ -81,13 +81,15 @@ def setup_driver(semester, year):
                "download.default_directory": download_filepath, "download.extensions_to_open": "applications/pdf"}
     options.add_experimental_option("prefs", profile)
     return (webdriver.Chrome('C:\\SeleniumDrivers\chromedriver.exe',
-                            chrome_options=options), download_filepath)
+                             chrome_options=options), download_filepath)
 
 
 def latest_download_file(filepath):
     old_dir = os.getcwd()
     os.chdir(filepath)
     files = sorted(os.listdir(filepath), key=os.path.getmtime)
+    if len(files) == 0: return ''
+
     newest = files[-1]
     os.chdir(old_dir)
     return newest

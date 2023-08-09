@@ -75,8 +75,8 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-     "Spring",  # A
-     # "Summer",  # B
+     # "Spring",  # A
+     "Summer",  # B
      # "Fall"  # C
 ]
 
@@ -102,9 +102,7 @@ for year in years:
         yearAndURLChar = str(year) + semesterCharToURLChar(semesterChar)
         # Part 1a
         # get the data from the website
-        for x in range(0, len(listOfColleges)):
-            print("On College: " + str(listOfColleges[x]))
-            downloadPDFs(url, str(year), semesterChar, listOfColleges[x])
+        downloadPDFs(url, str(year), semesterChar, listOfColleges)
 
         os.chdir(pdfFileDirectory)
         # # # Part 1b
