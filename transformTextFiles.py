@@ -168,6 +168,10 @@ def transformedTextFiles2020(filename,semester,year):
             re_courses = re.findall(r"\d+\s\d+\.\d+ \d+ \d+ \d+ \d+ \d+ \d+", line)
             re_errors = re.findall('Error', line)
             if len(re_professor) > 0 or len(re_courses) > 0:
+
+
+                if filename == 'grd20201EN.txt' and course_index > 300:
+                    pass # TODO: the enginerring is off for some reason. Something is off. The course jumps by 4
                 course_index += max(len(re_courses) + len(re_errors) - len(re_professor),0)
                 string_matches = re.findall(r"\d+\s\d+\.\d+ \d+ \d+ \d+ \d+ \d+ \d+ \w+ \w", line)
                 for index, elem in  enumerate(string_matches):

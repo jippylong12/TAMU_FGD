@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="Before changing list to dict">
+    <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="We're making progress steadily">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloadPDFs.py" beforeDir="false" afterPath="$PROJECT_DIR$/downloadPDFs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transformTextFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformTextFiles.py" afterDir="false" />
     </list>
@@ -21,9 +25,6 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="C:\Users\Marcus\PycharmProjects\FreeGradeDistribution" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="FreeGradeDistribution" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -45,6 +46,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1PAggpCknsajF68xZumBYoCQ9mq" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -73,15 +77,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="BUSINESS Admin&#9;null&#9;null" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python&#10;CoffeeScriptLiterate" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SpicyMemes" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Marcus\PycharmProjects\FreeGradeDistribution\GradeDistributionsDB\Fall2018" />
@@ -332,7 +337,12 @@
       <workItem from="1612541748877" duration="327000" />
       <workItem from="1612542115438" duration="3739000" />
       <workItem from="1612561626245" duration="6585000" />
-      <workItem from="1612658794160" duration="9058000" />
+      <workItem from="1612658794160" duration="9834000" />
+      <workItem from="1612800128655" duration="555000" />
+      <workItem from="1613670609429" duration="216000" />
+      <workItem from="1627917623521" duration="778000" />
+      <workItem from="1645683077451" duration="17000" />
+      <workItem from="1691612925592" duration="2041000" />
     </task>
     <task id="LOCAL-00001" summary="INitial push">
       <created>1460389325114</created>
@@ -537,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612665239035</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="We're making progress steadily">
+      <created>1612669569688</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1612669569688</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="INitial push" />
     <MESSAGE value="added comments" />
     <MESSAGE value="Finished part 1" />
     <MESSAGE value="Completed Part 2. Perhaps not completely error free but works with Agriculture and Engineering Colleges I think so on to part 3." />
@@ -577,7 +593,8 @@
     <MESSAGE value="I have added another method to transform the 2020 data but working on getting the data to the right format" />
     <MESSAGE value="This version works in the smallest test case" />
     <MESSAGE value="Before changing list to dict" />
-    <option name="LAST_COMMIT_MESSAGE" value="Before changing list to dict" />
+    <MESSAGE value="We're making progress steadily" />
+    <option name="LAST_COMMIT_MESSAGE" value="We're making progress steadily" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -623,9 +640,9 @@
           <option name="timeStamp" value="448" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
-          <line>221</line>
-          <option name="timeStamp" value="563" />
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="450" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -638,12 +655,13 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="_list[225:]" language="Python" />
+        <watch expression="_list[300:]" language="Python" />
+        <watch expression="line" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FreeGradeDistribution$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1612402131767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1612669516195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1691614565716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

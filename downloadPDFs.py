@@ -57,58 +57,51 @@ def createPrettyFilePath(college, semester):
         return (0, 0)
 
 
-def findIndex(options, filePathCollege):
-    for x in range(0, len(options)):
-        if options[x].text == filePathCollege:
-            return x
-    return -1
-
-
 def downloadPDFs(url, year, semester, college):
-    # set up firefox profile
-    fp = webdriver.FirefoxProfile()
+    driver = setup_driver(college, semester, year)
+    driver.get(url)
 
+    # select the right year
+    year_elem = driver.find_element_by_id("ctl00_plcMain_lstGradYear")
+    year_select = Select(year_elem)
+    year_select.select_by_value(year)
+
+    # select the correct semester
+    semester_elem = driver.find_element_by_id("ctl00_plcMain_lstGradTerm")
+    semester_select = Select(semester_elem)
+    semester_select.select_by_value(semester)
+
+    # select the correct college i.e ENGINEERING
+    college_elem = driver.find_element_by_id("ctl00_plcMain_lstGradCollege")
+    college_select = Select(college_elem)
+    college_select.select_by_value(college)
+
+    # find and click download button
+    download_elem = driver.find_element_by_id("ctl00_plcMain_btnGrade")
+    driver.execute_script("arguments[0].click();", download_elem)
+
+    # exit
+    time.sleep(5) # wait to download
+    driver.quit()
+
+
+def setup_driver(college, semester, year):
     # go to where we downloaded project and create initial DB folder
-    downloadFilesHere = os.getcwd()
-    downloadFilesHere = downloadFilesHere + "\\GradeDistributionsDB"
-    if not os.path.exists(downloadFilesHere):
-        os.chdir(downloadFilesHere)
+    download_filepath = os.getcwd() + "\\GradeDistributionsDB"
+    if not os.path.exists(download_filepath):
+        os.chdir(download_filepath)
 
     # create a new folder for each different semester
-    filePathCollege, filePathSemester = createPrettyFilePath(college, semester)
-    downloadFilesHere = downloadFilesHere + \
-                        "\\" + str(filePathSemester) + str(year)
-    if not os.path.exists(downloadFilesHere):
-        os.makedirs(downloadFilesHere)
+    _, semester_filepath = createPrettyFilePath(college, semester)
+    download_filepath = download_filepath + \
+                        "\\" + str(semester_filepath) + str(year)
+    if not os.path.exists(download_filepath):
+        os.makedirs(download_filepath)
 
     options = webdriver.ChromeOptions()
 
     profile = {"plugins.always_open_pdf_externally": True,  # Disable Chrome's PDF Viewer
-               "download.default_directory": downloadFilesHere, "download.extensions_to_open": "applications/pdf"}
+               "download.default_directory": download_filepath, "download.extensions_to_open": "applications/pdf"}
     options.add_experimental_option("prefs", profile)
-    driver = webdriver.Chrome('C:\\SeleniumDrivers\chromedriver.exe',
-                              chrome_options=options)  # Optional argument, if not specified will search path.
-
-    driver.get(url)
-
-    # select the right year
-    yearELEM = driver.find_element_by_id("ctl00_plcMain_lstGradYear")
-    yearSELECT = Select(yearELEM)
-    yearSELECT.select_by_value(year)
-
-    # select the correct semester
-    semesterELEM = driver.find_element_by_id("ctl00_plcMain_lstGradTerm")
-    semesterSELECT = Select(semesterELEM)
-    semesterSELECT.select_by_value(semester)
-
-    # select the correct college i.e ENGINEERING
-    collegeELEM = driver.find_element_by_id("ctl00_plcMain_lstGradCollege")
-    collegeSELECT = Select(collegeELEM)
-    collegeSELECT.select_by_value(college)
-
-    # find and click download button
-    downloadELEM = driver.find_element_by_id("ctl00_plcMain_btnGrade")
-    downloadELEM.click()
-    # exit
-    time.sleep(5)
-    driver.quit()
+    return webdriver.Chrome('C:\\SeleniumDrivers\chromedriver.exe',
+                            chrome_options=options)  # Optional argument, if not specified will search path.

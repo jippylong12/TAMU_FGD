@@ -37,7 +37,7 @@ def semesterCharToURLChar(semesterChar):
         return "0"
 
 # url = "http://web-as.tamu.edu/gradereport/PDFReports/"
-url = "http://web-as.tamu.edu/gradereport/"
+url = "http://web-as.tamu.edu/gradereports/"
 listOfColleges = [
     "AE",  # ACADEMIC SUCCESS CENTER
     "AG",  # AGRICULTURE AND LIFE SCIENCES
@@ -66,8 +66,8 @@ listOfColleges = [
 
 listOfSemesters = [
      "Spring",  # A
-     "Summer",  # B
-     "Fall"  # C
+     # "Summer",  # B
+     # "Fall"  # C
 ]
 
 years = [
@@ -92,9 +92,9 @@ for year in years:
         yearAndURLChar = str(year) + semesterCharToURLChar(semesterChar)
         # Part 1a
         # get the data from the website
-        # for x in range(0, len(listOfColleges)):
-        #     print("On College: " + str(listOfColleges[x]))
-        #     downloadPDFs(url, str(year), semesterChar, listOfColleges[x])
+        for x in range(0, len(listOfColleges)):
+            print("On College: " + str(listOfColleges[x]))
+            downloadPDFs(url, str(year), semesterChar, listOfColleges[x])
 
         os.chdir(pdfFileDirectory)
         # # # Part 1b
