@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="We're making progress steadily">
+    <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/downloadPDFs.py" beforeDir="false" afterPath="$PROJECT_DIR$/downloadPDFs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transformTextFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformTextFiles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +341,7 @@
       <workItem from="1613670609429" duration="216000" />
       <workItem from="1627917623521" duration="778000" />
       <workItem from="1645683077451" duration="17000" />
-      <workItem from="1691612925592" duration="2041000" />
+      <workItem from="1691612925592" duration="4238000" />
     </task>
     <task id="LOCAL-00001" summary="INitial push">
       <created>1460389325114</created>
@@ -554,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1612669569688</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Updated URL and started working on Part 1a">
+      <option name="closed" value="true" />
+      <created>1691615123134</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1691615123134</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added comments" />
     <MESSAGE value="Finished part 1" />
     <MESSAGE value="Completed Part 2. Perhaps not completely error free but works with Agriculture and Engineering Colleges I think so on to part 3." />
     <MESSAGE value="Added another part to manipulatePDFs which gives me a dictionary that &#10;makes it simple to output the data to an excel spreadsheet." />
@@ -594,7 +600,8 @@
     <MESSAGE value="This version works in the smallest test case" />
     <MESSAGE value="Before changing list to dict" />
     <MESSAGE value="We're making progress steadily" />
-    <option name="LAST_COMMIT_MESSAGE" value="We're making progress steadily" />
+    <MESSAGE value="Updated URL and started working on Part 1a" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated URL and started working on Part 1a" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -641,7 +648,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>98</line>
+          <line>108</line>
           <option name="timeStamp" value="450" />
         </line-breakpoint>
       </breakpoints>
@@ -662,6 +669,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FreeGradeDistribution$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1612402131767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1691614565716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1691617219090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

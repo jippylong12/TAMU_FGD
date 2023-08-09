@@ -8,57 +8,26 @@ from selenium.webdriver.support.ui import Select
 _author_ = "Marcus Salinas"
 
 
-def createPrettyFilePath(college, semester):
-    # colleges
-    if college == "AE":
-        newCollege = "ACADEMIC SUCCESS CENTER"
-    elif college == "AG":
-        newCollege = "AGRICULTURE AND LIFE SCIENCES"
-    elif college == "AR":
-        newCollege = "ARCHITECTURE"
-    elif college == "BA":
-        newCollege = "BUSINESS"
-    elif college == "ED":
-        newCollege = "EDUCATION"
-    elif college == "EL":
-        newCollege = "ENGLISH LANGUAGE INSTITUTE"
-    elif college == "EN":
-        newCollege = "ENGINEERING"
-    elif college == "GB":
-        newCollege = "GEORGE BUSH SCHOOL OF GOVERNMENT"
-    elif college == "GE":
-        newCollege = "GEOSCIENCES"
-    elif college == "LA":
-        newCollege = "LIBERAL ARTS"
-    elif college == "MD":
-        newCollege = "MEDICINE"
-    elif college == "MS":
-        newCollege = "MILITARY SCIENCE"
-    elif college == "SC":
-        newCollege = "SCIENCE"
-    elif college == "VM":
-        newCollege = "VETERINARY MEDICINE"
-    else:
-        newCollege = "N/A"
+def create_filepath(semester):
 
     # semester
     if semester == "A":
-        newSemester = "Spring"
+        new_semester = "Spring"
     elif semester == "B":
-        newSemester = "Summer"
+        new_semester = "Summer"
     elif semester == "C":
-        newSemester = "Fall"
+        new_semester = "Fall"
     else:
-        newSemester = "N/A"
+        new_semester = "N/A"
 
-    if newCollege != "N/A" and newSemester != "N/A":
-        return (newCollege, newSemester)
+    if new_semester != "N/A":
+        return new_semester
     else:
-        return (0, 0)
+        return 0
 
 
 def downloadPDFs(url, year, semester, college):
-    driver = setup_driver(college, semester, year)
+    driver, filepath = setup_driver(semester, year)
     driver.get(url)
 
     # select the right year
@@ -80,19 +49,27 @@ def downloadPDFs(url, year, semester, college):
     download_elem = driver.find_element_by_id("ctl00_plcMain_btnGrade")
     driver.execute_script("arguments[0].click();", download_elem)
 
+    fileends = "crdownload"
+    while "crdownload" == fileends:
+        time.sleep(1)
+        newest_file = latest_download_file(filepath)
+        if "crdownload" in newest_file:
+            fileends = "crdownload"
+        else:
+            fileends = "none"
     # exit
-    time.sleep(5) # wait to download
+    time.sleep(10)  # wait to download
     driver.quit()
 
 
-def setup_driver(college, semester, year):
+def setup_driver(semester, year):
     # go to where we downloaded project and create initial DB folder
     download_filepath = os.getcwd() + "\\GradeDistributionsDB"
     if not os.path.exists(download_filepath):
         os.chdir(download_filepath)
 
     # create a new folder for each different semester
-    _, semester_filepath = createPrettyFilePath(college, semester)
+    semester_filepath = create_filepath(semester)
     download_filepath = download_filepath + \
                         "\\" + str(semester_filepath) + str(year)
     if not os.path.exists(download_filepath):
@@ -103,5 +80,14 @@ def setup_driver(college, semester, year):
     profile = {"plugins.always_open_pdf_externally": True,  # Disable Chrome's PDF Viewer
                "download.default_directory": download_filepath, "download.extensions_to_open": "applications/pdf"}
     options.add_experimental_option("prefs", profile)
-    return webdriver.Chrome('C:\\SeleniumDrivers\chromedriver.exe',
-                            chrome_options=options)  # Optional argument, if not specified will search path.
+    return (webdriver.Chrome('C:\\SeleniumDrivers\chromedriver.exe',
+                            chrome_options=options), download_filepath)
+
+
+def latest_download_file(filepath):
+    old_dir = os.getcwd()
+    os.chdir(filepath)
+    files = sorted(os.listdir(filepath), key=os.path.getmtime)
+    newest = files[-1]
+    os.chdir(old_dir)
+    return newest
