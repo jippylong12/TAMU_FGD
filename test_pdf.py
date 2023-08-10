@@ -3,6 +3,7 @@ import re
 
 from transformTextFiles import getCoursesWithProfessorsTransformed
 
+PROF_NAME_REGEX = r"[A-Z\- \.]{2,}$"
 
 class PdfAnalyzer:
     def __init__(self, pdf_file):
@@ -42,7 +43,7 @@ class PdfAnalyzer:
                         raise("Should not happen - the last_part should always exist with GPA and prof name")
                     current_data.append(last_part_one[0])
 
-                    last_part_two = re.compile(r"[A-Z\- \.]{2,}$").findall(line.strip())
+                    last_part_two = re.compile(PROF_NAME_REGEX).findall(line.strip())
                     if len(last_part_two) == 0:
                         print(line)
                         raise("Should not happen - the last_part should always exist with GPA and prof name")
@@ -68,7 +69,7 @@ class PdfAnalyzer:
         for row in unsplit_master_list:
             # only operate on the sections for the professors
             # try to find the name
-            professor = re.compile(r"[A-Z\- ]{2,}$").search(row)
+            professor = re.compile(PROF_NAME_REGEX).search(row)
             if professor is None:
                 raise "Prof name not found"
             else:
