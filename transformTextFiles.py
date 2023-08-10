@@ -215,7 +215,11 @@ def transformedTextFiles2020(filename,semester,year):
                         if '%' in item: continue
                         remainder = re.compile(r"^ \d+").match(item)
                         if remainder is not None:
-                            lines[on_index]['data'] += remainder.group().rstrip()
+                            try:
+                                lines[on_index]['data'] += remainder.group().rstrip()
+                            except:
+                                print("howdy")
+
                             on_index += 1
                 elif add_end:
                     _lines = line.replace("Error", '0.000').strip().split("  ")

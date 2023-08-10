@@ -12,11 +12,6 @@ from glob import glob
 
 _author_ = "Marcus Salinas"
 
-
-def find_ext(dr, ext):
-    return glob(path.join(dr, "*.{}".format(ext)))
-
-
 def getSemesterChar(semester):
     if semester == "Spring":
         return "A"
@@ -37,7 +32,6 @@ def semesterCharToURLChar(semesterChar):
     else:
         return "0"
 
-# url = "http://web-as.tamu.edu/gradereport/PDFReports/"
 url = "http://web-as.tamu.edu/gradereports/"
 listOfColleges = [
     "AE",  # ACADEMIC SUCCESS CENTER
@@ -76,26 +70,21 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-     # "Spring",  # A
+     "Spring",  # A
      "Summer",  # B
      "Fall"  # C
 ]
 
 years = [
-    # 2012,
-    # 2013,
-    # 2014,
-    # 2015,
-    # 2016,
-    # 2017,
     # 2018,
     # 2019,
-    2020
+    2020,
+    # 2021
 ]
 
 
 MainDirectory = os.getcwd()
-download_flag = True
+download_flag = False
 for year in years:
     for semester in listOfSemesters:
         print ("On Semester: " + semester)
@@ -116,6 +105,7 @@ for year in years:
             pdfList = glob('*.pdf')
             googleOCR(folderName, pdfList)
         else:
+            os.chdir(pdfFileDirectory)
             # Part 2a
             # take all the data we have right now and give us what we need
             txtList = glob('*.txt')
@@ -144,5 +134,6 @@ for year in years:
 if not download_flag:
     # finally we just run the createMaster DB file
     os.chdir(MainDirectory)
-    # createMasterDBs(listOfColleges)
+    createMasterDBs(listOfColleges)
+    os.chdir(MainDirectory)
     create_courses_lists()
