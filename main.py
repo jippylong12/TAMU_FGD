@@ -1,13 +1,12 @@
 from createCoursesLists import create_courses_lists
 from createMasterDB import createMasterDBs
 from downloadPDFs import downloadPDFs
-from googleOCR import googleOCR
 from manipulatePDFs import manipulatePdfs
 from outputData import outputData
 from openpyxl import Workbook
 import os
 from os import path
-
+from test_pdf import PdfAnalyzer
 from glob import glob
 
 _author_ = "Marcus Salinas"
@@ -76,11 +75,12 @@ listOfSemesters = [
 ]
 
 years = [
+    2012,
     # 2018,
     # 2019,
     # 2020,
-    2021,
-    2022,
+    # 2021,
+    # 2022,
 ]
 
 
@@ -99,22 +99,17 @@ for year in years:
             # Part 1a
             # get the data from the website
             downloadPDFs(url, str(year), semesterChar, listOfColleges)
-
-            os.chdir(pdfFileDirectory)
-            # Part 1b
-            # take the pdfs and make them to text files
-            pdfList = glob('*.pdf')
-            googleOCR(folderName, pdfList)
         else:
             os.chdir(pdfFileDirectory)
+
             # Part 2a
             # take all the data we have right now and give us what we need
-            txtList = glob('*.txt')
-            for textFile in txtList:
+            fileList = glob('*.pdf')
+            for file in fileList:
                 os.chdir(MainDirectory)
-                print("On TextFile " + textFile)
-                college = textFile[8:10]
-                masterDictionary = manipulatePdfs(textFile, semester, str(year))
+                print("On file " + file)
+                college = file[8:10]
+                masterDictionary = manipulatePdfs(file, semester, str(year))
 
                 # Part 2b
                 # take the data we have and make it useful
@@ -132,9 +127,9 @@ for year in years:
                 wb.save(title)
 
 
-if not download_flag:
+# if not download_flag:
     # finally we just run the createMaster DB file
-    os.chdir(MainDirectory)
-    createMasterDBs(listOfColleges)
-    os.chdir(MainDirectory)
-    create_courses_lists()
+    # os.chdir(MainDirectory)
+    # createMasterDBs(listOfColleges)
+    # os.chdir(MainDirectory)
+    # create_courses_lists()

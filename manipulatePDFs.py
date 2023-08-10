@@ -2,6 +2,8 @@ import os
 import re
 from copy import deepcopy
 from collections import defaultdict
+
+from test_pdf import PdfAnalyzer
 from transformTextFiles import transformedTextFiles, transformedTextFiles2020
 
 _author_ = "Marcus Salinas"
@@ -179,17 +181,21 @@ def sortByCourse(masterdictionary):
 
 def manipulatePdfs(file, semester, year):
 
-    # IN FALL OF 2016 THEY CHANGED THE FORMAT OF PDFS AND I HAD TO MAKE A FUNCTION TO TRANSFORM THE TEXT FILES INTO
-    # SOMETHING USEFUL SO I COULD RUN IT AGAIN.
-    if (2016 < int(year) < 2020) or (year == "2016" and semester == "Fall"):
+    if int(year) == 2012:
+        filepath = os.getcwd() + "/GradeDistributionsDB/" + semester + year
+        os.chdir(filepath)
+        analyzer = PdfAnalyzer(file)
+        masterDictionary = analyzer.transform_v1()
+    elif (2016 < int(year) < 2020) or (year == "2016" and semester == "Fall"):
+        # IN FALL OF 2016 THEY CHANGED THE FORMAT OF PDFS AND I HAD TO MAKE A FUNCTION TO TRANSFORM THE TEXT FILES INTO
+        # SOMETHING USEFUL SO I COULD RUN IT AGAIN.
+
         masterDictionary = transformedTextFiles(file,semester,year)
     elif year > 2019:
         masterDictionary = transformedTextFiles2020(file,semester,year)
     else:
-        # get the data
-        usefulData = getDataFromTextFiles(file, semester, year)
         # filter the data to only the data we need
-        masterDictionary = getCoursesWithProfessors(usefulData)
+        masterDictionary = getCoursesWithProfessors(getDataFromTextFiles(file, semester, year))
 
 
     masterDictionary = createDataDictionary(masterDictionary)

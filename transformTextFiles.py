@@ -1,10 +1,11 @@
 from __future__ import print_function
 import os
 import re
-from Queue import Queue
+import queue
 from collections import defaultdict
 
-
+# The usefuldata can be a string separated by new lines or an array. Generally I keep using an array
+# We go through each row finding course data or prof data and add it to the dictionary
 def getCoursesWithProfessorsTransformed(usefulData):
     # setting everything up
     masterDictionary = defaultdict(list)
@@ -23,7 +24,7 @@ def getCoursesWithProfessorsTransformed(usefulData):
             # get the course name
             currentCourse = tempCourseInfo[:8]
         # try to find a professor
-        foundProfessor = re.match("[A-Z]+ [A-Z]", line)
+        foundProfessor = re.match("[A-Z\- ]{2,}$", line)
         # if we found a professor
         if foundProfessor is not None:
             # add it to the master dictionary
@@ -40,8 +41,8 @@ def transformedTextFiles(filename, semester, year):
     filePath = os.getcwd() + "/GradeDistributionsDB/" + semester + year
     os.chdir(filePath)
 
-    beginningQ = Queue()
-    endQ = Queue()
+    beginningQ = queue.Queue()
+    endQ = queue.Queue()
 
     middleCount = 0
     extraCount = 0
