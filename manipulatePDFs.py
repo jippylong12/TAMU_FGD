@@ -8,38 +8,6 @@ from transformTextFiles import transformedTextFiles, transformedTextFiles2020
 
 _author_ = "Marcus Salinas"
 
-# this function will go through the text files
-# (after using Google Drive OCR) and remove
-# all the unnecessary lines that we don't need.
-# It iwill take the lines we do need and add them
-# to a list so each item in the list is actually
-# a row in the text file
-
-
-def getDataFromTextFiles(filename, semester, year):
-    filePath = os.getcwd() + "/GradeDistributionsDB/" + semester + year
-    os.chdir(filePath)
-    fileAsList = []
-    addData = False
-
-    # we need to go line by line and populate a list in python
-    # to hold all the useful data we need. The first filter
-    # is by taking only the lines that have useful data. Not
-    # sure if this can be used for all files but we'll see.
-    with open(filename) as input:
-        for line in input:  # for each line
-            # we need this to find the start of each section
-            test = line[:5]
-            if test == "A - F":  # start of each section
-                addData = True
-            if addData:  # add data fro this section
-                if line == '________________':
-                    addData = False
-                else:
-                    fileAsList.append(line)
-
-    return fileAsList
-
 # will look at the text file and based on regex expressions will find the useful course and professor data and make
 # a dictionary of list of tuples out of them. The key of the dictionary is the actual course and the touples hold
 # the (course info, professor info). It is a list because some courses
@@ -181,23 +149,21 @@ def sortByCourse(masterdictionary):
 
 def manipulatePdfs(file, semester, year):
 
-    if int(year) == 2012:
+    if (2016 < int(year) < 2020) or (year == "2016" and semester == "Fall"):
+        # IN FALL OF 2016 THEY CHANGED THE FORMAT OF PDFS AND I HAD TO MAKE A FUNCTION TO TRANSFORM THE TEXT FILES INTO
+        # SOMETHING USEFUL SO I COULD RUN IT AGAIN.
+        master_dictionary = transformedTextFiles(file,semester,year)
+    elif int(year) < 2017:
         filepath = os.getcwd() + "/GradeDistributionsDB/" + semester + year
         os.chdir(filepath)
         analyzer = PdfAnalyzer(file)
-        masterDictionary = analyzer.transform_v1()
-    elif (2016 < int(year) < 2020) or (year == "2016" and semester == "Fall"):
-        # IN FALL OF 2016 THEY CHANGED THE FORMAT OF PDFS AND I HAD TO MAKE A FUNCTION TO TRANSFORM THE TEXT FILES INTO
-        # SOMETHING USEFUL SO I COULD RUN IT AGAIN.
-
-        masterDictionary = transformedTextFiles(file,semester,year)
+        master_dictionary = analyzer.transform_v1()
     elif year > 2019:
-        masterDictionary = transformedTextFiles2020(file,semester,year)
+        master_dictionary = transformedTextFiles2020(file,semester,year)
     else:
-        # filter the data to only the data we need
-        masterDictionary = getCoursesWithProfessors(getDataFromTextFiles(file, semester, year))
+        raise "Something went wrong"
 
 
-    masterDictionary = createDataDictionary(masterDictionary)
-    masterDictionary = sortByCourse(masterDictionary)
-    return masterDictionary
+    master_dictionary = createDataDictionary(master_dictionary)
+    master_dictionary = sortByCourse(master_dictionary)
+    return master_dictionary
