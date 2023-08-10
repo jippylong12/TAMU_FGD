@@ -4,7 +4,7 @@ import re
 import queue
 from collections import defaultdict
 
-import test_pdf
+import pdf_analyzer
 
 
 # The usefuldata can be a string separated by new lines or an array. Generally I keep using an array
@@ -27,7 +27,7 @@ def getCoursesWithProfessorsTransformed(usefulData):
             # get the course name
             currentCourse = tempCourseInfo[:8]
         # try to find a professor
-        foundProfessor = re.match(test_pdf.PROF_NAME_REGEX, line)
+        foundProfessor = re.match(pdf_analyzer.PROF_NAME_REGEX, line)
         # if we found a professor
         if foundProfessor is not None:
             # add it to the master dictionary

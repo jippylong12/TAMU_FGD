@@ -3,7 +3,7 @@ import re
 from copy import deepcopy
 from collections import defaultdict
 
-from test_pdf import PdfAnalyzer
+from pdf_analyzer import PdfAnalyzer
 from transformTextFiles import transformedTextFiles, transformedTextFiles2020
 
 _author_ = "Marcus Salinas"
@@ -148,18 +148,16 @@ def sortByCourse(masterdictionary):
 
 
 def manipulatePdfs(file, semester, year):
+    filepath = os.getcwd() + "/GradeDistributionsDB/" + semester + year
+    os.chdir(filepath)
+    analyzer = PdfAnalyzer(file)
 
-    if (2016 < int(year) < 2020) or (year == "2016" and semester == "Fall"):
+    if 2016 < int(year) or (year == "2016" and semester == "Fall"):
         # IN FALL OF 2016 THEY CHANGED THE FORMAT OF PDFS AND I HAD TO MAKE A FUNCTION TO TRANSFORM THE TEXT FILES INTO
         # SOMETHING USEFUL SO I COULD RUN IT AGAIN.
-        master_dictionary = transformedTextFiles(file,semester,year)
+        master_dictionary = analyzer.transform_v2()
     elif int(year) < 2017:
-        filepath = os.getcwd() + "/GradeDistributionsDB/" + semester + year
-        os.chdir(filepath)
-        analyzer = PdfAnalyzer(file)
         master_dictionary = analyzer.transform_v1()
-    elif year > 2019:
-        master_dictionary = transformedTextFiles2020(file,semester,year)
     else:
         raise "Something went wrong"
 

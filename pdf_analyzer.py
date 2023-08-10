@@ -3,13 +3,13 @@ import re
 
 from transformTextFiles import getCoursesWithProfessorsTransformed
 
-PROF_NAME_REGEX = r"[A-Z\- \.]{2,}$"
+PROF_NAME_REGEX = r"[A-Z\- \,\.]{2,}$"
 
 class PdfAnalyzer:
     def __init__(self, pdf_file):
         self.pdf_file = pdf_file
 
-    # from Spring 2012 - ??
+    # from Spring 2012 - Summer 2016
     def transform_v1(self):
         reader = PdfReader(self.pdf_file)
         unsplit_master_list = []
@@ -80,5 +80,63 @@ class PdfAnalyzer:
             split_master_list.append(professor)
         return getCoursesWithProfessorsTransformed(split_master_list)
 
+    # Fall 2016 - Today
+    def transform_v2(self):
+        reader = PdfReader(self.pdf_file)
+        unsplit_master_list = []
+        split_master_list = []
+        text_list = []
+        for page in reader.pages:
+            print(f"Page: #{page.page_number + 1}")
+            text_list += page.extract_text().split("\n")
+
+        state = 'collect'
+        current_data = ''
+        for line in text_list:
+            if state == 'collect':
+                course_info = re.compile(r"^\w+\-\d+\-\w+\s+\d+").match(line)
+                if course_info is not None:
+                    state = 'add_data'
+                    current_data += " ".join(course_info.group().split())
+            elif state == 'add_data':
+                end_match = re.compile(f"\d\.\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+{PROF_NAME_REGEX}").findall(line)
+
+                if len(end_match) == 0:
+                    unit = re.compile(r"\d+$").findall(line)
+
+                    if len(unit) == 0:
+                        print(line)
+                        raise("hey we should always have data")
+
+                    current_data += (" " + unit[0])
+                else:
+                    last_unit = re.compile(r"\d+\d+\.").findall(line)
+
+                    if len(last_unit) == 0:
+                        print(line)
+                        raise("hey we should always have data")
+
+                    last_unit = last_unit[0][:-2] # remove the GPA digit and decimal
+
+                    current_data += (" " + last_unit)
+                    current_data += (" " + " ".join(end_match[0].split()))
+                    unsplit_master_list.append(current_data)
+                    current_data = ''
+                    state = 'collect'
+
+
+        for row in unsplit_master_list:
+            # only operate on the sections for the professors
+            # try to find the name
+            professor = re.compile(PROF_NAME_REGEX).search(row)
+            if professor is None:
+                raise "Prof name not found"
+            else:
+                professor = professor.group()
+
+            # we will feed into the master dictionary a list that will have all course data on row A and the professor name on row B
+            split_master_list.append(row.replace(professor, "").strip())
+            split_master_list.append(professor)
+        return getCoursesWithProfessorsTransformed(split_master_list)
 
 

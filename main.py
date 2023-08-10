@@ -6,7 +6,7 @@ from outputData import outputData
 from openpyxl import Workbook
 import os
 from os import path
-from test_pdf import PdfAnalyzer
+from pdf_analyzer import PdfAnalyzer
 from glob import glob
 
 _author_ = "Marcus Salinas"
@@ -79,7 +79,7 @@ years = [
     # 2013,
     # 2014,
     # 2015,
-    # 2016,
+    2016,
     # 2017,
     # 2018,
     # 2019,
@@ -133,9 +133,9 @@ for year in years:
                 wb.save(title)
 
 
-if not download_flag:
-    # finally we just run the createMaster DB file
-    os.chdir(MainDirectory)
-    createMasterDBs(listOfColleges)
-    os.chdir(MainDirectory)
-    create_courses_lists()
+# if not download_flag:
+#     # finally we just run the createMaster DB file
+#     os.chdir(MainDirectory)
+#     createMasterDBs(listOfColleges)
+#     os.chdir(MainDirectory)
+#     create_courses_lists()
