@@ -58,47 +58,40 @@ def createMasterDBs(listOfColleges):
                         continue
                     # check for the course name
                     if row[0].value is not None:
-                        currentCourse = row[0].value.encode('utf-8')
+                        currentCourse = row[0].value
                         # if not in the master Dcit we add it
                         if currentCourse not in masterDB:
                             masterDB[currentCourse] = defaultdict(list)
                     if row[1].value is not None:
+                        prof_name = row[1].value.strip()
                         # create the list of grades
-                        if row[1].value.encode('utf-8') not in masterDB[currentCourse]:
+                        if prof_name not in masterDB[currentCourse]:
                             # need 8 values, the GPA, 5 percentages A-F, q drops,
                             # and a count
-                            masterDB[currentCourse][row[1].value.encode(
-                                'utf-8')] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                            masterDB[currentCourse][prof_name] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
                         # GPA
-                        masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][0] += float(row[2].value)
+                        masterDB[currentCourse][prof_name][0] += float(row[2].value)
 
                         course_total = 0
                         # grade percentages A,B,C,D,F
-                        masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][1] += float(row[3].value)
+                        masterDB[currentCourse][prof_name][1] += float(row[3].value)
                         course_total += row[3].value
-                        masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][2] += float(row[4].value)
+                        masterDB[currentCourse][prof_name][2] += float(row[4].value)
                         course_total += row[4].value
-                        masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][3] += float(row[5].value)
+                        masterDB[currentCourse][prof_name][3] += float(row[5].value)
                         course_total += row[5].value
-                        masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][4] += float(row[6].value)
+                        masterDB[currentCourse][prof_name][4] += float(row[6].value)
                         course_total += row[6].value
-                        masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][5] += float(row[7].value)
+                        masterDB[currentCourse][prof_name][5] += float(row[7].value)
                         course_total += row[7].value
                         # q drops
-                        masterDB[currentCourse][row[1].value.encode(
-                            'utf-8')][6] += float(row[8].value)
+                        masterDB[currentCourse][prof_name][6] += float(row[8].value)
                         course_total += row[8].value
                         # the count
                         masterDB[currentCourse][
-                            row[1].value.encode('utf-8')][7] += course_total
-                        masterDB[currentCourse][row[1].value.encode('utf-8')][8] += 1 # num of semesters
+                            prof_name][7] += course_total
+                        masterDB[currentCourse][prof_name][8] += 1 # num of semesters
 
                 os.chdir(mainDirectory)
                 print("done with " + currentWBName)

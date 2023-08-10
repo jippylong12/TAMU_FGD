@@ -69,16 +69,16 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-     "Spring",  # A
-     "Summer",  # B
+     # "Spring",  # A
+     # "Summer",  # B
      "Fall"  # C
 ]
 
 years = [
     # 2012,
-    2013,
-    2014,
-    2015,
+    # 2013,
+    # 2014,
+    # 2015,
     # 2016,
     # 2017,
     # 2018,
@@ -133,9 +133,9 @@ for year in years:
                 wb.save(title)
 
 
-# if not download_flag:
+if not download_flag:
     # finally we just run the createMaster DB file
-    # os.chdir(MainDirectory)
-    # createMasterDBs(listOfColleges)
-    # os.chdir(MainDirectory)
-    # create_courses_lists()
+    os.chdir(MainDirectory)
+    createMasterDBs(listOfColleges)
+    os.chdir(MainDirectory)
+    create_courses_lists()
