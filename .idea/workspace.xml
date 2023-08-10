@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createCoursesLists.py" beforeDir="false" afterPath="$PROJECT_DIR$/createCoursesLists.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transformTextFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformTextFiles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,7 +341,7 @@
       <workItem from="1613670609429" duration="216000" />
       <workItem from="1627917623521" duration="778000" />
       <workItem from="1645683077451" duration="17000" />
-      <workItem from="1691612925592" duration="14384000" />
+      <workItem from="1691612925592" duration="15841000" />
     </task>
     <task id="LOCAL-00001" summary="INitial push">
       <created>1460389325114</created>
@@ -585,7 +585,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691626442103</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Fixed bugs found in some of the contents like course numbers having letters and Errors being inserted into the data">
+      <option name="closed" value="true" />
+      <created>1691627728402</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1691627728402</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +619,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="The program is done. Not tested at all for other other colleges besides Engieering and Agriculture but I think it will work. If it does work then all that is left is running it on all the colleges and then eventually if I wanted to somehow combining all the data. from the past 3 years or something." />
     <MESSAGE value="Changed output file naming scheme and also added outputs to the git." />
     <MESSAGE value="Opened about 4 of them and they all looked fine. There were some bugs were the totals are showing up but it doesn't affect the program I don't think. Overall very happy that it works." />
     <MESSAGE value="received  feedback from friend and figured out a way to sort the courses to make it easy to read and now it's sorted Alphabetically by Course." />
@@ -636,7 +643,8 @@
     <MESSAGE value="Created more dynamic way to assure that the download will be downloaded before moving on&#10;Cleaned up code from not using" />
     <MESSAGE value="Dramatically improved download times by removing a 10 seconds wait and not closing out the browser each college" />
     <MESSAGE value="I think I did it&#10;Created new function to run that will generate the data into the old format" />
-    <option name="LAST_COMMIT_MESSAGE" value="I think I did it&#10;Created new function to run that will generate the data into the old format" />
+    <MESSAGE value="Fixed bugs found in some of the contents like course numbers having letters and Errors being inserted into the data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs found in some of the contents like course numbers having letters and Errors being inserted into the data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -645,21 +653,6 @@
           <url>file://$USER_HOME$/Dropbox/Code/SDD/stockdeepdive3 Updated.py</url>
           <line>1465</line>
           <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/createCoursesLists.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/createCoursesLists.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="213" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/createCoursesLists.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py</url>
@@ -699,7 +692,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FreeGradeDistribution$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1612402131767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1691627502209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1691627847308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FreeGradeDistribution$createCoursesLists.coverage" NAME="createCoursesLists Coverage Results" MODIFIED="1691626800444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

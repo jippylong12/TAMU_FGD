@@ -1,3 +1,4 @@
+from createCoursesLists import create_courses_lists
 from createMasterDB import createMasterDBs
 from downloadPDFs import downloadPDFs
 from googleOCR import googleOCR
@@ -130,10 +131,11 @@ for year in years:
                 os.makedirs(newPath)
             os.chdir(newPath)
 
-        #     # call the function to outpt data and save in the new path
+        #     # call the function to output data and save in the new path
             wb = outputData(masterDictionary, title)
             wb.save(title)
 
 # finally we just run the createMaster DB file
 os.chdir(MainDirectory)
-createMasterDBs(listOfColleges)
+# createMasterDBs(listOfColleges)
+create_courses_lists()
