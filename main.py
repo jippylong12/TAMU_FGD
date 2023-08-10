@@ -76,9 +76,9 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-     "Spring",  # A
-     # "Summer",  # B
-     # "Fall"  # C
+     # "Spring",  # A
+     "Summer",  # B
+     "Fall"  # C
 ]
 
 years = [
@@ -92,7 +92,10 @@ years = [
     # 2019,
     2020
 ]
+
+
 MainDirectory = os.getcwd()
+download_flag = True
 for year in years:
     for semester in listOfSemesters:
         print ("On Semester: " + semester)
@@ -101,41 +104,45 @@ for year in years:
         folderName = semester + str(year)
         pdfFileDirectory = os.path.join(os.getcwd(),"GradeDistributionsDB",folderName)
         yearAndURLChar = str(year) + semesterCharToURLChar(semesterChar)
-        # Part 1a
-        # get the data from the website
-        # downloadPDFs(url, str(year), semesterChar, listOfColleges)
 
-        os.chdir(pdfFileDirectory)
-        # Part 1b
-        # take the pdfs and make them to text files
-        # pdfList = glob('*.pdf')
-        # googleOCR(folderName, pdfList)
+        if download_flag:
+            # Part 1a
+            # get the data from the website
+            downloadPDFs(url, str(year), semesterChar, listOfColleges)
 
-        # Part 2a
-        # take all the data we have right now and give us what we need
-        txtList = glob('*.txt')
-        for textFile in txtList:
-            os.chdir(MainDirectory)
-            print ("On TextFile " + textFile)
-            college = textFile[8:10]
-            masterDictionary = manipulatePdfs(textFile, semester, str(year))
-        # #
-        # #     # Part 2b
-        #     # take the data we have and make it useful
-            title = semester + str(year) + " " + college + ".xlsx"
-            wb = Workbook()
+            os.chdir(pdfFileDirectory)
+            # Part 1b
+            # take the pdfs and make them to text files
+            pdfList = glob('*.pdf')
+            googleOCR(folderName, pdfList)
+        else:
+            # Part 2a
+            # take all the data we have right now and give us what we need
+            txtList = glob('*.txt')
+            for textFile in txtList:
+                os.chdir(MainDirectory)
+                print ("On TextFile " + textFile)
+                college = textFile[8:10]
+                masterDictionary = manipulatePdfs(textFile, semester, str(year))
 
-        #     # save the file to a new path
-            newPath = os.getcwd() + "\\Output"
-            if not os.path.exists(newPath):
-                os.makedirs(newPath)
-            os.chdir(newPath)
+                # Part 2b
+                # take the data we have and make it useful
+                title = semester + str(year) + " " + college + ".xlsx"
+                wb = Workbook()
 
-        #     # call the function to output data and save in the new path
-            wb = outputData(masterDictionary, title)
-            wb.save(title)
+                # save the file to a new path
+                newPath = os.getcwd() + "\\Output"
+                if not os.path.exists(newPath):
+                    os.makedirs(newPath)
+                os.chdir(newPath)
 
-# finally we just run the createMaster DB file
-os.chdir(MainDirectory)
-# createMasterDBs(listOfColleges)
-create_courses_lists()
+                # call the function to output data and save in the new path
+                wb = outputData(masterDictionary, title)
+                wb.save(title)
+
+
+if not download_flag:
+    # finally we just run the createMaster DB file
+    os.chdir(MainDirectory)
+    # createMasterDBs(listOfColleges)
+    create_courses_lists()

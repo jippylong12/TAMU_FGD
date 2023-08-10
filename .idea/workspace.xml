@@ -280,11 +280,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.scratch" />
-      <item itemvalue="Python.scratch_5" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.createMasterDB" />
       <item itemvalue="Python.createCoursesLists" />
+      <item itemvalue="Python.scratch_5" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.scratch" />
     </list>
     <recent_temporary>
       <list>
