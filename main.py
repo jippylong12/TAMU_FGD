@@ -69,8 +69,8 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-     "Spring",  # A
-     "Summer",  # B
+     # "Spring",  # A
+     # "Summer",  # B
      "Fall"  # C
 ]
 
@@ -80,12 +80,12 @@ years = [
     # 2014,
     # 2015,
     # 2016,
-    2017,
+    # 2017,
     2018,
-    2019,
-    2020,
-    2021,
-    2022,
+    # 2019,
+    # 2020,
+    # 2021,
+    # 2022,
 ]
 
 
@@ -110,11 +110,31 @@ for year in years:
             # Part 2a
             # take all the data we have right now and give us what we need
             fileList = glob("*.pdf")
+            fileList = [
+                'grd20183CP_PROF.pdf',
+                'grd20183DN.pdf',
+                'grd20183DN_PROF.pdf',
+                'grd20183ED.pdf',
+                'grd20183EN.pdf',
+                'grd20183GB.pdf',
+                'grd20183GE.pdf',
+                'grd20183LA.pdf',
+                'grd20183MD.pdf',
+                'grd20183MD_PROF.pdf',
+                'grd20183MS.pdf',
+                'grd20183NU.pdf',
+                'grd20183PH.pdf',
+                'grd20183SC.pdf',
+                'grd20183SL.pdf',
+                'grd20183SL_PROF.pdf',
+                'grd20183VM.pdf',
+                'grd20183VM_PROF.pdf'
+            ]
             print("',\n'".join(fileList))
             for file in fileList:
                 os.chdir(MainDirectory)
                 print("On file " + file)
-                college = file[8:10]
+                college = file.replace(".pdf", "")[8:]
                 masterDictionary = manipulatePdfs(file, semester, str(year))
 
                 # Part 2b

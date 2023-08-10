@@ -100,13 +100,13 @@ class PdfAnalyzer:
                     current_data += " ".join(course_info.group().split())
             elif state == 'add_data':
                 end_match = re.compile(r"\d\.\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+").findall(line)
-
-                if len(end_match) == 0:
+                end_match_prof = re.compile(r"\d\.\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+").findall(line)
+                if len(end_match) == 0 and len(end_match_prof) == 0:
                     unit = re.compile(r"\d+$").findall(line)
 
                     if len(unit) == 0:
                         print(line)
-                        raise("hey we should always have data")
+                        break
 
                     current_data += (" " + unit[0])
                 else:
@@ -124,9 +124,18 @@ class PdfAnalyzer:
 
 
                     last_unit = last_unit[0][:-2] # remove the GPA digit and decimal
+                    if len(end_match) != 0:
+                        extra_counts = " ".join(end_match[0].split())
+                    elif len(end_match_prof) != 0:
+                        _list = end_match_prof[0].split()
+                        _list.insert(4, '0') # the return function expects all the Q drop column which some don't have
+                        extra_counts = " ".join(_list)
+                    else:
+                        raise("We should have some type of match")
+
 
                     current_data += (" " + last_unit)
-                    current_data += (" " + " ".join(end_match[0].split()))
+                    current_data += (" " + extra_counts)
                     current_data += (" " + prof_name)
                     unsplit_master_list.append(current_data)
                     current_data = ''
