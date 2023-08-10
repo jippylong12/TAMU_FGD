@@ -42,7 +42,7 @@ class PdfAnalyzer:
                         raise("Should not happen - the last_part should always exist with GPA and prof name")
                     current_data.append(last_part_one[0])
 
-                    last_part_two = re.compile(r"[A-Z\- ]{2,}$").findall(line)
+                    last_part_two = re.compile(r"[A-Z\- \.]{2,}$").findall(line.strip())
                     if len(last_part_two) == 0:
                         print(line)
                         raise("Should not happen - the last_part should always exist with GPA and prof name")
