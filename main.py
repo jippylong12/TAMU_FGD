@@ -32,7 +32,7 @@ def semesterCharToURLChar(semesterChar):
     else:
         return "0"
 
-url = "http://web-as.tamu.edu/gradereports/"
+url = "https://web-as.tamu.edu/gradereports/"
 listOfColleges = [
     "AE",  # ACADEMIC SUCCESS CENTER
     "AC",  # ARCHITECTURE
@@ -88,7 +88,7 @@ MainDirectory = os.getcwd()
 download_flag = False
 for year in years:
     for semester in listOfSemesters:
-        print ("On Semester: " + semester)
+        print("On Semester: " + semester)
         os.chdir(MainDirectory)
         semesterChar = getSemesterChar(semester)
         folderName = semester + str(year)
@@ -112,7 +112,7 @@ for year in years:
             txtList = glob('*.txt')
             for textFile in txtList:
                 os.chdir(MainDirectory)
-                print ("On TextFile " + textFile)
+                print("On TextFile " + textFile)
                 college = textFile[8:10]
                 masterDictionary = manipulatePdfs(textFile, semester, str(year))
 

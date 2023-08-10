@@ -48,7 +48,7 @@ def createMasterDBs(listOfColleges):
             currentWBName = folder + ' ' + college + '.xlsx'
             try:
                 os.chdir(os.getcwd() + '\\' + folder + '\\Output')
-                print ("Starting " + currentWBName)
+                print("Starting " + currentWBName)
                 wb = load_workbook(currentWBName, read_only=True)
                 ws = wb.active
                 currentCourse = ''
@@ -101,10 +101,10 @@ def createMasterDBs(listOfColleges):
                         masterDB[currentCourse][row[1].value.encode('utf-8')][8] += 1 # num of semesters
 
                 os.chdir(mainDirectory)
-                print ("done with " + currentWBName)
+                print("done with " + currentWBName)
             except:
                 os.chdir(mainDirectory)
-                print ("Cannot find: " + currentWBName)
+                print("Cannot find: " + currentWBName)
                 continue
 
         # output to csv file

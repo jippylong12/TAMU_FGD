@@ -2,7 +2,6 @@ from __future__ import print_function
 from selenium import webdriver
 import os
 import time
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 
 _author_ = "Marcus Salinas"
