@@ -177,6 +177,9 @@ def transformedTextFiles2020(filename,semester,year):
                 lines = []
                 on_index = 0
 
+            if line.strip() == 'Cannot':
+                break
+
             if line.strip() == '-------------------':
                 collect = True
                 collect_init = True
@@ -210,6 +213,9 @@ def transformedTextFiles2020(filename,semester,year):
                             })
                 elif add_remainder:
                     if on_index == len(lines): on_index = 0
+                    if len(lines) == 0:
+                        # Things like _PROF files have a different format than the main. One Eventually I might adapt the code for them
+                        continue
                     _lines = line.split("  ")
                     for item in _lines:
                         if '%' in item: continue
@@ -230,6 +236,10 @@ def transformedTextFiles2020(filename,semester,year):
 
                         if type == 'section':
                             matches = re.compile(r"\d+ \d\.\d+ \d+ \d+ \d+ \d+ \d+ \d+ [\w+\s]*").match(part.strip())
+                            if matches is None:
+                                # sometimes they don't list a professor with a course
+                                part += " Not Listed"
+                                matches = re.compile(r"\d+ \d\.\d+ \d+ \d+ \d+ \d+ \d+ \d+ [\w+\s]*").match(part.strip())
                         elif type == 'total':
                             matches = re.compile(r"\d+ \d\.\d+ \d+ \d+ \d+ \d+ \d+ \d+").match(part.strip())
                         else:
