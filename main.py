@@ -69,8 +69,8 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-     # "Spring",  # A
-     # "Summer",  # B
+     "Spring",  # A
+     "Summer",  # B
      "Fall"  # C
 ]
 
@@ -79,13 +79,13 @@ years = [
     # 2013,
     # 2014,
     # 2015,
-    2016,
-    # 2017,
-    # 2018,
-    # 2019,
-    # 2020,
-    # 2021,
-    # 2022,
+    # 2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
 ]
 
 
@@ -109,16 +109,7 @@ for year in years:
 
             # Part 2a
             # take all the data we have right now and give us what we need
-            # fileList = glob("*.pdf")
-            fileList = [
-'grd20163EN.pdf',
-'grd20163GB.pdf',
-'grd20163GE.pdf',
-'grd20163LA.pdf',
-'grd20163MD.pdf',
-'grd20163MS.pdf',
-'grd20163SC.pdf',
-'grd20163VM.pdf']
+            fileList = glob("*.pdf")
             print("',\n'".join(fileList))
             for file in fileList:
                 os.chdir(MainDirectory)
