@@ -120,19 +120,19 @@ for year in years:
             masterDictionary = manipulatePdfs(textFile, semester, str(year))
         # #
         # #     # Part 2b
-        # #     # take the data we have and make it useful
-        #     title = semester + str(year) + " " + college + ".xlsx"
-        #     wb = Workbook()
-        #
-        # #     # save the file to a new path
-        #     newPath = os.getcwd() + "\\Output"
-        #     if not os.path.exists(newPath):
-        #         os.makedirs(newPath)
-        #     os.chdir(newPath)
-        #
-        # #     # call the function to outpt data and save in the new path
-        #     wb = outputData(masterDictionary, title)
-        #     wb.save(title)
+        #     # take the data we have and make it useful
+            title = semester + str(year) + " " + college + ".xlsx"
+            wb = Workbook()
+
+        #     # save the file to a new path
+            newPath = os.getcwd() + "\\Output"
+            if not os.path.exists(newPath):
+                os.makedirs(newPath)
+            os.chdir(newPath)
+
+        #     # call the function to outpt data and save in the new path
+            wb = outputData(masterDictionary, title)
+            wb.save(title)
 
 # finally we just run the createMaster DB file
 os.chdir(MainDirectory)

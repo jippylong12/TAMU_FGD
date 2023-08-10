@@ -194,7 +194,7 @@ def transformedTextFiles2020(filename,semester,year):
                     add_remainder = True
 
                 if collect_init:
-                    match = re.compile( r"^\w+\-\d+\-\d+\s\d+").match(line)
+                    match = re.compile( r"^\w+\-\d+\-\w+\s\d+").match(line)
                     if match is not None:
                         lines.append({
                             'data': match.group(),
@@ -218,7 +218,7 @@ def transformedTextFiles2020(filename,semester,year):
                             lines[on_index]['data'] += remainder.group().rstrip()
                             on_index += 1
                 elif add_end:
-                    _lines = line.strip().split("  ")
+                    _lines = line.replace("Error", '0.000').strip().split("  ")
                     for part in _lines:
                         if on_index == len(lines): on_index = 0
 
