@@ -159,67 +159,109 @@ def transformedTextFiles2020(filename,semester,year):
     num_of_courses = 0
 
     with open(filename) as textFile:
-        course_index = 0
-        new_course_index = 0
-        grade_column_index = 0 # we need to go through each column
+        collect = False
+        collect_init = False
+        add_remainder = False
+        add_end = False
+        new_data = []
+        lines = []
+        on_index = 0
 
         for line in textFile:
-            re_professor = re.findall(r"\d+\s\d+\.\d+ \d+ \d+ \d+ \d+ \d+ \d+ \w+ \w", line)
-            re_courses = re.findall(r"\d+\s\d+\.\d+ \d+ \d+ \d+ \d+ \d+ \d+", line)
-            re_errors = re.findall('Error', line)
-            if len(re_professor) > 0 or len(re_courses) > 0:
+            if line.strip() == 'COLLEGE:':
+                collect = False
+                collect_init = False
+                add_remainder = False
+                add_end = False
+                new_data += lines
+                lines = []
+                on_index = 0
+
+            if line.strip() == '-------------------':
+                collect = True
+                collect_init = True
+
+            if collect:
+                remainder = re.compile(r"^ \d+").match(line.rstrip())
+                found_ends_prof = re.compile(r"\d+ \d\.\d+ \d+ \d+ \d+ \d+ \d+ \d+ (([a-zA-Z])+\s)+").match(line.strip())
+                found_ends_totals = re.compile(r"\d+ \d\.\d+ \d+ \d+ \d+ \d+ \d+ \d+").match(line.strip())
+
+                if not add_end and (found_ends_prof is not None or found_ends_totals is not None):
+                    add_remainder = False
+                    add_end = True
+                elif not add_remainder and not add_end and remainder is not None:
+                    collect_init = False
+                    add_remainder = True
+
+                if collect_init:
+                    match = re.compile( r"^\w+\-\d+\-\d+\s\d+").match(line)
+                    if match is not None:
+                        lines.append({
+                            'data': match.group(),
+                            'type': 'section',
+                        })
+                    else:
+                        course_pattern = re.compile(r"^[A-Z]+ TOTAL: \d+")
+                        course_match = course_pattern.match(line)
+                        if course_match is not None:
+                            lines.append({
+                                'data': course_match.group(),
+                                'type': 'total',
+                            })
+                elif add_remainder:
+                    if on_index == len(lines): on_index = 0
+                    _lines = line.split("  ")
+                    for item in _lines:
+                        if '%' in item: continue
+                        remainder = re.compile(r"^ \d+").match(item)
+                        if remainder is not None:
+                            lines[on_index]['data'] += remainder.group().rstrip()
+                            on_index += 1
+                elif add_end:
+                    _lines = line.strip().split("  ")
+                    for part in _lines:
+                        if on_index == len(lines): on_index = 0
+
+                        type = lines[on_index]['type']
+
+                        if type == 'section':
+                            matches = re.compile(r"\d+ \d\.\d+ \d+ \d+ \d+ \d+ \d+ \d+ [\w+\s]*").match(part.strip())
+                        elif type == 'total':
+                            matches = re.compile(r"\d+ \d\.\d+ \d+ \d+ \d+ \d+ \d+ \d+").match(part.strip())
+                        else:
+                            continue
+
+                        if matches is not None:
+                            lines[on_index]['data'] += (" " + matches.group())
+                        else:
+                            print("problem")
+
+                        on_index += 1
+
+        new_data += lines
 
 
-                if filename == 'grd20201EN.txt' and course_index > 300:
-                    pass # TODO: the enginerring is off for some reason. Something is off. The course jumps by 4
-                course_index += max(len(re_courses) + len(re_errors) - len(re_professor),0)
-                string_matches = re.findall(r"\d+\s\d+\.\d+ \d+ \d+ \d+ \d+ \d+ \d+ \w+ \w", line)
-                for index, elem in  enumerate(string_matches):
-                    _list[course_index + index] = _list[course_index + index] + " " + elem
 
-                course_index += len(string_matches)
-                if course_index == num_of_courses:
-                    new_course_index = course_index
-            elif re.match("\s\d+\s", line) is not None:
-                number =  re.match("\s\d+\s", line).group().strip()
-                if course_index < num_of_courses:
-                    _list[course_index] = _list[course_index] + " " + number
-                course_index += 1
-                if course_index == num_of_courses: # - 1 for the index + 3 because of course, department, college
-                    course_index = new_course_index
-                    grade_column_index+=1
-                    if grade_column_index == 4:
-                        grade_column_index = 0
-                        course_index = new_course_index
-            elif re.match(r"\w+-\d+-\d+\s\d+", line) is not None:
-                _list.append(re.match(r"\w+-\d+-\d+\s\d+", line).group())
-                num_of_courses += 1
-            elif re.match(r"COURSE TOTAL: \d+", line) is not None:
-                _list.append(re.match(r"COURSE TOTAL: \d+", line).group())
-                num_of_courses += 1
-            elif re.match(r"DEPARTMENT TOTAL: \d+", line) is not None:
-                _list.append(re.match(r"DEPARTMENT TOTAL: \d+", line).group())
-                num_of_courses += 1
-            elif re.match(r"COLLEGE TOTAL: \d+", line) is not None:
-                _list.append(re.match(r"COLLEGE TOTAL: \d+", line).group())
-                num_of_courses += 1
-
+    # WE IGNORE THE TOTAL TYPES BECAUSE WE ONLY CARE ABOUT SECTIONS
     # ONCE HERE IT HAS TRANSFORMED THE FILE. NOW WE JUST NEED TO PUT THE PROFESSOR NAMES ON A NEW LINE AND THEN
     # JUST RUN THE OLD FUNCTIONS ON IT.
 
-    _list = _list[0:num_of_courses]
     _transformed_list = []
-    for index, row in enumerate(_list):
-        if len(re.findall(r"TOTAL: \d+", row)) == 0:
-            if row.startswith("ALEC-425-700"):
-                pass
-            professor = re.findall(r"\s[A-Z]+ [A-Z]", row)
-            if len(professor) == 0:
+
+    # go through all the data we've collected
+    for index, row in enumerate(new_data):
+        if row['type'] == 'section':
+            # only operate on the sections for the professors
+            # try to find the name
+            professor = re.compile(r"[A-Z]+\s[A-Z]+$").search(row['data'])
+            if professor is None:
                 continue
+                # if we don't just skip
             else:
-                professor = professor[-1].strip()
-            row = row.replace(professor, "").strip()
-            _transformed_list.append(row)
+                professor = professor.group()
+
+            # we will feed into the master dictionary a list that will have all course data on row A and the professor name on row B
+            _transformed_list.append(row['data'].replace(professor, "").strip())
             _transformed_list.append(professor)
 
     # NOW NEW TRANSFORMED STRING IS IN THE CORRECT FORMAT

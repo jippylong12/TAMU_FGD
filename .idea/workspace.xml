@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b4983fdd-1538-4fea-8716-0db88e0e63b8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/downloadPDFs.py" beforeDir="false" afterPath="$PROJECT_DIR$/downloadPDFs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transformTextFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformTextFiles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,7 +341,7 @@
       <workItem from="1613670609429" duration="216000" />
       <workItem from="1627917623521" duration="778000" />
       <workItem from="1645683077451" duration="17000" />
-      <workItem from="1691612925592" duration="5162000" />
+      <workItem from="1691612925592" duration="13180000" />
     </task>
     <task id="LOCAL-00001" summary="INitial push">
       <created>1460389325114</created>
@@ -569,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691617311504</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Dramatically improved download times by removing a 10 seconds wait and not closing out the browser each college">
+      <option name="closed" value="true" />
+      <created>1691618412952</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1691618412952</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +592,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Completed Part 2. Perhaps not completely error free but works with Agriculture and Engineering Colleges I think so on to part 3." />
     <MESSAGE value="Added another part to manipulatePDFs which gives me a dictionary that &#10;makes it simple to output the data to an excel spreadsheet." />
     <MESSAGE value="The program is done. Not tested at all for other other colleges besides Engieering and Agriculture but I think it will work. If it does work then all that is left is running it on all the colleges and then eventually if I wanted to somehow combining all the data. from the past 3 years or something." />
     <MESSAGE value="Changed output file naming scheme and also added outputs to the git." />
@@ -609,7 +616,8 @@
     <MESSAGE value="We're making progress steadily" />
     <MESSAGE value="Updated URL and started working on Part 1a" />
     <MESSAGE value="Created more dynamic way to assure that the download will be downloaded before moving on&#10;Cleaned up code from not using" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created more dynamic way to assure that the download will be downloaded before moving on&#10;Cleaned up code from not using" />
+    <MESSAGE value="Dramatically improved download times by removing a 10 seconds wait and not closing out the browser each college" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dramatically improved download times by removing a 10 seconds wait and not closing out the browser each college" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -640,24 +648,24 @@
           <option name="timeStamp" value="438" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/createMasterDB.py</url>
-          <line>110</line>
-          <option name="timeStamp" value="440" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/createMasterDB.py</url>
-          <line>105</line>
-          <option name="timeStamp" value="444" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/outputData.py</url>
           <line>7</line>
           <option name="timeStamp" value="448" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>106</line>
-          <option name="timeStamp" value="450" />
+          <url>file://$PROJECT_DIR$/googleOCR.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="472" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="478" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/transformTextFiles.py</url>
+          <line>267</line>
+          <option name="timeStamp" value="511" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -677,6 +685,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FreeGradeDistribution$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1612402131767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1691618158205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FreeGradeDistribution$main.coverage" NAME="main Coverage Results" MODIFIED="1691626329614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
