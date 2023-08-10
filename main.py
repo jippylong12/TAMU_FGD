@@ -109,8 +109,17 @@ for year in years:
 
             # Part 2a
             # take all the data we have right now and give us what we need
-            fileList = glob("*.pdf")
-            print(",\n".join(fileList))
+            # fileList = glob("*.pdf")
+            fileList = [
+'grd20163EN.pdf',
+'grd20163GB.pdf',
+'grd20163GE.pdf',
+'grd20163LA.pdf',
+'grd20163MD.pdf',
+'grd20163MS.pdf',
+'grd20163SC.pdf',
+'grd20163VM.pdf']
+            print("',\n'".join(fileList))
             for file in fileList:
                 os.chdir(MainDirectory)
                 print("On file " + file)

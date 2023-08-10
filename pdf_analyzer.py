@@ -3,7 +3,7 @@ import re
 
 from transformTextFiles import getCoursesWithProfessorsTransformed
 
-PROF_NAME_REGEX = r"[A-Z\- \,\.]{2,}$"
+PROF_NAME_REGEX = r"[A-Z\- \,\.\']{2,}$"
 
 class PdfAnalyzer:
     def __init__(self, pdf_file):
@@ -99,7 +99,7 @@ class PdfAnalyzer:
                     state = 'add_data'
                     current_data += " ".join(course_info.group().split())
             elif state == 'add_data':
-                end_match = re.compile(f"\d\.\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+{PROF_NAME_REGEX}").findall(line)
+                end_match = re.compile(r"\d\.\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+").findall(line)
 
                 if len(end_match) == 0:
                     unit = re.compile(r"\d+$").findall(line)
@@ -116,10 +116,18 @@ class PdfAnalyzer:
                         print(line)
                         raise("hey we should always have data")
 
+                    prof_name = re.compile(PROF_NAME_REGEX).findall(line)
+                    if len(prof_name) == 0:
+                        prof_name = "NOT LISTED"
+                    else:
+                        prof_name = prof_name[0].strip()
+
+
                     last_unit = last_unit[0][:-2] # remove the GPA digit and decimal
 
                     current_data += (" " + last_unit)
                     current_data += (" " + " ".join(end_match[0].split()))
+                    current_data += (" " + prof_name)
                     unsplit_master_list.append(current_data)
                     current_data = ''
                     state = 'collect'
