@@ -101,9 +101,9 @@ def createMasterDBs(listOfColleges):
                 continue
 
     # output to csv file
-    headerLine = ['Course', 'Professor', 'GPA', '% of A\'s', '% of B\'s',
-                  '% of C\'s', '% of D\'s', '% of F\'s', '% of Q Drop\'s',
-                  '% of Semesters']
+    headerLine = ['Course', 'Professor', 'GPA', 'A', 'B',
+                  'C', 'D', 'F', 'Q Drops',
+                  'Semester Count']
     blankLine = ['', '', '', '', '', '', '', '', '']
     csvFileName = 'MasterDB.csv'
     os.chdir(outputDirectory)
