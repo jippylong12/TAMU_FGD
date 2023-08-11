@@ -40,8 +40,8 @@ def createMasterDBs(listOfColleges):
     os.chdir(mainDirectory)
     listOfFolders = next(os.walk('.'))[1]
     listOfFolders.remove('MasterDBs')
+    masterDB = defaultdict(dict)
     for college in listOfColleges:
-        masterDB = defaultdict(dict)
 
         # create the master DB dictirionary
         for folder in listOfFolders:
@@ -100,53 +100,53 @@ def createMasterDBs(listOfColleges):
                 print("Cannot find: " + currentWBName)
                 continue
 
-        # output to csv file
-        headerLine = ['Course', 'Professor', 'GPA', '% of A\'s', '% of B\'s',
-                      '% of C\'s', '% of D\'s', '% of F\'s', '% of Q Drop\'s',
-                      '% of Semesters']
-        blankLine = ['', '', '', '', '', '', '', '', '']
-        csvFileName = college + 'MasterDB.csv'
-        os.chdir(outputDirectory)
-        with open(csvFileName, 'w') as csvfile:
-            spamwriter = csv.writer(csvfile)
-            spamwriter.writerow(headerLine)
-            orderedMasterDB = collections.OrderedDict(sorted(masterDB.items()))
-            for course, teachersDict in orderedMasterDB.items():
-                # write the course row
-                spamwriter.writerow([course, '', '', '', '', '', '', ''])
-                # for each teacher output their data
-                teachersDict = collections.OrderedDict(
-                    sorted(teachersDict.items()))
-                for teacher in teachersDict:
-                    thisTeacherList = orderedMasterDB[course][teacher]
-                    if thisTeacherList[7] == 0:
-                        # SOCI 323 has a semester where the parse is 0 or there is an error
-                        spamwriter.writerow(['', teacher,
-                                             '4.0',
-                                             '100%',
-                                             '0%',
-                                             '0%',
-                                             '0%',
-                                             '0%',
-                                             '0%',
-                                             '0%',
-                                             str(thisTeacherList[8])])
-                    else:
-                        spamwriter.writerow(['', teacher,
-                                             calculate_GPA(thisTeacherList),
-                                             str(round(thisTeacherList[
-                                                           1] * 100 / thisTeacherList[7], 2)) + '%',
-                                             str(round(thisTeacherList[
-                                                           2] * 100 / thisTeacherList[7], 2)) + '%',
-                                             str(round(thisTeacherList[
-                                                           3] * 100 / thisTeacherList[7], 2)) + '%',
-                                             str(round(thisTeacherList[
-                                                           4] * 100 / thisTeacherList[7], 2)) + '%',
-                                             str(round(thisTeacherList[
-                                                           5] * 100 / thisTeacherList[7], 2)) + '%',
-                                             str(round(thisTeacherList[
-                                                           6] * 100 / thisTeacherList[7], 2)) + '%',
-                                             str(thisTeacherList[8])])
-                # output blank row
-                spamwriter.writerow(blankLine)
-        os.chdir(mainDirectory)
+    # output to csv file
+    headerLine = ['Course', 'Professor', 'GPA', '% of A\'s', '% of B\'s',
+                  '% of C\'s', '% of D\'s', '% of F\'s', '% of Q Drop\'s',
+                  '% of Semesters']
+    blankLine = ['', '', '', '', '', '', '', '', '']
+    csvFileName = 'MasterDB.csv'
+    os.chdir(outputDirectory)
+    with open(csvFileName, 'w') as csvfile:
+        spamwriter = csv.writer(csvfile)
+        spamwriter.writerow(headerLine)
+        orderedMasterDB = collections.OrderedDict(sorted(masterDB.items()))
+        for course, teachersDict in orderedMasterDB.items():
+            # write the course row
+            spamwriter.writerow([course, '', '', '', '', '', '', ''])
+            # for each teacher output their data
+            teachersDict = collections.OrderedDict(
+                sorted(teachersDict.items()))
+            for teacher in teachersDict:
+                thisTeacherList = orderedMasterDB[course][teacher]
+                if thisTeacherList[7] == 0:
+                    # SOCI 323 has a semester where the parse is 0 or there is an error
+                    spamwriter.writerow(['', teacher,
+                                         '4.0',
+                                         '100%',
+                                         '0%',
+                                         '0%',
+                                         '0%',
+                                         '0%',
+                                         '0%',
+                                         '0%',
+                                         str(thisTeacherList[8])])
+                else:
+                    spamwriter.writerow(['', teacher,
+                                         calculate_GPA(thisTeacherList),
+                                         str(round(thisTeacherList[
+                                                       1] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(round(thisTeacherList[
+                                                       2] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(round(thisTeacherList[
+                                                       3] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(round(thisTeacherList[
+                                                       4] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(round(thisTeacherList[
+                                                       5] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(round(thisTeacherList[
+                                                       6] * 100 / thisTeacherList[7], 2)) + '%',
+                                         str(thisTeacherList[8])])
+            # output blank row
+            spamwriter.writerow(blankLine)
+    os.chdir(mainDirectory)

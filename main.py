@@ -1,13 +1,13 @@
+import os
+from glob import glob
+
+from openpyxl import Workbook
+
 from createCoursesLists import create_courses_lists
 from createMasterDB import createMasterDBs
 from downloadPDFs import downloadPDFs
 from manipulatePDFs import manipulatePdfs
 from outputData import outputData
-from openpyxl import Workbook
-import os
-from os import path
-from pdf_analyzer import PdfAnalyzer
-from glob import glob
 
 _author_ = "Marcus Salinas"
 
@@ -82,10 +82,10 @@ years = [
     # 2016,
     # 2017,
     # 2018,
-    2019,
-    2020,
-    2021,
-    2022,
+    # 2019,
+    # 2020,
+    # 2021,
+    # 2022,
 ]
 
 
@@ -133,9 +133,9 @@ for year in years:
                 wb.save(title)
 
 
-# if not download_flag:
-#     # finally we just run the createMaster DB file
-#     os.chdir(MainDirectory)
-#     createMasterDBs(listOfColleges)
-#     os.chdir(MainDirectory)
-#     create_courses_lists()
+if not download_flag:
+    # finally we just run the createMaster DB file
+    os.chdir(MainDirectory)
+    createMasterDBs(listOfColleges)
+    os.chdir(MainDirectory)
+    create_courses_lists()
