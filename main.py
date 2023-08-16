@@ -137,5 +137,3 @@ if not download_flag:
     # finally we just run the createMaster DB file
     os.chdir(MainDirectory)
     createMasterDBs(listOfColleges)
-    os.chdir(MainDirectory)
-    create_courses_lists()
