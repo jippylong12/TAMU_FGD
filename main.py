@@ -3,7 +3,6 @@ from glob import glob
 
 from openpyxl import Workbook
 
-from createCoursesLists import create_courses_lists
 from createMasterDB import createMasterDBs
 from downloadPDFs import downloadPDFs
 from manipulatePDFs import manipulatePdfs
@@ -69,9 +68,9 @@ listOfColleges = [
 ]
 
 listOfSemesters = [
-     "Spring",  # A
+     # "Spring",  # A
      "Summer",  # B
-     "Fall"  # C
+     # "Fall"  # C
 ]
 
 years = [
@@ -86,6 +85,7 @@ years = [
     # 2020,
     # 2021,
     # 2022,
+    2023
 ]
 
 
