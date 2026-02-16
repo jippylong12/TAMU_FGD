@@ -2,10 +2,11 @@
 import argparse
 import csv
 import json
+import re
 import shutil
 from collections import defaultdict
-from pathlib import Path
 from datetime import datetime, timezone
+from pathlib import Path
 
 HEADER = [
     "Course",
@@ -23,6 +24,19 @@ BLANK_LINE = ["", "", "", "", "", "", "", "", ""]
 COURSE_LINE = ["", "", "", "", "", "", "", ""]
 INDEX_FILE_NAME = "MasterDB.index.json"
 INDEX_VERSION = 1
+META_FILE_NAME = "MasterDB.meta.json"
+META_VERSION = 1
+TERM_ORDER = {
+    "spring": 1,
+    "summer": 2,
+    "fall": 3,
+}
+TERM_LABELS = {
+    "spring": "Spring",
+    "summer": "Summer",
+    "fall": "Fall",
+}
+TERM_RE = re.compile(r"(spring|summer|fall)\s*[-_]?\s*(20\d{2})", re.IGNORECASE)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -130,6 +144,57 @@ def write_masterdb_index(output_csv: Path, course_index: dict) -> Path:
     return index_path
 
 
+def extract_terms_from_paths(sources: list[Path]) -> list[tuple[int, str]]:
+    terms = []
+    for source in sources:
+        for semester, year_text in TERM_RE.findall(str(source).lower()):
+            terms.append((int(year_text), TERM_LABELS.get(semester, semester.title()), semester))
+
+    unique_terms = []
+    seen = set()
+    for term in terms:
+        if term in seen:
+            continue
+        unique_terms.append(term)
+        seen.add(term)
+
+    unique_terms.sort(key=lambda term: (term[0], TERM_ORDER.get(term[2], 999)))
+    return unique_terms
+
+
+def build_meta_payload(output_csv: Path, sources: list[Path]) -> dict:
+    output_stats = output_csv.stat()
+    terms = extract_terms_from_paths(sources)
+    term_range = None
+    if terms:
+        term_range = {
+            "start": f"{terms[0][1]} {terms[0][0]}",
+            "end": f"{terms[-1][1]} {terms[-1][0]}",
+        }
+
+    return {
+        "version": META_VERSION,
+        "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "source": {
+            "filename": output_csv.name,
+            "size": output_stats.st_size,
+            "mtime": int(output_stats.st_mtime),
+        },
+        "coverage": {
+            "term_range": term_range,
+            "source_count": len(sources),
+        },
+    }
+
+
+def write_masterdb_meta(output_csv: Path, sources: list[Path]) -> Path:
+    meta_path = output_csv.with_name(META_FILE_NAME)
+    payload = build_meta_payload(output_csv, sources)
+    with open(meta_path, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle, indent=2, sort_keys=True)
+    return meta_path
+
+
 def normalize_sources(args) -> list[Path]:
     sources = []
     for raw_path in args.openai_json:
@@ -229,7 +294,12 @@ def write_masterdb(master: dict, output_csv: Path) -> tuple:
     return professor_rows, course_index
 
 
-def publish_to_frontend(output_csv: Path, frontend_root: Path, index_path: Path = None) -> tuple:
+def publish_to_frontend(
+    output_csv: Path,
+    frontend_root: Path,
+    index_path: Path = None,
+    meta_path: Path = None,
+) -> tuple:
     destination = frontend_root / "MasterDBs" / "MasterDB.csv"
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(output_csv, destination)
@@ -237,7 +307,13 @@ def publish_to_frontend(output_csv: Path, frontend_root: Path, index_path: Path 
     if index_path is not None and index_path.exists():
         destination_index = frontend_root / "MasterDBs" / index_path.name
         shutil.copy2(index_path, destination_index)
-    return destination, destination_index
+
+    destination_meta = None
+    if meta_path is not None and meta_path.exists():
+        destination_meta = frontend_root / "MasterDBs" / meta_path.name
+        shutil.copy2(meta_path, destination_meta)
+
+    return destination, destination_index, destination_meta
 
 
 def main() -> int:
@@ -262,16 +338,22 @@ def main() -> int:
     output_csv = Path(args.output_csv).resolve()
     professor_rows, course_index = write_masterdb(master, output_csv)
     index_path = write_masterdb_index(output_csv, course_index)
+    meta_path = write_masterdb_meta(output_csv, sources)
     print(f"[OK] Wrote MasterDB CSV: {output_csv}")
     print(f"[OK] Wrote MasterDB index: {index_path}")
+    print(f"[OK] Wrote MasterDB metadata: {meta_path}")
     print(f"[SUMMARY] files={len(sources)} courses={len(master)} professors={professor_rows}")
 
     if args.frontend_root:
         frontend_root = Path(args.frontend_root).resolve()
-        destination, destination_index = publish_to_frontend(output_csv, frontend_root, index_path)
+        destination, destination_index, destination_meta = publish_to_frontend(
+            output_csv, frontend_root, index_path, meta_path
+        )
         print(f"[OK] Published frontend CSV: {destination}")
         if destination_index is not None:
             print(f"[OK] Published frontend index: {destination_index}")
+        if destination_meta is not None:
+            print(f"[OK] Published frontend metadata: {destination_meta}")
     return 0
 
 
