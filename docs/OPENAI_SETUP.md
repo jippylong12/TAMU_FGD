@@ -1,5 +1,19 @@
 # Extraction Setup
 
+## Script Overview
+- `scripts/run_regex_terms_to_masterdb.sh`:
+  - one-command multi-term workflow (`download -> regex parse -> per-term CSV -> final combined MasterDB.csv for frontend`)
+- `scripts/run_regex_semester_to_csv.sh`:
+  - one-term workflow (`download -> regex parse -> one term CSV`)
+- `scripts/run_regex_batches.sh`:
+  - parse existing semester PDFs into `regex.json` artifacts only
+- `scripts/extract_regex_json.py`:
+  - parse one PDF into page-keyed `regex.json`
+- `scripts/generate_masterdb_from_eval_root.sh`:
+  - build CSV from one eval root (`openai.json` by default, optional `regex.json`)
+- `scripts/generate_masterdb_from_openai.py`:
+  - low-level CSV builder from explicit JSON file list (`openai.json` or `regex.json`)
+
 ## One-time Setup
 From `TAMU_FGD/`:
 
@@ -37,6 +51,15 @@ Run a full semester (download PDFs + regex extraction + semester CSV):
 ```bash
 bash scripts/run_regex_semester_to_csv.sh --semester spring --year 2023
 bash scripts/run_regex_semester_to_csv.sh --semester summer --year 2023
+```
+
+Run multiple terms and produce one final frontend MasterDB in one command:
+
+```bash
+bash scripts/run_regex_terms_to_masterdb.sh \
+  --term spring:2023 \
+  --term summer:2023 \
+  --download-insecure
 ```
 
 If your local Python trust store blocks TAMU TLS cert chain resolution, add:
