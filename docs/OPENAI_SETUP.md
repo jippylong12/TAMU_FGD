@@ -1,6 +1,8 @@
 # Extraction Setup
 
 ## Script Overview
+- `scripts/run_regex_year_range_to_masterdb.sh`:
+  - one-command all-years workflow on existing PDFs (`regex parse -> combined MasterDB.csv`)
 - `scripts/run_regex_terms_to_masterdb.sh`:
   - one-command multi-term workflow (`download -> regex parse -> per-term CSV -> final combined MasterDB.csv for frontend`)
 - `scripts/run_regex_semester_to_csv.sh`:
@@ -61,6 +63,25 @@ bash scripts/run_regex_terms_to_masterdb.sh \
   --term summer:2023 \
   --download-insecure
 ```
+
+Run all terms in a year range (existing PDFs already in `GradeDistributionsDB/*`) and produce one MasterDB:
+
+```bash
+bash scripts/run_regex_year_range_to_masterdb.sh \
+  --start-year 2012 \
+  --end-year 2023 \
+  --semesters spring,summer,fall \
+  --jobs 6
+```
+
+Parser routing is automatic per PDF:
+- pre-Fall 2016 -> legacy parser
+- Fall 2016+ -> modern parser
+- `_PROF` PDFs -> modern no-`Q` parser
+
+Notes:
+- `--jobs` controls concurrent term parsing workers before final MasterDB merge.
+- The script always waits for all parse jobs to finish, then builds `MasterDB.csv` once.
 
 If your local Python trust store blocks TAMU TLS cert chain resolution, add:
 

@@ -9,7 +9,7 @@ SRC_DIR = ROOT_DIR / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-from tamu_fgd.eval.regex_extractor import parse_pdf
+from tamu_fgd.eval.regex_extractor import parse_pdf, parser_mode
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -26,6 +26,7 @@ def main() -> int:
     pdf_path = Path(args.pdf).resolve()
     output_path = Path(args.output).resolve()
 
+    mode = parser_mode(pdf_path)
     payload = parse_pdf(pdf_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as handle:
@@ -33,6 +34,7 @@ def main() -> int:
 
     page_count = len(payload)
     record_count = sum(len(records) for records in payload.values())
+    print(f"[PARSER] mode={mode}")
     print(f"[OK] Wrote regex output: {output_path}")
     print(f"[SUMMARY] pages={page_count} records={record_count}")
     return 0
