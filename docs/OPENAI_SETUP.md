@@ -21,6 +21,8 @@ Default target (`Fall2023 EN`):
 bash scripts/run_openai_comparison.sh
 ```
 
+This runner prints timestamped progress logs and per-page extraction progress.
+
 Custom PDF/output:
 
 ```bash

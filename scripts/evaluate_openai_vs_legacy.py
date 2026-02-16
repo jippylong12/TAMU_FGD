@@ -28,6 +28,11 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Run legacy extraction only (no OpenAI calls).",
     )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Print progress logs for page extraction and API calls.",
+    )
     return parser
 
 
@@ -37,14 +42,34 @@ def write_json(path: Path, payload: dict) -> None:
         json.dump(payload, handle, indent=2)
 
 
+def log(enabled: bool, message: str) -> None:
+    if enabled:
+        print(message)
+
+
+def summarize_pages(payload: dict) -> str:
+    page_count = len(payload)
+    record_count = sum(len(records) for records in payload.values())
+    return f"pages={page_count}, records={record_count}"
+
+
 def main() -> int:
     args = build_parser().parse_args()
     pdf_path = Path(args.pdf).resolve()
     output_dir = Path(args.output_dir).resolve()
+    log(args.verbose, f"[START] pdf={pdf_path}")
+    log(args.verbose, f"[START] output_dir={output_dir}")
+    log(args.verbose, f"[START] model={args.model}")
+    if args.max_pages is not None:
+        log(args.verbose, f"[START] max_pages={args.max_pages}")
 
-    legacy = LegacyPageExtractor().extract(pdf_path=pdf_path, max_pages=args.max_pages)
+    legacy = LegacyPageExtractor(verbose=args.verbose).extract(
+        pdf_path=pdf_path,
+        max_pages=args.max_pages,
+    )
     legacy_path = output_dir / "legacy.json"
     write_json(legacy_path, legacy)
+    log(args.verbose, f"[LEGACY] {summarize_pages(legacy)}")
     print(f"[OK] Wrote legacy output: {legacy_path}")
 
     if args.skip_openai:
@@ -56,12 +81,17 @@ def main() -> int:
         print("[ERROR] OPENAI_API_KEY is not set.")
         return 2
 
-    openai = OpenAIPageExtractor(api_key=api_key, model=args.model).extract(
+    openai = OpenAIPageExtractor(
+        api_key=api_key,
+        model=args.model,
+        verbose=args.verbose,
+    ).extract(
         pdf_path=pdf_path,
         max_pages=args.max_pages,
     )
     openai_path = output_dir / "openai.json"
     write_json(openai_path, openai)
+    log(args.verbose, f"[OPENAI] {summarize_pages(openai)}")
     print(f"[OK] Wrote OpenAI output: {openai_path}")
 
     report = compare_section_records(legacy=legacy, openai=openai)

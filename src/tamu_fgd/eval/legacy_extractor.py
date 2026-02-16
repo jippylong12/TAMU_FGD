@@ -13,18 +13,30 @@ TOTAL_HINT_RE = re.compile(r"TOTAL:")
 
 
 class LegacyPageExtractor:
+    def __init__(self, verbose: bool = False) -> None:
+        self.verbose = verbose
+
     def extract(self, pdf_path: Path, max_pages: Optional[int] = None) -> dict:
         reader = PdfReader(str(pdf_path))
+        total_pages = len(reader.pages)
+        if max_pages is not None:
+            total_pages = min(total_pages, max_pages)
         result = {}
+        if self.verbose:
+            print(f"[LEGACY] Extracting {total_pages} page(s) from {pdf_path.name}")
         for page_idx, page in enumerate(reader.pages, start=1):
             if max_pages is not None and page_idx > max_pages:
                 break
+            if self.verbose:
+                print(f"[LEGACY] Page {page_idx}/{total_pages}: reading text")
             text = page.extract_text() or ""
             lines = text.split("\n")
             records = self._extract_page_records(lines)
             for index, record in enumerate(records):
                 record["record_index"] = index
             result[str(page_idx)] = records
+            if self.verbose:
+                print(f"[LEGACY] Page {page_idx}/{total_pages}: extracted {len(records)} record(s)")
         return result
 
     def _extract_page_records(self, lines: list[str]) -> list[dict]:
