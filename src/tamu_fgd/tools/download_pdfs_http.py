@@ -20,6 +20,25 @@ SEMESTER_TO_FOLDER = {
     "FALL": "Fall",
 }
 
+CODE_ALIASES = {
+    "AC": ("AC", "AR"),
+    "AR": ("AR", "AC"),
+    "DT": ("DT", "DN"),
+    "DN": ("DN", "DT"),
+    "DT_PROF": ("DT_PROF", "DN_PROF"),
+    "DN_PROF": ("DN_PROF", "DT_PROF"),
+    "EH": ("EH", "ED"),
+    "ED": ("ED", "EH"),
+    "MN": ("MN", "MD"),
+    "MD": ("MD", "MN"),
+    "PM_PROF": ("PM_PROF", "CP_PROF"),
+    "CP_PROF": ("CP_PROF", "PM_PROF"),
+    "VT": ("VT", "VM"),
+    "VM": ("VM", "VT"),
+    "VT_PROF": ("VT_PROF", "VM_PROF"),
+    "VM_PROF": ("VM_PROF", "VT_PROF"),
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -63,6 +82,18 @@ def parse_college_codes(raw: str):
     return [code.strip() for code in raw.split(",") if code.strip()]
 
 
+def alias_candidates(code: str) -> list:
+    candidates = CODE_ALIASES.get(code, (code,))
+    seen = set()
+    ordered = []
+    for candidate in candidates:
+        if candidate in seen:
+            continue
+        seen.add(candidate)
+        ordered.append(candidate)
+    return ordered
+
+
 def main() -> int:
     args = parse_args()
     semester = args.semester.upper()
@@ -91,32 +122,38 @@ def main() -> int:
         ssl_context = ssl._create_unverified_context()
 
     for code in colleges:
-        filename = f"grd{term_key}{code}.pdf"
-        url = f"{BASE_URL}/{term_key}/{filename}"
-        output_path = download_dir / filename
-        try:
-            with urlopen(url, timeout=args.timeout_seconds, context=ssl_context) as response:
-                status = getattr(response, "status", 200)
-                content_type = response.headers.get("Content-Type", "")
-                if status != 200:
-                    print(f"[FAIL] {filename}: HTTP {status}")
-                    failed.append(code)
-                    continue
-                if "pdf" not in content_type.lower():
-                    print(f"[FAIL] {filename}: unexpected content type '{content_type}'")
-                    failed.append(code)
-                    continue
-                output_path.write_bytes(response.read())
-                print(f"[OK] Downloaded {filename}")
-                ok.append(code)
-        except HTTPError as exc:
-            print(f"[FAIL] {filename}: HTTP {exc.code}")
-            failed.append(code)
-        except URLError as exc:
-            print(f"[FAIL] {filename}: network error {exc.reason}")
-            failed.append(code)
-        except TimeoutError:
-            print(f"[FAIL] {filename}: timeout")
+        downloaded = False
+        for candidate in alias_candidates(code):
+            filename = f"grd{term_key}{candidate}.pdf"
+            url = f"{BASE_URL}/{term_key}/{filename}"
+            output_path = download_dir / filename
+            try:
+                with urlopen(url, timeout=args.timeout_seconds, context=ssl_context) as response:
+                    status = getattr(response, "status", 200)
+                    content_type = response.headers.get("Content-Type", "")
+                    if status != 200:
+                        print(f"[FAIL] {filename}: HTTP {status}")
+                        continue
+                    if "pdf" not in content_type.lower():
+                        print(f"[FAIL] {filename}: unexpected content type '{content_type}'")
+                        continue
+                    output_path.write_bytes(response.read())
+                    if candidate == code:
+                        print(f"[OK] Downloaded {filename}")
+                    else:
+                        print(f"[OK] Downloaded {filename} (requested {code})")
+                    ok.append(candidate)
+                    downloaded = True
+                    break
+            except HTTPError as exc:
+                print(f"[FAIL] {filename}: HTTP {exc.code}")
+            except URLError as exc:
+                print(f"[FAIL] {filename}: network error {exc.reason}")
+                # Network/DNS failures are environment-level, no need to test aliases.
+                break
+            except TimeoutError:
+                print(f"[FAIL] {filename}: timeout")
+        if not downloaded:
             failed.append(code)
 
     print("")

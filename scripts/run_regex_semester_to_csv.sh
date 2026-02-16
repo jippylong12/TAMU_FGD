@@ -29,6 +29,9 @@ codes=""
 frontend_root="../TAMU_FGD_FRONT_END"
 download_insecure=0
 
+# Legacy code list is kept for backward compatibility.
+# scripts/download_pdfs_http.py applies rename fallback aliases
+# (for example AC->AR, DT->DN, EH->ED, etc.) when needed.
 DEFAULT_CODES="AC,AE,AG,AP,AT,BA,DT,DT_PROF,EH,EN,GB,GV,MN,MS,NS,PH,PM_PROF,QT,SL,SL_PROF,VF,VT,VT_PROF"
 
 while [[ $# -gt 0 ]]; do

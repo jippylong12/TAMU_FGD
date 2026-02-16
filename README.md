@@ -36,3 +36,83 @@ your own opinion, but I made this on Windows so you will have to probably change
 * The comments although poor in quality should help you out enough.
 
 Hope it helps. <3
+## Source drift notes (college code aliases)
+
+TAMU has intermittently renamed college report codes in newer terms. The regex pipeline keeps historical codes and applies downloader alias fallbacks for known transitions:
+
+* `AC` -> `AR`
+* `DT` -> `DN`
+* `DT_PROF` -> `DN_PROF`
+* `EH` -> `ED`
+* `MN` -> `MD`
+* `PM_PROF` -> `CP_PROF`
+* `VT` -> `VM`
+* `VT_PROF` -> `VM_PROF`
+
+If additional aliases appear, update `TAMU_FGD/src/tamu_fgd/tools/download_pdfs_http.py` under `CODE_ALIASES` before the next refresh run.
+
+## Data refresh runbook
+
+### 1) Rerun the full dataset (2012 → 2025) from existing PDFs
+
+This does **not** download new PDFs again. It reparses available PDFs under `GradeDistributionsDB/<Semester><Year>` and rebuilds the merged `MasterDB.csv`.
+
+```bash
+cd /Users/marcus.salinas/Programming/Personal/tamu_fgd_mono/TAMU_FGD
+bash scripts/run_regex_year_range_to_masterdb.sh \
+  --start-year 2012 \
+  --end-year 2025 \
+  --semesters spring,summer,fall \
+  --output-root eval_output/all_terms_regex \
+  --output-csv GradeDistributionsDB/MasterDBs/MasterDB.csv \
+  --frontend-root ../TAMU_FGD_FRONT_END \
+  --jobs 16 \
+  --force-all
+```
+
+Tips:
+- `--force-all` regenerates `regex.json` for each term even if it already exists.
+- Use `--strict` to stop on first term failure.
+- This step is for re-running extraction + merged output after PDF files are already on disk.
+
+### 2) Download new PDFs (fresh pulls from TAMU)
+
+Use semester/year commands to fetch PDFs and then parse that semester:
+
+```bash
+cd /Users/marcus.salinas/Programming/Personal/tamu_fgd_mono/TAMU_FGD
+bash scripts/run_regex_semester_to_csv.sh --semester spring --year 2025 --download-insecure
+bash scripts/run_regex_semester_to_csv.sh --semester summer --year 2025 --download-insecure
+bash scripts/run_regex_semester_to_csv.sh --semester fall --year 2025 --download-insecure
+```
+
+To pull older/newer year ranges, extend the loop:
+
+```bash
+cd /Users/marcus.salinas/Programming/Personal/tamu_fgd_mono/TAMU_FGD
+for year in 2024 2025; do
+  bash scripts/run_regex_semester_to_csv.sh --semester spring --year "$year" --download-insecure
+  bash scripts/run_regex_semester_to_csv.sh --semester summer --year "$year" --download-insecure
+  bash scripts/run_regex_semester_to_csv.sh --semester fall --year "$year" --download-insecure
+done
+```
+
+### 3) Generate `MasterDB.csv` only from existing `regex.json` files
+
+If your PDFs were already downloaded and `regex.json` files already exist, run:
+
+```bash
+cd /Users/marcus.salinas/Programming/Personal/tamu_fgd_mono/TAMU_FGD
+bash scripts/generate_masterdb_from_eval_root.sh \
+  eval_output/all_terms_regex \
+  GradeDistributionsDB/MasterDBs/MasterDB.csv \
+  ../TAMU_FGD_FRONT_END \
+  regex.json
+```
+
+This rebuilds:
+- `MasterDB.csv`
+- `MasterDB.index.json`
+- `MasterDB.meta.json`
+
+at the frontend publish root as long as `--frontend-root` is provided.
