@@ -5,7 +5,8 @@ import random
 from pathlib import Path
 
 COUNT_KEYS = ["a", "b", "c", "d", "f", "af_total", "i", "s", "u", "q", "x", "grand_total"]
-RECORD_KEYS = {"record_type", "record_id", "counts", "gpa", "instructor", "record_index"}
+REQUIRED_RECORD_KEYS = {"record_type", "record_id", "counts", "gpa", "instructor", "record_index"}
+OPTIONAL_RECORD_KEYS = {"honors"}
 COUNT_KEY_SET = set(COUNT_KEYS)
 
 
@@ -40,8 +41,15 @@ def schema_issues(payload: dict, label: str) -> list[str]:
             if not isinstance(record, dict):
                 issues.append(f"{label}: page {page} record {index} is not an object")
                 continue
-            if set(record.keys()) != RECORD_KEYS:
+            record_keys = set(record.keys())
+            if not REQUIRED_RECORD_KEYS.issubset(record_keys):
+                issues.append(f"{label}: page {page} record {index} is missing required record keys")
+                continue
+            if not record_keys.issubset(REQUIRED_RECORD_KEYS | OPTIONAL_RECORD_KEYS):
                 issues.append(f"{label}: page {page} record {index} has unexpected record keys")
+                continue
+            if "honors" in record and not isinstance(record.get("honors"), bool):
+                issues.append(f"{label}: page {page} record {index} honors is not a boolean")
                 continue
             counts = record.get("counts")
             if not isinstance(counts, dict):

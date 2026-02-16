@@ -4,6 +4,7 @@ SYSTEM_PROMPT = (
     "Extract grade distribution rows from one TAMU page. "
     "Return records in the same top-to-bottom order as the page. "
     "Use record_type values: section, course_total, department_total. "
+    "Set honors=true only when record_type is section and the section token in record_id starts with 2 (200-level section); otherwise honors=false. "
     "For missing numeric fields, use 0. For missing instructor, use null."
 )
 

@@ -15,6 +15,7 @@ Each record includes:
 - `counts` (`a`, `b`, `c`, `d`, `f`, `af_total`, `i`, `s`, `u`, `q`, `x`, `grand_total`)
 - `gpa`
 - `instructor` (`string` or `null`)
+- `honors` (`true` only for section IDs in the 200 range, otherwise `false`)
 
 ## Run Command
 From `TAMU_FGD/`:

@@ -10,6 +10,16 @@ SUMMARY_WITH_Q_RE = re.compile(
 INTS_IN_LINE_RE = re.compile(r"\d+")
 
 
+def is_honors_section(record_type: str, record_id: str) -> bool:
+    if record_type != "section":
+        return False
+    parts = (record_id or "").split("-")
+    if len(parts) < 3:
+        return False
+    section = parts[2].strip()
+    return bool(section) and section.startswith("2")
+
+
 def build_record(
     record_type: str,
     record_id: str,
@@ -48,6 +58,7 @@ def build_record(
         },
         "gpa": gpa,
         "instructor": instructor,
+        "honors": is_honors_section(record_type, record_id),
         "record_index": record_index,
     }
 

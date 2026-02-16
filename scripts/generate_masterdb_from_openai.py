@@ -85,6 +85,26 @@ def course_from_record_id(record_id: str) -> str:
     return f"{parts[0].upper()}-{parts[1]}"
 
 
+def infer_honors_from_record_id(record_id: str) -> bool:
+    parts = (record_id or "").split("-")
+    if len(parts) < 3:
+        return False
+    return parts[2].strip().startswith("2")
+
+
+def record_is_honors(record: dict) -> bool:
+    honors = record.get("honors")
+    if isinstance(honors, bool):
+        return honors
+    return infer_honors_from_record_id(str(record.get("record_id", "")))
+
+
+def instructor_with_honors_marker(instructor: str, honors: bool) -> str:
+    if honors and not instructor.endswith("*"):
+        return f"{instructor}*"
+    return instructor
+
+
 def normalize_sources(args) -> list[Path]:
     sources = []
     for raw_path in args.openai_json:
@@ -117,7 +137,8 @@ def aggregate_openai_json(path: Path, master: dict, default_instructor: str, ver
             course = course_from_record_id(record.get("record_id", ""))
             if not course:
                 continue
-            instructor = (record.get("instructor") or "").strip() or default_instructor
+            base_instructor = (record.get("instructor") or "").strip() or default_instructor
+            instructor = instructor_with_honors_marker(base_instructor, record_is_honors(record))
             counts = record.get("counts") or {}
             stats = master[course][instructor]
             stats["a"] += as_float(counts.get("a"))

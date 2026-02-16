@@ -14,6 +14,16 @@ PAGE_ID_RE = re.compile(r"^page\-(\d+)$")
 TERMINAL_STATUSES = {"completed", "failed", "expired", "cancelled"}
 
 
+def derive_honors(record: dict) -> bool:
+    if record.get("record_type") != "section":
+        return False
+    record_id = str(record.get("record_id") or "")
+    parts = record_id.split("-")
+    if len(parts) < 3:
+        return False
+    return parts[2].strip().startswith("2")
+
+
 class OpenAIBatchRunner:
     def __init__(self, client: OpenAIHttpClient, model: str, verbose: bool = False) -> None:
         self.client = client
@@ -100,6 +110,7 @@ class OpenAIBatchRunner:
                     continue
                 for idx, record in enumerate(records):
                     record["record_index"] = idx
+                    record["honors"] = derive_honors(record)
                 openai_pages[page_key] = records
 
         error_id = batch.get("error_file_id")

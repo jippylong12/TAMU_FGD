@@ -47,8 +47,9 @@ PAGE_RECORDS_SCHEMA = {
                     },
                     "gpa": {"type": "number"},
                     "instructor": {"type": ["string", "null"]},
+                    "honors": {"type": "boolean"},
                 },
-                "required": ["record_type", "record_id", "counts", "gpa", "instructor"],
+                "required": ["record_type", "record_id", "counts", "gpa", "instructor", "honors"],
             },
         }
     },

@@ -8,6 +8,16 @@ from tamu_fgd.eval.openai_api import OpenAIHttpClient
 from tamu_fgd.eval.prompting import build_chat_body
 
 
+def derive_honors(record: dict) -> bool:
+    if record.get("record_type") != "section":
+        return False
+    record_id = str(record.get("record_id") or "")
+    parts = record_id.split("-")
+    if len(parts) < 3:
+        return False
+    return parts[2].strip().startswith("2")
+
+
 class OpenAIPageExtractor:
     def __init__(self, api_key: str, model: str, timeout_seconds: int = 120, verbose: bool = False) -> None:
         self.model = model
@@ -37,6 +47,7 @@ class OpenAIPageExtractor:
             records = self._extract_page_records(page_idx=page_idx, page_text=page_text)
             for index, record in enumerate(records):
                 record["record_index"] = index
+                record["honors"] = derive_honors(record)
             result[str(page_idx)] = records
             if self.verbose:
                 print(f"[OPENAI] Page {page_idx}/{total_pages}: received {len(records)} record(s)")
