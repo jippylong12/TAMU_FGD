@@ -1,4 +1,6 @@
 import json
+import os
+import ssl
 import time
 import uuid
 from pathlib import Path
@@ -7,12 +9,18 @@ from urllib.request import Request, urlopen
 
 API_BASE = "https://api.openai.com/v1"
 
+try:
+    import certifi
+except ImportError:
+    certifi = None
+
 
 class OpenAIHttpClient:
     def __init__(self, api_key: str, timeout_seconds: int = 120, verbose: bool = False) -> None:
         self.api_key = api_key
         self.timeout_seconds = timeout_seconds
         self.verbose = verbose
+        self.ssl_context = self._build_ssl_context()
 
     def create_chat_completion(self, payload: dict) -> dict:
         return self.request_json("POST", "/chat/completions", payload)
@@ -81,7 +89,7 @@ class OpenAIHttpClient:
         for attempt in range(1, max_attempts + 1):
             try:
                 request = Request(f"{API_BASE}{path}", data=data, headers=headers, method=method)
-                with urlopen(request, timeout=self.timeout_seconds) as response:
+                with urlopen(request, timeout=self.timeout_seconds, context=self.ssl_context) as response:
                     return response.read()
             except HTTPError as exc:
                 body = exc.read().decode("utf-8", errors="replace")
@@ -106,3 +114,18 @@ class OpenAIHttpClient:
         if self.verbose:
             print(f"[OPENAI][RETRY] {path} reason={reason} sleeping={delay}s")
         time.sleep(delay)
+
+    def _build_ssl_context(self) -> ssl.SSLContext:
+        if os.getenv("OPENAI_INSECURE_SKIP_VERIFY") == "1":
+            if self.verbose:
+                print("[OPENAI][WARN] SSL verification disabled via OPENAI_INSECURE_SKIP_VERIFY=1")
+            return ssl._create_unverified_context()
+
+        cafile = os.getenv("OPENAI_SSL_CERT_FILE") or os.getenv("SSL_CERT_FILE")
+        if not cafile and certifi is not None:
+            cafile = certifi.where()
+        if cafile and Path(cafile).exists():
+            if self.verbose:
+                print(f"[OPENAI] Using SSL CA bundle: {cafile}")
+            return ssl.create_default_context(cafile=cafile)
+        return ssl.create_default_context()

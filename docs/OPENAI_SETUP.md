@@ -1,4 +1,4 @@
-# OpenAI Extraction Setup
+# Extraction Setup
 
 ## One-time Setup
 From `TAMU_FGD/`:
@@ -14,7 +14,40 @@ Edit `.env` and set:
 Optional:
 - `OPENAI_MODEL` (defaults to `gpt-4.1-mini`)
 
-## Run Extraction
+## Primary Path: Regex Extraction (No OpenAI Cost)
+Run one PDF:
+
+```bash
+python3 scripts/extract_regex_json.py \
+  --pdf GradeDistributionsDB/Fall2023/grd20233DT.pdf \
+  --output eval_output/dt_fall2023/regex.json
+```
+
+Run all Fall 2023 PDFs:
+
+```bash
+bash scripts/run_regex_batches.sh --semester fall --year 2023
+```
+
+This writes:
+- `eval_output/fall2023_all_regex/<college>_fall2023/regex.json`
+
+Compare regex outputs to legacy OpenAI outputs on 5 random colleges:
+
+```bash
+python3 scripts/compare_regex_vs_openai_semester_sample.py \
+  --regex-root eval_output/fall2023_all_regex \
+  --openai-root eval_output/fall2023_all \
+  --sample-size 5
+```
+
+This writes:
+- `eval_output/fall2023_all_regex/regex_vs_openai_college_sample.json`
+
+Note:
+- In this branch, OpenAI batch flow is kept as a legacy reference path because it is higher cost.
+
+## Legacy Path: OpenAI Extraction
 Default target (`Fall2023 EN`):
 
 ```bash
@@ -100,7 +133,7 @@ Legacy convenience wrapper (fixed to Fall 2023) still works:
 bash scripts/run_openai_fall2023_batches.sh full
 ```
 
-## Outputs
+## Legacy OpenAI Outputs
 - `openai.json`
 - `openai_summary.json`
 - `batch_errors.json` (batch modes)
