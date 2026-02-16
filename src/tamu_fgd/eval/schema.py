@@ -28,7 +28,7 @@ PAGE_RECORDS_SCHEMA = {
                             "u": {"type": "integer"},
                             "q": {"type": "integer"},
                             "x": {"type": "integer"},
-                            "isuqx_total": {"type": "integer"},
+                            "grand_total": {"type": "integer"},
                         },
                         "required": [
                             "a",
@@ -42,7 +42,7 @@ PAGE_RECORDS_SCHEMA = {
                             "u",
                             "q",
                             "x",
-                            "isuqx_total",
+                            "grand_total",
                         ],
                     },
                     "gpa": {"type": "number"},
@@ -69,5 +69,5 @@ def empty_counts() -> dict:
         "u": 0,
         "q": 0,
         "x": 0,
-        "isuqx_total": 0,
+        "grand_total": 0,
     }

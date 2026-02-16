@@ -14,7 +14,7 @@ Each record includes:
 - `record_index` (order on page)
 - `record_type` (`section`, `course_total`, `department_total`)
 - `record_id`
-- `counts` (`a`, `b`, `c`, `d`, `f`, `af_total`, `i`, `s`, `u`, `q`, `x`, `isuqx_total`)
+- `counts` (`a`, `b`, `c`, `d`, `f`, `af_total`, `i`, `s`, `u`, `q`, `x`, `grand_total`)
 - `gpa`
 - `instructor` (`string` or `null`)
 

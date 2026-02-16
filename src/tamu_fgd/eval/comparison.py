@@ -24,7 +24,7 @@ def compare_section_records(legacy: dict, openai: dict, gpa_tolerance: float = 0
             if left["record_id"] != right["record_id"]:
                 diffs.append("record_id")
 
-            for key in ["a", "b", "c", "d", "f", "af_total", "i", "s", "u", "q", "x", "isuqx_total"]:
+            for key in ["a", "b", "c", "d", "f", "af_total", "i", "s", "u", "q", "x", "grand_total"]:
                 if left["counts"].get(key) != right["counts"].get(key):
                     diffs.append(f"counts.{key}")
 

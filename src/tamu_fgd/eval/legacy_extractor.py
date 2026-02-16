@@ -105,7 +105,7 @@ class LegacyPageExtractor:
                 "u": int(parts[10]),
                 "q": int(parts[11]),
                 "x": int(parts[12]),
-                "isuqx_total": int(parts[13]),
+                "grand_total": int(parts[13]),
             }
             gpa = float(parts[7])
         except ValueError:
