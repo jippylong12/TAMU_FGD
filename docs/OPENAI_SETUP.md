@@ -63,3 +63,19 @@ bash scripts/run_openai_comparison.sh \
 - `batch_errors.json` (batch modes)
 
 Written under the output directory you pass in.
+
+## Generate `MasterDB.csv` From OpenAI Output
+From `TAMU_FGD/`:
+
+```bash
+python3 scripts/generate_masterdb_from_openai.py \
+  --eval-output eval_output/dt_fall2023 \
+  --output-csv GradeDistributionsDB/MasterDBs/MasterDB.csv \
+  --frontend-root ../TAMU_FGD_FRONT_END
+```
+
+This generates:
+- `GradeDistributionsDB/MasterDBs/MasterDB.csv`
+
+And publishes a copy to:
+- `../TAMU_FGD_FRONT_END/MasterDBs/MasterDB.csv`

@@ -142,33 +142,37 @@ def main() -> int:
         return 0
 
     batch = OpenAIBatchRunner(client=client, model=args.model, verbose=args.verbose)
-    if args.openai_mode == "batch-submit":
-        state = batch.submit(pdf_path=pdf_path, state_dir=state_dir, max_pages=args.max_pages)
-        print(f"[BATCH] Submitted batch id: {state['batch_id']}")
-        print(f"[BATCH] State file: {state_dir / 'batch_state.json'}")
-        return 0
+    try:
+        if args.openai_mode == "batch-submit":
+            state = batch.submit(pdf_path=pdf_path, state_dir=state_dir, max_pages=args.max_pages)
+            print(f"[BATCH] Submitted batch id: {state['batch_id']}")
+            print(f"[BATCH] State file: {state_dir / 'batch_state.json'}")
+            return 0
 
-    batch_id = batch.resolve_batch_id(state_dir=state_dir, batch_id=args.batch_id or None)
-    if args.openai_mode == "batch-wait":
-        batch_obj = batch.wait_for_terminal(
-            batch_id=batch_id,
-            poll_seconds=args.batch_poll_seconds,
-            max_wait_seconds=args.batch_max_wait_seconds,
+        batch_id = batch.resolve_batch_id(state_dir=state_dir, batch_id=args.batch_id or None)
+        if args.openai_mode == "batch-wait":
+            batch_obj = batch.wait_for_terminal(
+                batch_id=batch_id,
+                poll_seconds=args.batch_poll_seconds,
+                max_wait_seconds=args.batch_max_wait_seconds,
+            )
+            status = batch_obj.get("status")
+            print(f"[BATCH] Terminal status: {status}")
+            if status != "completed":
+                return 3
+
+        collection = batch.collect(batch_id=batch_id, state_dir=state_dir)
+        write_openai_outputs(
+            output_dir=output_dir,
+            openai_pages=collection["openai_pages"],
+            mode=args.openai_mode,
+            batch_meta={"batch_id": batch_id},
+            errors=collection["errors"],
         )
-        status = batch_obj.get("status")
-        print(f"[BATCH] Terminal status: {status}")
-        if status != "completed":
-            return 3
-
-    collection = batch.collect(batch_id=batch_id, state_dir=state_dir)
-    write_openai_outputs(
-        output_dir=output_dir,
-        openai_pages=collection["openai_pages"],
-        mode=args.openai_mode,
-        batch_meta={"batch_id": batch_id},
-        errors=collection["errors"],
-    )
-    return 0
+        return 0
+    except RuntimeError as exc:
+        print(f"[ERROR] {exc}")
+        return 2
 
 
 if __name__ == "__main__":

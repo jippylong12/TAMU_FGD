@@ -56,22 +56,26 @@ class OpenAIBatchRunner:
     def wait_for_terminal(self, batch_id: str, poll_seconds: int, max_wait_seconds: int) -> dict:
         start = time.monotonic()
         last_status = None
+        sleep_seconds = max(1, poll_seconds)
         while True:
             batch = self.client.retrieve_batch(batch_id)
             status = batch.get("status")
             req = batch.get("request_counts", {})
-            if self.verbose and (status != last_status):
+            if self.verbose:
+                elapsed_seconds = int(time.monotonic() - start)
+                status_note = "changed" if status != last_status else "unchanged"
                 print(
                     "[BATCH] "
                     f"id={batch_id} status={status} "
-                    f"total={req.get('total')} completed={req.get('completed')} failed={req.get('failed')}"
+                    f"total={req.get('total')} completed={req.get('completed')} failed={req.get('failed')} "
+                    f"elapsed={elapsed_seconds}s next_poll={sleep_seconds}s ({status_note})"
                 )
                 last_status = status
             if status in TERMINAL_STATUSES:
                 return batch
             if (time.monotonic() - start) > max_wait_seconds:
                 raise RuntimeError(f"Timed out waiting for batch {batch_id}")
-            time.sleep(max(1, poll_seconds))
+            time.sleep(sleep_seconds)
 
     def collect(self, batch_id: str, state_dir: Path) -> dict:
         state_dir.mkdir(parents=True, exist_ok=True)
@@ -109,6 +113,13 @@ class OpenAIBatchRunner:
 
     def read_state(self, state_dir: Path) -> dict:
         state_path = state_dir / "batch_state.json"
+        if not state_path.exists():
+            raise RuntimeError(
+                "Missing batch state file: "
+                f"{state_path}. "
+                "Run OPENAI_MODE=batch-submit first for this output directory, "
+                "or provide BATCH_ID/--batch-id for an existing batch."
+            )
         with open(state_path, "r", encoding="utf-8") as handle:
             return json.load(handle)
 
