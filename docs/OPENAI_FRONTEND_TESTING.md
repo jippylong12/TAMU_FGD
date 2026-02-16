@@ -11,6 +11,21 @@ python3 scripts/generate_masterdb_from_openai.py \
   --verbose
 ```
 
+Batch run first (recommended):
+
+```bash
+bash scripts/run_openai_batches.sh --mode full --semester fall --year 2023
+```
+
+Then build one merged frontend CSV:
+
+```bash
+bash scripts/generate_masterdb_from_eval_root.sh \
+  eval_output/fall2023_all \
+  GradeDistributionsDB/MasterDBs/MasterDB.csv \
+  ../TAMU_FGD_FRONT_END
+```
+
 Expected frontend file:
 - `../TAMU_FGD_FRONT_END/MasterDBs/MasterDB.csv`
 

@@ -77,6 +77,9 @@ class OpenAIBatchRunner:
                 raise RuntimeError(f"Timed out waiting for batch {batch_id}")
             time.sleep(sleep_seconds)
 
+    def status(self, batch_id: str) -> dict:
+        return self.client.retrieve_batch(batch_id)
+
     def collect(self, batch_id: str, state_dir: Path) -> dict:
         state_dir.mkdir(parents=True, exist_ok=True)
         batch = self.client.retrieve_batch(batch_id)

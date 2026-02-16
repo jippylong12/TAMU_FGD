@@ -26,7 +26,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-pages", type=int, default=None, help="Optional page limit.")
     parser.add_argument(
         "--openai-mode",
-        choices=["live", "batch-submit", "batch-wait", "batch-collect"],
+        choices=["live", "batch-submit", "batch-wait", "batch-collect", "batch-status"],
         default="live",
         help="OpenAI execution mode.",
     )
@@ -104,6 +104,26 @@ def write_openai_outputs(output_dir: Path, openai_pages: dict, mode: str, batch_
     )
 
 
+def write_batch_status(output_dir: Path, batch_obj: dict) -> None:
+    status_path = output_dir / "batch_status.json"
+    request_counts = batch_obj.get("request_counts") or {}
+    payload = {
+        "batch_id": batch_obj.get("id"),
+        "status": batch_obj.get("status"),
+        "request_counts": request_counts,
+        "output_file_id": batch_obj.get("output_file_id"),
+        "error_file_id": batch_obj.get("error_file_id"),
+    }
+    write_json(status_path, payload)
+    print(
+        "[BATCH] "
+        f"id={payload['batch_id']} status={payload['status']} "
+        f"total={request_counts.get('total')} completed={request_counts.get('completed')} "
+        f"failed={request_counts.get('failed')}"
+    )
+    print(f"[OK] Wrote batch status: {status_path}")
+
+
 def main() -> int:
     args = build_parser().parse_args()
     pdf_path = Path(args.pdf).resolve()
@@ -150,6 +170,10 @@ def main() -> int:
             return 0
 
         batch_id = batch.resolve_batch_id(state_dir=state_dir, batch_id=args.batch_id or None)
+        if args.openai_mode == "batch-status":
+            batch_obj = batch.status(batch_id=batch_id)
+            write_batch_status(output_dir=output_dir, batch_obj=batch_obj)
+            return 0
         if args.openai_mode == "batch-wait":
             batch_obj = batch.wait_for_terminal(
                 batch_id=batch_id,

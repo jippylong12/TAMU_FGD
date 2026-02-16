@@ -57,6 +57,49 @@ bash scripts/run_openai_comparison.sh \
   eval_output/ba_fall2023
 ```
 
+## Run Any Semester In Batch (One Command)
+From `TAMU_FGD/`:
+
+```bash
+bash scripts/run_openai_batches.sh --mode full --semester fall --year 2023
+```
+
+Supported modes:
+- `submit`
+- `wait`
+- `collect`
+- `full` (submit + wait)
+- `status`
+
+Defaults:
+- infers `term_key` and output label from `--semester` and `--year` (`fall + 2023` -> `20233`, `fall2023`)
+- reads `GradeDistributionsDB/<semester>/grd<term_key>*.pdf`
+- writes outputs under `eval_output/<semester_label>_all/<college>_<semester_label>`
+- skips already-completed outputs (`openai.json` exists) unless `--force-all` is set
+- `wait` polls every submitted batch each cycle (not one batch at a time), auto-collects completed ones, and logs remaining counts
+
+If your folder naming is nonstandard, explicit overrides are still supported:
+
+```bash
+bash scripts/run_openai_batches.sh \
+  --mode full \
+  --semester fall \
+  --year 2023 \
+  --semester-dir MySemesterFolder \
+  --term-key 20233 \
+  --label customlabel
+```
+
+Runner manifest/report:
+- `eval_output/<semester_label>_all/batch_manifest.json`
+- includes per-college batch id/status plus summary counts (`done`, `in_progress`, `pending`, `failed`, `remaining`)
+
+Legacy convenience wrapper (fixed to Fall 2023) still works:
+
+```bash
+bash scripts/run_openai_fall2023_batches.sh full
+```
+
 ## Outputs
 - `openai.json`
 - `openai_summary.json`
@@ -79,3 +122,15 @@ This generates:
 
 And publishes a copy to:
 - `../TAMU_FGD_FRONT_END/MasterDBs/MasterDB.csv`
+
+## Generate One MasterDB From All Batch Outputs (One Command)
+From `TAMU_FGD/`:
+
+```bash
+bash scripts/generate_masterdb_from_eval_root.sh \
+  eval_output/fall2023_all \
+  GradeDistributionsDB/MasterDBs/MasterDB.csv \
+  ../TAMU_FGD_FRONT_END
+```
+
+This discovers all `openai.json` files under `eval_output/fall2023_all` and builds one merged `MasterDB.csv`.
