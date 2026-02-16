@@ -32,6 +32,23 @@ bash scripts/run_regex_batches.sh --semester fall --year 2023
 This writes:
 - `eval_output/fall2023_all_regex/<college>_fall2023/regex.json`
 
+Run a full semester (download PDFs + regex extraction + semester CSV):
+
+```bash
+bash scripts/run_regex_semester_to_csv.sh --semester spring --year 2023
+bash scripts/run_regex_semester_to_csv.sh --semester summer --year 2023
+```
+
+If your local Python trust store blocks TAMU TLS cert chain resolution, add:
+
+```bash
+bash scripts/run_regex_semester_to_csv.sh --semester spring --year 2023 --download-insecure
+```
+
+This writes:
+- `eval_output/<semester><year>_all_regex/<college>_<semester><year>/regex.json`
+- `GradeDistributionsDB/MasterDBs/MasterDB_<semester><year>_regex.csv`
+
 Compare regex outputs to legacy OpenAI outputs on 5 random colleges:
 
 ```bash
@@ -167,3 +184,13 @@ bash scripts/generate_masterdb_from_eval_root.sh \
 ```
 
 This discovers all `openai.json` files under `eval_output/fall2023_all` and builds one merged `MasterDB.csv`.
+
+To build from regex outputs instead, pass `regex.json` as the 4th argument:
+
+```bash
+bash scripts/generate_masterdb_from_eval_root.sh \
+  eval_output/spring2023_all_regex \
+  GradeDistributionsDB/MasterDBs/MasterDB_spring2023_regex.csv \
+  ../TAMU_FGD_FRONT_END \
+  regex.json
+```
