@@ -92,6 +92,7 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
+eval_output/
 
 # Spyder project settings
 .spyderproject
