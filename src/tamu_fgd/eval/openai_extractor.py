@@ -1,27 +1,22 @@
 import json
 from pathlib import Path
 from typing import Optional
-from urllib.request import Request, urlopen
 
 from pypdf import PdfReader
 
-from tamu_fgd.eval.schema import PAGE_RECORDS_SCHEMA
-
-API_URL = "https://api.openai.com/v1/chat/completions"
-SYSTEM_PROMPT = (
-    "Extract grade distribution rows from one TAMU page. "
-    "Return records in the same top-to-bottom order as the page. "
-    "Use record_type values: section, course_total, department_total. "
-    "For missing numeric fields, use 0. For missing instructor, use null."
-)
+from tamu_fgd.eval.openai_api import OpenAIHttpClient
+from tamu_fgd.eval.prompting import build_chat_body
 
 
 class OpenAIPageExtractor:
     def __init__(self, api_key: str, model: str, timeout_seconds: int = 120, verbose: bool = False) -> None:
-        self.api_key = api_key
         self.model = model
-        self.timeout_seconds = timeout_seconds
         self.verbose = verbose
+        self.client = OpenAIHttpClient(
+            api_key=api_key,
+            timeout_seconds=timeout_seconds,
+            verbose=verbose,
+        )
 
     def extract(self, pdf_path: Path, max_pages: Optional[int] = None) -> dict:
         reader = PdfReader(str(pdf_path))
@@ -48,40 +43,7 @@ class OpenAIPageExtractor:
         return result
 
     def _extract_page_records(self, page_idx: int, page_text: str) -> list[dict]:
-        payload = {
-            "model": self.model,
-            "messages": [
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {
-                    "role": "user",
-                    "content": (
-                        f"Page number: {page_idx}\n"
-                        "Extract records from this page text:\n"
-                        f"{page_text}"
-                    ),
-                },
-            ],
-            "response_format": {
-                "type": "json_schema",
-                "json_schema": {
-                    "name": "tamu_page_records",
-                    "strict": True,
-                    "schema": PAGE_RECORDS_SCHEMA,
-                },
-            },
-        }
-        body = json.dumps(payload).encode("utf-8")
-        request = Request(
-            API_URL,
-            data=body,
-            headers={
-                "Authorization": f"Bearer {self.api_key}",
-                "Content-Type": "application/json",
-            },
-            method="POST",
-        )
-        with urlopen(request, timeout=self.timeout_seconds) as response:
-            raw = json.loads(response.read().decode("utf-8"))
+        raw = self.client.create_chat_completion(build_chat_body(self.model, page_idx, page_text))
         if self.verbose and "usage" in raw:
             usage = raw["usage"]
             print(

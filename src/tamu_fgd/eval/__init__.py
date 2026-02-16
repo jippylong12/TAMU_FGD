@@ -1,1 +1,1 @@
-"""Evaluation modules for legacy-vs-OpenAI comparisons."""
+"""OpenAI extraction and batch evaluation modules."""

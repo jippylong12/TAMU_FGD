@@ -1,4 +1,4 @@
-# OpenAI Comparison Setup
+# OpenAI Extraction Setup
 
 ## One-time Setup
 From `TAMU_FGD/`:
@@ -14,7 +14,7 @@ Edit `.env` and set:
 Optional:
 - `OPENAI_MODEL` (defaults to `gpt-4.1-mini`)
 
-## Run Comparison
+## Run Extraction
 Default target (`Fall2023 EN`):
 
 ```bash
@@ -22,6 +22,32 @@ bash scripts/run_openai_comparison.sh
 ```
 
 This runner prints timestamped progress logs and per-page extraction progress.
+
+## Batch Mode (Recommended For Large PDFs)
+Submit a batch job:
+
+```bash
+OPENAI_MODE=batch-submit bash scripts/run_openai_comparison.sh
+```
+
+Wait for completion (polls status and auto-collects on completion):
+
+```bash
+OPENAI_MODE=batch-wait bash scripts/run_openai_comparison.sh
+```
+
+Collect results later (if already complete):
+
+```bash
+OPENAI_MODE=batch-collect bash scripts/run_openai_comparison.sh
+```
+
+Optional controls:
+- `BATCH_POLL_SECONDS` (default `30`)
+- `BATCH_MAX_WAIT_SECONDS` (default `86400`)
+- `BATCH_STATE_DIR` (default `<output_dir>/batch_state`)
+- `BATCH_ID` (override state file batch id)
+- `MAX_PAGES` (limit pages for test runs)
 
 Custom PDF/output:
 
@@ -32,8 +58,8 @@ bash scripts/run_openai_comparison.sh \
 ```
 
 ## Outputs
-- `legacy.json`
 - `openai.json`
-- `comparison.json`
+- `openai_summary.json`
+- `batch_errors.json` (batch modes)
 
 Written under the output directory you pass in.

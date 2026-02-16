@@ -1,9 +1,7 @@
-# OpenAI vs Legacy Comparison (Single College)
+# OpenAI Extraction Workflow (Single College)
 
 ## Goal
-Compare one Fall 2023 PDF parsed by:
-- legacy extractor
-- OpenAI extractor
+Extract one Fall 2023 PDF into structured JSON using OpenAI only.
 
 ## Target JSON Shape
 The output JSON files use this root shape:
@@ -28,22 +26,21 @@ python3 scripts/evaluate_openai_vs_legacy.py \
   --model gpt-4.1-mini
 ```
 
-If you only want legacy JSON without OpenAI calls:
+Batch-first flow for large PDFs:
 
 ```bash
-python3 scripts/evaluate_openai_vs_legacy.py \
-  --pdf GradeDistributionsDB/Fall2023/grd20233EN.pdf \
-  --output-dir eval_output/en_fall2023 \
-  --skip-openai
+OPENAI_MODE=batch-submit bash scripts/run_openai_comparison.sh
+OPENAI_MODE=batch-wait bash scripts/run_openai_comparison.sh
 ```
 
 ## Outputs
-- `legacy.json`
 - `openai.json`
-- `comparison.json`
+- `openai_summary.json`
+- `batch_errors.json` (when batch mode is used)
 
 All under your `--output-dir`.
 
 ## Notes
-- `OPENAI_API_KEY` must be set for OpenAI extraction.
-- Comparison currently focuses on `section` records and preserves on-page order.
+- `OPENAI_API_KEY` must be set for extraction.
+- Batch mode writes durable state and raw batch artifacts in `<output_dir>/batch_state/`.
+- `openai_summary.json` includes page and record totals plus record-type breakdown.
