@@ -5,6 +5,7 @@ import json
 import shutil
 from collections import defaultdict
 from pathlib import Path
+from datetime import datetime, timezone
 
 HEADER = [
     "Course",
@@ -20,6 +21,8 @@ HEADER = [
 ]
 BLANK_LINE = ["", "", "", "", "", "", "", "", ""]
 COURSE_LINE = ["", "", "", "", "", "", "", ""]
+INDEX_FILE_NAME = "MasterDB.index.json"
+INDEX_VERSION = 1
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -105,6 +108,28 @@ def instructor_with_honors_marker(instructor: str, honors: bool) -> str:
     return instructor
 
 
+def build_index_payload(output_csv: Path, course_index: dict) -> dict:
+    csv_stats = output_csv.stat()
+    return {
+        "version": INDEX_VERSION,
+        "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "source": {
+            "filename": output_csv.name,
+            "size": csv_stats.st_size,
+            "mtime": int(csv_stats.st_mtime),
+        },
+        "courses": course_index,
+    }
+
+
+def write_masterdb_index(output_csv: Path, course_index: dict) -> Path:
+    index_path = output_csv.with_name(INDEX_FILE_NAME)
+    payload = build_index_payload(output_csv, course_index)
+    with open(index_path, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle, indent=2, sort_keys=True)
+    return index_path
+
+
 def normalize_sources(args) -> list[Path]:
     sources = []
     for raw_path in args.openai_json:
@@ -159,16 +184,22 @@ def aggregate_openai_json(path: Path, master: dict, default_instructor: str, ver
         print(f"[OPENAI] Processed {section_count} section rows from {path}")
 
 
-def write_masterdb(master: dict, output_csv: Path) -> int:
+def write_masterdb(master: dict, output_csv: Path) -> tuple:
     output_csv.parent.mkdir(parents=True, exist_ok=True)
     professor_rows = 0
+    course_index = {}
+    line_number = 0
     with open(output_csv, "w", encoding="utf-8", newline="") as handle:
         writer = csv.writer(handle)
         writer.writerow(HEADER)
+        line_number += 1
         for course in sorted(master.keys()):
             course_line = list(COURSE_LINE)
             course_line[0] = course
             writer.writerow(course_line)
+            line_number += 1
+            course_start_line = line_number
+            has_professors = False
             for instructor in sorted(master[course].keys()):
                 stats = master[course][instructor]
                 total = stats["total"]
@@ -187,15 +218,26 @@ def write_masterdb(master: dict, output_csv: Path) -> int:
                     ]
                 )
                 professor_rows += 1
+                has_professors = True
+                line_number += 1
             writer.writerow(BLANK_LINE)
-    return professor_rows
+            line_number += 1
+            course_index[course] = {
+                "start_line": int(course_start_line),
+                "end_line": int(line_number - 1 if has_professors else line_number),
+            }
+    return professor_rows, course_index
 
 
-def publish_to_frontend(output_csv: Path, frontend_root: Path) -> Path:
+def publish_to_frontend(output_csv: Path, frontend_root: Path, index_path: Path = None) -> tuple:
     destination = frontend_root / "MasterDBs" / "MasterDB.csv"
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(output_csv, destination)
-    return destination
+    destination_index = None
+    if index_path is not None and index_path.exists():
+        destination_index = frontend_root / "MasterDBs" / index_path.name
+        shutil.copy2(index_path, destination_index)
+    return destination, destination_index
 
 
 def main() -> int:
@@ -218,14 +260,18 @@ def main() -> int:
         aggregate_openai_json(source, master, args.default_instructor, args.verbose)
 
     output_csv = Path(args.output_csv).resolve()
-    professor_rows = write_masterdb(master, output_csv)
+    professor_rows, course_index = write_masterdb(master, output_csv)
+    index_path = write_masterdb_index(output_csv, course_index)
     print(f"[OK] Wrote MasterDB CSV: {output_csv}")
+    print(f"[OK] Wrote MasterDB index: {index_path}")
     print(f"[SUMMARY] files={len(sources)} courses={len(master)} professors={professor_rows}")
 
     if args.frontend_root:
         frontend_root = Path(args.frontend_root).resolve()
-        destination = publish_to_frontend(output_csv, frontend_root)
+        destination, destination_index = publish_to_frontend(output_csv, frontend_root, index_path)
         print(f"[OK] Published frontend CSV: {destination}")
+        if destination_index is not None:
+            print(f"[OK] Published frontend index: {destination_index}")
     return 0
 
 

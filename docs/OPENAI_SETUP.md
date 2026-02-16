@@ -238,3 +238,22 @@ bash scripts/generate_masterdb_from_eval_root.sh \
   ../TAMU_FGD_FRONT_END \
   regex.json
 ```
+
+## Generate Frontend MasterDB from `all_terms_regex`
+From `TAMU_FGD/`:
+
+```bash
+bash scripts/generate_masterdb_from_eval_root.sh \
+  eval_output/all_terms_regex \
+  GradeDistributionsDB/MasterDBs/MasterDB_all_terms_regex.csv \
+  ../TAMU_FGD_FRONT_END \
+  regex.json
+```
+
+This discovers all `regex.json` files under `eval_output/all_terms_regex`, builds:
+- `GradeDistributionsDB/MasterDBs/MasterDB_all_terms_regex.csv`
+- `GradeDistributionsDB/MasterDBs/MasterDB.index.json`
+
+and publishes them to frontend:
+- `../TAMU_FGD_FRONT_END/MasterDBs/MasterDB.csv`
+- `../TAMU_FGD_FRONT_END/MasterDBs/MasterDB.index.json`

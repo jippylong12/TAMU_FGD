@@ -6,6 +6,8 @@ import os
 from collections import defaultdict
 import collections
 import csv
+import json
+from datetime import datetime, timezone
 
 _author_ = "Marcus Salinas"
 
@@ -31,6 +33,27 @@ def calculate_GPA(data_list):
         return round(gpa / (data_list[7]), 2)
 
 
+INDEX_FILE_NAME = "MasterDB.index.json"
+INDEX_VERSION = 1
+
+
+def write_course_index(output_directory: str, index_data: dict, file_name: str):
+    csv_stat = os.stat(file_name)
+    payload = {
+        "version": INDEX_VERSION,
+        "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "source": {
+            "filename": os.path.basename(file_name),
+            "size": csv_stat.st_size,
+            "mtime": int(csv_stat.st_mtime),
+        },
+        "courses": index_data,
+    }
+    index_path = os.path.join(output_directory, INDEX_FILE_NAME)
+    with open(index_path, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle, indent=2, sort_keys=True)
+
+
 def createMasterDBs(listOfColleges):
     mainDirectory = os.getcwd() + '/GradeDistributionsDB'
     outputDirectory = mainDirectory + '/MasterDBs'
@@ -41,6 +64,7 @@ def createMasterDBs(listOfColleges):
     listOfFolders = next(os.walk('.'))[1]
     listOfFolders.remove('MasterDBs')
     masterDB = defaultdict(dict)
+    course_index = {}
     for college in listOfColleges:
 
         # create the master DB dictirionary
@@ -110,10 +134,14 @@ def createMasterDBs(listOfColleges):
     with open(csvFileName, 'w') as csvfile:
         spamwriter = csv.writer(csvfile)
         spamwriter.writerow(headerLine)
+        line_number = 1
         orderedMasterDB = collections.OrderedDict(sorted(masterDB.items()))
         for course, teachersDict in orderedMasterDB.items():
             # write the course row
             spamwriter.writerow([course, '', '', '', '', '', '', ''])
+            line_number += 1
+            course_start_line = line_number
+            had_teacher = False
             # for each teacher output their data
             teachersDict = collections.OrderedDict(
                 sorted(teachersDict.items()))
@@ -147,6 +175,20 @@ def createMasterDBs(listOfColleges):
                                          str(round(thisTeacherList[
                                                        6] * 100 / thisTeacherList[7], 2)) + '%',
                                          str(thisTeacherList[8])])
+                had_teacher = True
+                line_number += 1
             # output blank row
             spamwriter.writerow(blankLine)
-    os.chdir(mainDirectory)
+            line_number += 1
+            if had_teacher:
+                course_index[course] = {
+                    "start_line": int(course_start_line),
+                    "end_line": int(line_number - 1),
+                }
+            else:
+                course_index[course] = {
+                    "start_line": int(course_start_line),
+                    "end_line": int(course_start_line),
+                }
+        write_course_index(outputDirectory, course_index, os.path.join(outputDirectory, csvFileName))
+        os.chdir(mainDirectory)
